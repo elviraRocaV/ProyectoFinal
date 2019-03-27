@@ -1,0 +1,122 @@
+h1
+{
+    margin-top: 1%;
+    font-family: 'Bree Serif', serif;
+    font-size: 300%;
+    color: #1CA421;
+}
+
+.imagenlogo {
+    width: 50px;
+}
+
+/*  ---------------------menu principal -------------------------------------------*/
+
+.accesoVoluntarios
+{
+    background-color: #1CA421;
+    margin: 0% 1.5%;
+}
+.textoAcceso
+{
+    color: white;
+    font-family: 'Bree Serif', serif;
+   /* margin: 1% 0%;*/
+}
+
+.textoAcceso:hover
+{
+    color: black;
+    text-decoration: none;
+}
+
+.menuPrincipal
+{
+    background-color: #1CA421;
+}
+.texto
+{
+    padding: 1% 13%;
+    color: white;
+    font-family: 'Bree Serif', serif;
+    font-size: 100%;
+}
+
+.textMenuPrinci
+{
+    color: white;
+}
+
+.textMenuPrinci:hover
+{
+    color: black;
+    text-decoration: none;
+}
+
+.boton
+{
+    background-color: #1CA421;
+    border-color: #1CA421;
+}
+
+.boton1
+{
+    background-color: #1CA421;
+    border-color: #1CA421;
+}
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+}
+
+/*  --------------------- accesoVoluntario -------------------------------------------*/
+
+.acceso
+{
+    color:#1CA421;
+    font-family: 'Bree Serif', serif;
+}
+
+.lineaVoluntario
+{
+    padding: 2.5% 2%;
+    border-radius: 4px;
+}
+
+.icono
+{
+    margin-left: 10%;
+}
+
+.botonGrande
+{
+    background-color: #1CA421;
+    border-color: #1CA421;
+    color: white;
+    padding: 0 5px;
+}
+.glyphicon-user:before{content:"\e008"}
+.color
+{
+    background-color: #b5e8bf;
+}
+
+
+
+
+/*  --------------------- ayudanos -------------------------------------------*/
+
+.linea
+{
+    border-color: #1CA421;
+}
+
+.direc
+{
+    width:100%;
+}

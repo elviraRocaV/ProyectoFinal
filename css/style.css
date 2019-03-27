@@ -1,0 +1,51 @@
+
+.container { background-color:#FFF5EE; }
+
+header
+{
+	background-color: #D2B48C;
+	margin-bottom: 2%;
+	padding: 1.5% 0;
+}
+
+.fila2
+{
+	margin-bottom: 2%;
+	margin-left: 10%;
+}
+
+.fila3
+{
+	margin-left: 10%;
+	margin-bottom: 2%;
+}
+
+.foto{  width: 90%; }
+
+.fila5
+{
+	width: 20%;
+	float: right;
+	margin: 2%;
+}
+
+.fila6
+{
+	width: 20%;
+	margin: 2%;
+}
+
+.texto
+{
+	margin-top: 4%;
+}
+
+.fila7
+{
+	margin-bottom: 2%;
+}
+
+.fila8
+{
+	margin-right: 2%;
+}

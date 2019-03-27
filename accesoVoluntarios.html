@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>gatos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kanit|Lobster" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<div class="container-fluid">
+    <header class="row mt-1 cabeza">
+        <div class="col-2 mt-4 imagenlogo">
+            <img width="100%"  src="imagenes/logoAyunt.png">
+        </div>
+        <h1 class="col-7 text-sm-center text-md-center text-xs-center ml-5"><em><strong>Plan Esterilización Felina</strong></em></h1>
+        <div class="col-2 mt-3 ml-4 imagenlogo">
+            <img width="100%" src="imagenes/logoCEU.png">
+        </div>
+    </header>
+</div>
+
+<nav class=" navbar navbar-expand-lg">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse menuPrincipal" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li class="texto">
+                <a class="textMenuPrinci" href="index.html">Inicio</a>
+            </li>
+            <li class="texto">
+                <a class="textMenuPrinci" href="queHacemos.html">Qué hacemos</a>
+            </li>
+            <li class="texto">
+                <a class="textMenuPrinci" href="voluntariado.php">Hazte Voluntario</a>
+            </li>
+            <li class="texto">
+                <a class="textMenuPrinci" href="ayudanos.php">Ayudanos</a>
+            </li>
+            <li class="texto">
+                <a class="textMenuPrinci" href="eventos.html">Eventos</a>
+            </li>
+            <li class="texto">
+                <a class="textMenuPrinci" href="Adopcion.html">Adopción</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row mt-3">
+        <div class="col-12 text-md-center acceso">
+            <h2>Acceso Voluntarios</h2>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-12 text-md-center mb-4">
+            <h4 class="">Identificación Usuario</h4>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-auto mb-5">
+            <label>Usuario:</label><br>
+            <div class="input-group">
+                <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
+                <input class="linea lineaVoluntario fondocaja" type="text" name="usuario" id="usuario" placeholder="Nombre Usuario" onfocus="cambiarFondoUsuario(this)">
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-auto mb-5">
+            <label>Contraseña:</label><br>
+            <div class="input-group">
+                <span class="input-group-addon icono2"><i class="glyphicon glyphicon-lock"></i></span>
+                <input class="linea lineaVoluntario fondocaja" type="text" name="password" id="password" placeholder="contraseña" onfocus="cambiarFondoPassword(this)">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-md-center">
+            <button type="button" class="btn botonGrande">Enviar</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="jsValidar/validar.js"></script>
+
+
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
