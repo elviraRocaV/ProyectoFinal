@@ -6,9 +6,11 @@ h1
     color: #1CA421;
 }
 
-.imagenlogo {
-    width: 50px;
+.imagenlogo
+{
+    width: 110%;
 }
+
 
 /*  ---------------------menu principal -------------------------------------------*/
 
@@ -65,13 +67,89 @@ h1
     border-color: #1CA421;
 }
 
-.icon {
+.icon
+{
     display: inline-block;
     width: 1em;
     height: 1em;
     stroke-width: 0;
     stroke: currentColor;
     fill: currentColor;
+}
+
+@media(max-width: 991px)  /*md*/
+{
+    .posLogo2
+    {
+        order: 2;
+    }
+
+    .textoPlan
+    {
+        order: 2;
+    }
+
+    .posLogo1
+    {
+        order: 1;
+    }
+}
+
+@media(max-width: 767px)  /*sm*/
+{
+    .imagenlogo
+    {
+        width: 40%;
+    }
+
+    .textoPlan
+    {
+        font-size: 100%;
+    }
+
+    .posLogo2
+    {
+        order: 3;
+
+    }
+
+    .textoPlan
+    {
+        order: 1;
+    }
+
+    .posLogo1
+    {
+        order: 2;
+    }
+
+    .imagenlogo
+    {
+        width:45%;
+    }
+}
+
+@media(max-width:576px)   /* xs */
+{
+    .textoPlan
+    {
+        font-size:70%;
+    }
+    .imagenlogo
+    {
+        width:60%;
+    }
+
+    .accesoTexto
+    {
+        font-size:0%;
+    }
+
+}
+
+.botonMenu
+{
+    margin-left: 10px;
 }
 
 /*  --------------------- accesoVoluntario -------------------------------------------*/
@@ -98,7 +176,7 @@ h1
     background-color: #1CA421;
     border-color: #1CA421;
     color: white;
-    padding: 0 5px;
+    padding: 2px 8px;
 }
 .glyphicon-user:before{content:"\e008"}
 .color
