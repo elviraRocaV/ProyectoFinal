@@ -17,22 +17,27 @@
 
 <!--<?php require __DIR__."views/partials/cabecera.part.php";?>-->
 <div class="container-fluid">
-    <header class="row mt-1 cabeza">
-        <div class="col-2 mt-4 imagenlogo">
-            <img width="100%"  src="imagenes/logoAyunt.png">
+    <header class="row mt-3 justify-content-md-around">
+
+        <div class="col-md-2 col-sm-6 col-6 mt-md-4 mt-sm-1 text-sm-left ml-md-2 posLogo1">
+            <img class="imagenlogo" src="imagenes/logoAyunt.png">
         </div>
-        <h1 class="col-7 text-sm-center text-md-center text-xs-center ml-5"><em><strong>Plan Esterilización Felina</strong></em></h1>
-        <div class="col-2 mt-3 ml-4 imagenlogo">
-            <img width="100%" src="imagenes/logoCEU.png">
+
+        <div class="col-md-7 col-sm-12 col-12 ml-5 textoPlan text-md-center text-sm-center text-center">
+            <h1 class="pt-md-4"><em><strong>Plan Esterilización Felina</strong></em></h1>
+        </div>
+
+        <div class="col-md-2 col-sm-6 col-6 mt-md-3 mt-sm-1 ml-md-4 mr-md-1 text-sm-right text-right posLogo2">
+            <img class="imagenlogo" src="imagenes/logoCEU.png">
         </div>
     </header>
 </div>
 
-<nav class=" navbar navbar-expand-lg">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class=" navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler botonMenu" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse menuPrincipal" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse menuPrincipal" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="texto">
                 <a class="textMenuPrinci" href="index.html">Inicio</a>
@@ -41,7 +46,7 @@
                 <a class="textMenuPrinci" href="queHacemos.html">Qué hacemos</a>
             </li>
             <li class="texto">
-                <a class="textMenuPrinci" href="voluntariado.html">Hazte Voluntario</a>
+                <a class="textMenuPrinci" href="hazteVoluntario.php">Hazte Voluntario</a>
             </li>
             <li class="texto">
                 <a class="textMenuPrinci" href="ayudanos.html">Ayudanos</a>
@@ -62,9 +67,104 @@
             <h2>Hazte Voluntario</h2>
         </div>
     </div>
-            <form action="">
-                <div class="form-group">
-                    <div class="row justify-content-between">
+
+    <form action="">
+        <div class="row justify-content-between">
+            <div class="col-md-auto mt-3">
+                <label>Nombre</label><br>
+                <div class="input-group">
+                    <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
+                    <input class="linea lineahazteVoluntario fondocaja" type="text" name="usuario" id="usuario" placeholder="Nombre" onfocus="cambiarFondoUsuario(this)">
+                </div>
+            </div>
+            <div class="col-md-3 mt-3">
+                <label>Apellidos</label><br>
+                <div class="input-group">
+                    <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
+                    <input class="linea lineahazteVoluntario fondocaja" type="text" name="apellido" id="apellido" placeholder="apellido" onfocus="cambiarFondoApellido(this)">
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-md-auto mt-3">
+                <label>DNI</label><br>
+                <div class="input-group">
+                    <span class="input-group-addon icono2"><i class="glyphicon glyphicon-list-alt"></i></span>
+                    <input class="linea lineahazteVoluntario fondocaja" type="text" name="dni" id="dni" placeholder="DNI" onfocus="cambiarFondoDNI(this)">
+                </div>
+            </div>
+            <div class="col-md-3 mt-3">
+                <label>Fecha nacimiento</label><br>
+                <div class="input-group">
+                    <span class="input-group-addon icono2"><i class="glyphicon glyphicon-calendar"></i></span>
+                    <select class="lineahazteVoluntarioFecha" name="diaFecha" id="diaFecha">
+                        <option value="">Día</option>
+                       <?php
+                            for($i=1;$i<=31;$i++):
+                               ?> <option value="<?php echo $i ?> "> <?php echo $i ?> </option>
+                        <?php
+                            endfor;
+                            ?>
+                    </select>
+                    <select class="lineahazteVoluntarioFecha" name="mesFecha" id="mesFecha">
+                        <option value="">Mes</option>
+                        <option value="Enero">Enero</option>
+                        <option value="Febrero">Febrero</option>
+                        <option value="Marzo">Marzo</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Mayo">Mayo</option>
+                        <option value="Junio">Junio</option>
+                        <option value="Julio">Julio</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Septiembre">Septiembre</option>
+                        <option value="Octubre">Octubre</option>
+                        <option value="Noviembre">Noviembre</option>
+                        <option value="Diciembre">Diciembre</option>
+                    </select>
+                  <!--  <select class="lineahazteVoluntarioFecha" name="anyoFecha" id="anyoFecha">
+                        <option value="">Año</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">Febrero</option>
+                        <option value="2003">Marzo</option>
+                        <option value="2004">Abril</option>
+                        <option value="2005">Mayo</option>
+                        <option value="2006">Junio</option>
+                        <option value="2007">Julio</option>
+                        <option value="2008">Agosto</option>
+                        <option value="2009">Septiembre</option>
+                        <option value="2010">Octubre</option>
+                        <option value="">Noviembre</option>
+                        <option value="Diciembre">Diciembre</option>
+                    </select>-->
+
+                    <select class="lineahazteVoluntarioFecha" name="anyoFecha" id="anyoFecha">
+                        <option value="">Año</option>
+                        <?php
+
+                        $anyoActual=date("Y",time());
+                        $anyoMin=$anyoActual-18;
+
+                        for($j=$anyoMin;$j>=diaAnyo;$j--):
+
+                            ?> <option value="<?php echo $j ?> "> <?php echo $j ?> </option>
+                            <?php
+                        endfor;
+                        ?>
+                    </select>
+
+
+
+
+
+
+                   <!-- <input class="linea lineahazteVoluntarioFecha fondocaja" type="text" name="usuario" id="fechaNacimiento" placeholder="Nombre Usuario" onfocus="cambiarFondoUsuario(this)">-->
+                </div>
+            </div>
+        </div>
+
+
+
+               <!--     <div class="row justify-content-around">
                         <div class="caixa1 col-md-12">
                             <label>Nombre</label><br>
                             <div class="input-group">
@@ -78,8 +178,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </form>
+
+           <!-- </form>-->
 
 </div>
                 <!--<div class="form-group caixa mt-5 mb-5">
@@ -208,20 +308,7 @@
     </div>
 </div>
 
-
-
-<?php
-
-
-
-
-
-
-
-
-
-?>
-
+<script type="text/javascript" src="jsValidar/validar.js"></script>
 
 
 
