@@ -13,3 +13,21 @@ function cambiarFondoPassword()
     fondoPassword=document.getElementById("password");
     fondoPassword.style.backgroundColor="#d1d1c6";
 }
+
+function cambiarFondoApellido()
+{
+    fondoPassword=document.getElementById("apellido");
+    fondoPassword.style.backgroundColor="#d1d1c6";
+}
+
+function cambiarFondoDNI()
+{
+    fondoPassword=document.getElementById("dni");
+    fondoPassword.style.backgroundColor="#d1d1c6";
+}
+
+
+
+
+
+
