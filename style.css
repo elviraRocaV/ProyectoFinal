@@ -213,6 +213,20 @@ h1
 
 /*  --------------------- hazte Voluntario -------------------------------------------*/
 
+.asterisco
+{
+    color: #dc3545;
+}
+
+.ubicarVisto
+{
+    margin-top: 4%;
+}
+
+.deplazarDerecha
+{
+    margin-left: 30%;
+}
 .lineahazteVoluntario
 {
     padding: 2% 20%;
@@ -221,13 +235,13 @@ h1
 }
 .lineahazteVoluntarioFechaMes
 {
-    padding: 1% 1%;
+    padding: 2% 2%;
     border: 1px solid #1CA421;
     border-radius:5%;
 }
 .lineahazteVoluntarioFecha
 {
-    padding: 1% 1.5%;
+    padding: 2% 3%;
     border: 1px solid #1CA421;
     border-radius:5%;
 }
@@ -239,12 +253,33 @@ h1
     border-radius:5%;
 }
 
-.lineahazteVoluntarioDirec
+.lineahazteVoluntarioDirec1
 {
     border: 1px solid #1CA421;
     border-radius:5%;
-    width:70%;
-    height: 49%;
+    width:90%;
+    height:60%;
+}
+.lineahazteVoluntarioDirec2
+{
+    border: 1px solid #1CA421;
+    border-radius:5%;
+    width:90%;
+    height:60%;
+}
+.lineahazteVoluntarioDirec3
+{
+    border: 1px solid #1CA421;
+    border-radius:5%;
+    width:90%;
+    height:60%;
+}
+.lineahazteVoluntarioDirec4
+{
+    border: 1px solid #1CA421;
+    border-radius:5%;
+    width:90%;
+    height:60%;
 }
 
 .lineahazteVoluntarioZona
