@@ -257,28 +257,28 @@ h1
 {
     border: 1px solid #1CA421;
     border-radius:5%;
-    width:90%;
+    width:85%;
     height:60%;
 }
 .lineahazteVoluntarioDirec2
 {
     border: 1px solid #1CA421;
     border-radius:5%;
-    width:90%;
+    width:85%;
     height:60%;
 }
 .lineahazteVoluntarioDirec3
 {
     border: 1px solid #1CA421;
     border-radius:5%;
-    width:90%;
+    width:85%;
     height:60%;
 }
 .lineahazteVoluntarioDirec4
 {
     border: 1px solid #1CA421;
     border-radius:5%;
-    width:90%;
+    width:85%;
     height:60%;
 }
 
@@ -298,20 +298,30 @@ h1
 {
     border: 1px solid #1CA421;
     border-radius:5%;
-    padding:2% 12%;
+    padding:3% 8%;
 }
 
 .lineahazteVoluntarioTelef
 {
     border: 1px solid #1CA421;
     border-radius:5%;
-    padding:2% 12%;
+    padding:3% 8%;
+}
+
+.lineahazteVoluntarioTelef2
+{
+    border: 1px solid #1CA421;
+    border-radius:5%;
+    padding:3% 8%;
 }
 
 .textFormularioVoluntario
 {
     font-size: 120%;
 }
+
+
+
 
 /*  --------------------- ayudanos -------------------------------------------*/
 

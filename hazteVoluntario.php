@@ -70,41 +70,47 @@
 
     <form action="">
         <div class="row">
-            <div class="col-md-3 mt-md-3 offset-md-2">
+            <div class="col-md-3 col-sm-6 mt-md-3 offset-md-2">
                 <label class="textFormularioVoluntario">Nombre <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
                     <input class="linea lineahazteVoluntario fondocaja" type="text" name="usuario" id="usuario" placeholder="Nombre" onclick="cambiarFondoUsuario()" onblur="cambiarFondoUsuarios(this)">
                 </div>
             </div>
-            <div class="col-md-1 mt-md-5">
+            <div class="col-md-1 col-sm-1 mt-md-5 mt-sm-5">
                 <div id="visto1"></div>
             </div>
-            <div class="col-md-3 mt-md-3 offset-md-1">
+
+            <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
+
+            <div class="col-md-3 col-sm-6 mt-md-3 mt-sm-4 offset-md-1">
                 <label class="textFormularioVoluntario">Apellidos <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
-                    <input class="linea lineahazteVoluntario fondocaja" type="text" name="apellido" id="apellido" placeholder="apellido" onclick="cambiarFondoApellido()" onblur="cambiarFondoApellidos(this)">
+                    <input class="linea lineahazteVoluntario fondocaja" type="text" name="apellido" id="apellido" placeholder="Apellido1 Apellido2" onclick="cambiarFondoApellido()" onblur="cambiarFondoApellidos(this)">
                 </div>
             </div>
-            <div class="col-md-1 mt-md-5">
+            <div class="col-md-1 col-sm-1 mt-md-5 mt-sm-5">
                 <div id="visto2"></div>
             </div>
         </div>
 
-
+        <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
 
         <div class="row">
-            <div class="col-md-3 mt-5 offset-2">
+            <div class="col-md-3 col-sm-6 mt-md-5 mt-sm-4 offset-md-2">
                 <label class="textFormularioVoluntario">DNI <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-list-alt"></i></span>
-                    <input class="linea lineahazteVoluntario fondocaja" type="text" name="dni" id="dni" placeholder="DNI" onclick="cambiarFondoDNI()" onblur="cambiarFondoDNIs(this)">
+                    <input class="linea lineahazteVoluntario fondocaja" type="text" name="dni" id="dni" placeholder="00000000-X" onclick="cambiarFondoDNI()" onblur="cambiarFondoDNIs(this)">
                 </div>
             </div>
-           <div class="col-md-1 ubicarVisto">
+           <div class="col-md-1 col-sm-1 mt-md-5 mt-sm-5 ubicarVisto">
                 <div id="visto3"></div>
             </div>
+
+            <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
+
             <div class="col-md-3 mt-md-5 offset-md-1">
                 <div class="row">
                     <div class="col-md-12">
@@ -137,7 +143,7 @@
                                 <option value="Diciembre">Diciembre</option>
                             </select>
 
-                            <select class="lineahazteVoluntarioFecha linea" name="anyoFecha" id="anyoFecha" onclick="cambiarFondoAnyo(this)" onblur="cambiarFondoAnyos(this, diafecha, mesFecha)">
+                            <select class="lineahazteVoluntarioFecha linea" name="anyoFecha" id="anyoFecha" onclick="cambiarFondoAnyo()" onblur="cambiarFondoAnyos(this, diafecha, mesFecha)">
                                 <option value="">Año</option>
                                 <?php
 
@@ -160,6 +166,7 @@
             </div>
         </div>
 
+
         <hr class="lineaH mt-md-5">
 
 
@@ -168,17 +175,17 @@
                 <label class="textFormularioVoluntario">Dirección <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
-                    <input class="linea lineahazteVoluntarioDirecion" type="text" name="direccion" id="direccion" placeholder="Dirección" onclick="cambiarFondoDireccion()" onblur="cambiarFondoDireccions(this)">
+                    <input class="linea lineahazteVoluntarioDirecion" type="text" name="direccion" id="direccion" placeholder="Dirección" onclick="cambiarFondoDireccion(this)">
                 </div>
             </div>
 
-            <div class="col-md-3 mt-md-3 offset-md-1">
-                <div class="row justify-content-md-between">
+           <div class="col-md-3 mt-md-3 offset-md-1">
+                <div class="row justify-content-md-around">
                     <div class="col-md-3">
                         <label class="textFormularioVoluntario">Nº<span class="asterisco"> *</span></label><br>
-                        <input class="linea lineahazteVoluntarioDirec1" type="text" name="numero" id="numero" placeholder="" onclick="cambiarFondoNumero()" onblur="cambiarFondoNumeros(this)">
+                        <input class="linea lineahazteVoluntarioDirec1" type="text" name="numero" id="numero" placeholder="" onclick="cambiarFondoNumero(this)">
                     </div>
-                    <div class="col-md-3">
+                   <div class="col-md-3">
                         <label class="textFormularioVoluntario">Portal</label><br>
                         <input class="linea lineahazteVoluntarioDirec2" type="text" name="portal" id="portal" placeholder="" onclick="cambiarFondoPortal()">
                     </div>
@@ -191,7 +198,7 @@
                         <input class="linea lineahazteVoluntarioDirec4" type="text" name="letra" id="letra" placeholder="" onclick="cambiarFondoLetra()">
                     </div>
                 </div>
-            </div>
+           </div>
             <div class="col-md-1 mt-md-5">
                 <div id="visto5"></div>
             </div>
@@ -202,7 +209,7 @@
                 <label class="textFormularioVoluntario">Zona donde reside <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
-                     <select class="lineahazteVoluntarioZona linea" name="zona" id="zona" onchange="cambiarFondoResides(this)">
+                     <select class="lineahazteVoluntarioZona linea" name="zona" id="zona" onblur="cambiarFondoResides(this)">
                          <option class="textFormularioVoluntario" value="">Zona a Elegir</option>
                          <option value="Moncada">Moncada</option>
                          <option value="Barrio">Barrio</option>
@@ -212,51 +219,102 @@
                      </select>
                  </div>
             </div>
-            <div class="col-md-1 mt-md-5">
-                <div class="row">
-                    <div class="mt-md-5">
-                        <div id="visto5"></div>
-                    </div>
-                </div>
+            <div class="col-md-1 mt-md-5 mr-md-5">
+                <div id="visto6"></div>
             </div>
         </div>
 
         <hr class="lineaH mt-md-5">
 
+
         <div class="row mb-md-5">
-            <div class="col-md-3 mt-3 offset-md-2">
-                <label class="textFormularioVoluntario">Correo Electrónico</label><br>
+            <div class="col-md-2 mt-md-3 offset-md-2">
+                <label class="textFormularioVoluntario">Correo Electrónico <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-envelope"></i></span>
-                    <input class="linea lineahazteVoluntarioCorreo fondocaja" type="text" name="correo" id="correo" placeholder="Correo Electrónico" onclick="cambiarFondoCorreo()">
+                    <input class="linea lineahazteVoluntarioCorreo fondocaja" type="text" name="correo" id="correo" placeholder="xxxxx@xxx.xxx" onclick="cambiarFondoCorreo()" onblur="cambiarFondoCorreos(this)" >
                 </div>
             </div>
-            <div class="col-md-3 mt-3">
+            <div class="col-md-1 mt-md-5">
+                <div id="visto7"></div>
+            </div>
+            <div class="col-md-2 mt-md-3">
                 <label class="textFormularioVoluntario">Telefono 1 <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-earphone"></i></span>
                     <input class="linea lineahazteVoluntarioTelef fondocaja" type="text" name="telefono1" id="telefono1" placeholder="Telefono 1" onclick="cambiarFondoTelf1()" onblur="cambiarFondoTelf1s(this)">
                 </div>
             </div>
-            <div class="col-md-3 mt-3">
+            <div class="col-md-1 mt-md-5">
+                <div id="visto8"></div>
+            </div>
+            <div class="col-md-2 mt-md-3">
                 <label class="textFormularioVoluntario">Telefono 2</label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-earphone"></i></span>
-                    <input class="linea lineahazteVoluntarioTelef fondocaja" type="text" name="telefono2" id="telefono2" placeholder="Telefono 2" onclick="cambiarFondoTelf2()" onblur="cambiarFondoTelf2s(this)">
+                    <input class="linea lineahazteVoluntarioTelef2 fondocaja" type="text" name="telefono2" id="telefono2" placeholder="Telefono 2" onclick="cambiarFondoTelf2()" onblur="cambiarFondoTelf2s(this)">
                 </div>
             </div>
         </div>
+
+
+        <hr class="lineaH mt-md-5">
+
+
+        <div class="row">
+            <div class="col-md-3 mt-md-3 offset-md-2 mt-md-5">
+                <label class="textFormularioVoluntario">Contraseña Usuario <span class="asterisco">*</span></label><br>
+                <div class="input-group">
+                    <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
+                    <input class="linea lineahazteVoluntario fondocaja" type="password" name="password1" id="password1" placeholder="contraseña" onclick="cambiarFondoPassword1()" onblur="cambiarFondoPassword1s(this)">
+                </div>
+            </div>
+            <div class="col-md-1 mt-md-5">
+                <div id="visto1"></div>
+            </div>
+            <div class="col-md-3 mt-md-3 offset-md-1 mt-md-5">
+                <label class="textFormularioVoluntario">Vuelva a introducir la contraseña <span class="asterisco">*</span></label><br>
+                <div class="input-group">
+                    <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
+                    <input class="linea lineahazteVoluntario fondocaja" type="password" name="password2" id="password2" placeholder="contraseña" onclick="cambiarFondoPassword2()" onblur="cambiarFondoPassword2s(this)">
+                </div>
+            </div>
+            <div class="col-md-1 mt-md-5">
+                <div id="visto10"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class=" cajaBoton mt-md-5">
+                    <a href="coloniasGatos.php" class="btn btn-primary boton1" role="button">Enviar</a>
+                </div>
+
+                <div class=" cajaBoton mt-md-5 ml-md-5">
+                    <a href="coloniasGatos.php" class="btn btn-primary boton1" role="button">Siguiente </a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     </form>
 
 
     <div class="container">
-        <div class="row justify-content-md-end">
-            <div class=" cajaBoton">
-                <a href="coloniasGatos.php" class="btn btn-primary boton1" role="button">Siguiente </a>
-            </div>
-        </div>
+
     </div>
 
 </div>
