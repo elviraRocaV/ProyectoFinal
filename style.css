@@ -320,7 +320,12 @@ h1
     font-size: 120%;
 }
 
-
+.boton1:hover
+{
+    background-color:#1CA421;
+    border-color:#1CA421;
+    color: black;
+}
 
 
 /*  --------------------- ayudanos -------------------------------------------*/

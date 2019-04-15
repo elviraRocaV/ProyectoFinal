@@ -14,6 +14,7 @@ function cambiarFondoUsuarios(nombre)
         document.getElementById("visto1").style.backgroundrepeat="no-repeat";
         document.getElementById("visto1").style.backgroundSize="cover";
         document.getElementById("visto1").style.backgroundImage= 'url("imagenes/vistoVerde.png")';
+        nombre.style="border-color:#1CA421;"
     }else
     {
         document.getElementById("visto1").style.width="40px";
@@ -34,7 +35,7 @@ function cambiarFondoApellido()
 
 function cambiarFondoApellidos(apellidos)
 {
-    if(apellidos.value.match(/^[A-Z][a-zA-Z]+\s[A-Z][a-zA-Z]+$/))
+    if(apellidos.value.match(/^[a-zA-Z][a-zA-Z]+\s[a-zA-Z][a-zA-Z]+$/))
     {
         document.getElementById("visto2").style.width="36px";
         document.getElementById("visto2").style.height="36px";
@@ -82,59 +83,80 @@ function cambiarFondoDNIs(dni)
 
 /*-------------------------------- FECHA NACIMIENTO ----------------------------------   NO FUNCIONA*/
 
-/*function cambiarFondoDia(dia)
+
+function cambiarFondoDia(dia)
 {
     if(dia.value=="")
     {
         dia.style="border-color:red;"
+        return 1;
+    }else
+    {
+        dia.style="border-color:#1CA421";
+        return 0;
     }
-    return 1;
 }
+
 
 function cambiarFondoMes(mes)
 {
     if(mes.value=="")
     {
         mes.style="border-color:red;"
-    }
-    return 1;
+        return 1;
+    }else
+        {
+            mes.style="border-color:#1CA421";
+            return 0;
+        }
 }
 
 function cambiarFondoAnyo(anyo)
 {
     if(anyo.value=="")
     {
-        anyo.style="border-color:red;"
-    }
-    return 1;
-}
-
-function cambiarFondoAnyos(anyo, dia, mes)
-{
-    alert("pasa");
-
-    let resdia=cambiarFondoDia(dia);
-    let resmes=cambiarFondoMes(mes);
-    let resAnyo=cambiarFondoAnyo(anyo);
-
-    alert(resAnyo, resdia, resAnyo);
-
-    if(resdia==1 || resmes==1 || resAnyo==1)
-    {
-        document.getElementById("visto4").style.width="40px";
-        document.getElementById("visto4").style.height="40px";
-        document.getElementById("visto4").style.backgroundrepeat="no-repeat";
-        document.getElementById("visto4").style.backgroundSize="cover";
-        document.getElementById("visto4").style.backgroundImage= 'url("imagenes/vistoRojo.png")';
+        anyo.style="border-color:red";
+        return 1;
     }else
         {
-            document.getElementById("visto4").style.width="35px";
-            document.getElementById("visto4").style.height="35px";
+            anyo.style="border-color:#1CA421";
+            return 0;
+        }
+}
+
+document.getElementsByTagName("select")[2].onchange=cambiarFondoAnyos;
+
+function cambiarFondoAnyos()
+{
+    let dia;
+    let mes;
+    let anyo;
+
+    dia=document.getElementsByTagName("select")[0].value;
+    mes=document.getElementsByTagName("select")[2].value;
+    anyo=document.getElementsByTagName("select")[2].value;
+
+    alert(dia+mes+anyo);
+
+    if(dia!="" && mes!="" && anyo!="")
+    {
+        document.getElementById("visto4").style.width="35px";
+        document.getElementById("visto4").style.height="35px";
+        document.getElementById("visto4").style.backgroundrepeat="no-repeat";
+        document.getElementById("visto4").style.backgroundSize="cover";
+        document.getElementById("visto4").style.backgroundImage= 'url("imagenes/vistoVerde.png")';
+        dia.style="border-color:#1CA421";
+        mes.style="border-color:#1CA421";
+        anyo.style="border-color:#1CA421";
+    }else
+        {
+            document.getElementById("visto4").style.width="40px";
+            document.getElementById("visto4").style.height="40px";
             document.getElementById("visto4").style.backgroundrepeat="no-repeat";
             document.getElementById("visto4").style.backgroundSize="cover";
-            document.getElementById("visto4").style.backgroundImage= 'url("imagenes/vistoVerde.png")';
+            document.getElementById("visto4").style.backgroundImage= 'url("imagenes/vistoRojo.png")';
         }
-}*/
+}
 
 /*-------------------------------- DIRECCION ---------------------------------- */
 
@@ -170,7 +192,7 @@ function cambiarFondoDireccions(direccion)
     let direcc;
     direcc=document.getElementById("direccion").value;
 
-    if(direcc.match(/^[a-zA-Z]+\s[a-zA-Z]{1,14}$/))
+    if(direcc.match(/^[a-zA-Z]+\s[a-zA-Z]+$/))
     {
         return 0;
     }else

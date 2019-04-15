@@ -68,7 +68,7 @@
         </div>
     </div>
 
-    <form action="">
+    <form action="datosFormulario.php" method="post">
         <div class="row">
             <div class="col-md-3 col-sm-6 mt-md-3 offset-md-2">
                 <label class="textFormularioVoluntario">Nombre <span class="asterisco">*</span></label><br>
@@ -143,7 +143,7 @@
                                 <option value="Diciembre">Diciembre</option>
                             </select>
 
-                            <select class="lineahazteVoluntarioFecha linea" name="anyoFecha" id="anyoFecha" onclick="cambiarFondoAnyo()" onblur="cambiarFondoAnyos(this, diafecha, mesFecha)">
+                            <select class="lineahazteVoluntarioFecha linea" name="anyoFecha" id="anyoFecha" onblur="cambiarFondoAnyo(this)">
                                 <option value="">Año</option>
                                 <?php
 
@@ -287,7 +287,7 @@
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class=" cajaBoton mt-md-5">
-                    <a href="coloniasGatos.php" class="btn btn-primary boton1" role="button">Enviar</a>
+                    <a class="btn btn-primary boton1" role="button">Enviar</a>
                 </div>
 
                 <div class=" cajaBoton mt-md-5 ml-md-5">
