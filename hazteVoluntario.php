@@ -1,66 +1,55 @@
-<!--<!DOCTYPE html>
-<html>
-<head>
-    <title>gatos</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kanit|Lobster" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link href="icono/fonts/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+<?php
+require_once "Database/Connection.php";
+require_once "Entities/Voluntario.php";
+$conexion=Connection::make();
+
+require __DIR__."/views/partials/cabecera.part.php";
+
+if($_SERVER['REQUEST_METHOD']=="POST")
+{
+    $name=$_POST["usuario"];
+    $apellidos=$_POST["apellido"];
+    $dni=$_POST["dni"];
+    $dia=$_POST["diaFecha"];
+    $mes=$_POST["mesFecha"];
+    $anyo=$_POST["anyoFecha"];
+    $fechaNacimiento=$dia."/".$mes."/".$anyo;
+    $direccion=$_POST["direccion"];
+    $num=$_POST["numero"];
+    $portal=$_POST["portal"];
+    $piso=$_POST["piso"];
+    $letra=$_POST["letra"];
+    $zonaReside=$_POST["zona"];  //????????????? no sé si lo cogerá
+    $mail=$_POST["correo"];
+    $telf1=$_POST["telefono1"];
+    $telf2=$_POST["telefono2"];
+    $pass1=$_POST["password1"];
+    $pass2=$_POST["password2"];
+
+    $churropassword=password_hash($pass1, PASSWORD_DEFAULT, ["cost"=>15]);
+
+    $stmt1=$conexion->prepare("INSERT INTO voluntariado(usuario, apellido, dni, fechaNacimiento, direccion, numero, portal, piso, letra, zona,correo, telefono1, telefono2, password1)VALUES (:usuarioA, :apellidoA, :dniA, :fechaNacimientoA, :direccionA, :numeroA, :portalA, :pisoA, :letraA, :zonaA,:correoA, :telefono1A, :telefono2A, :password1A)");
 
 
-<div class="container-fluid">
-    <header class="row mt-3 justify-content-md-around">
+    $stmt1->bindParam(':usuarioA',$name);
+    $stmt1->bindParam(':apellidoA', $apellidos);
+    $stmt1->bindParam(':dniA',   $dni);
+    $stmt1->bindParam(':fechaNacimientoA', $fechaNacimiento);
+    $stmt1->bindParam(':direccionA',  $direccion);
+    $stmt1->bindParam(':numeroA', $num);
+    $stmt1->bindParam(':portalA', $portal);
+    $stmt1->bindParam(':pisoA',   $piso);
+    $stmt1->bindParam(':letraA',   $letra);
+    $stmt1->bindParam(':zonaA',    $zonaReside);
+    $stmt1->bindParam(':correoA', $mail);
+    $stmt1->bindParam(':telefono1A',    $telf1);
+    $stmt1->bindParam(':telefono2A',   $telf2);
+    $stmt1->bindParam(':password1A',   $pass1);
 
-        <div class="col-md-2 col-sm-6 col-6 mt-md-4 mt-sm-1 text-sm-left ml-md-2 posLogo1">
-            <img class="imagenlogo" src="imagenes/logoAyunt.png">
-        </div>
+    $stmt1->execute();
+}
 
-        <div class="col-md-7 col-sm-12 col-12 ml-5 textoPlan text-md-center text-sm-center text-center">
-            <h1 class="pt-md-4"><em><strong>Plan Esterilización Felina</strong></em></h1>
-        </div>
-
-        <div class="col-md-2 col-sm-6 col-6 mt-md-3 mt-sm-1 ml-md-4 mr-md-1 text-sm-right text-right posLogo2">
-            <img class="imagenlogo" src="imagenes/logoCEU.png">
-        </div>
-    </header>
-</div>
-
-    <nav class=" navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler botonMenu" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon "></span>
-        </button>
-
-        <div class="collapse navbar-collapse menuPrincipal" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="texto">
-                    <a class="textMenuPrinci" href="index.php">Inicio</a>
-                </li>
-                <li class="texto">
-                    <a class="textMenuPrinci" href="queHacemos.php">Qué hacemos</a>
-                </li>
-                <li class="texto">
-                    <a class="textMenuPrinci" href="hazteVoluntario.php">Hazte Voluntario</a>
-                </li>
-                <li class="texto">
-                    <a class="textMenuPrinci" href="ayudanos.html">Ayudanos</a>
-                </li>
-                <li class="texto">
-                    <a class="textMenuPrinci" href="eventos.html">Eventos</a>
-                </li>
-                <li class="texto">
-                    <a class="textMenuPrinci" href="adopcion.html">Adopción</a>
-                </li>
-            </ul>
-        </div>
-    </nav>-->
-<?php require __DIR__."/views/partials/cabecera.part.php";?>
-
+?>
 
 <div class="container-fluid">
     <div class="row mt-3">
@@ -69,7 +58,7 @@
         </div>
     </div>
 
-    <form action="datosFormulario.php" method="post">
+    <form action="hazteVoluntario.php" method="post">
         <div class="row">
             <div class="col-md-3 col-sm-6 mt-md-3 offset-md-2">
                 <label class="textFormularioVoluntario">Nombre <span class="asterisco">*</span></label><br>
