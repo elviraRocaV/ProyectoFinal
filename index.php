@@ -1,3 +1,4 @@
+<!--<!DOCTYPE html>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,17 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kanit|Lobster" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link href="icono/fonts/style.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
-
 </head>
 <body>
 
-<!--<?php require __DIR__."views/partials/cabecera.part.php";?>-->
 <div class="container-fluid">
     <header class="row mt-3 justify-content-md-around">
 
@@ -31,19 +29,28 @@
             <img class="imagenlogo" src="imagenes/logoCEU.png">
         </div>
     </header>
+</div>-->
+
+<!--<div class="container-fluid">
+    <div class="row justify-content-md-end justify-content-sm-start">
+        <div class="col-md-2 col-sm-12 col-12 mt-2 accesoVoluntarios">
+            <a class="textoAcceso" href="accesoVoluntarios.html">Acceso voluntarios<span class="icon-enter icono ml-2"></span></a>
+        </div>
+    </div>
 </div>
 
 <nav class=" navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler botonMenu" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon "></span>
     </button>
+
     <div class="collapse navbar-collapse menuPrincipal" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="texto">
-                <a class="textMenuPrinci" href="index.html">Inicio</a>
+                <a class="textMenuPrinci" href="index.php">Inicio</a>
             </li>
             <li class="texto">
-                <a class="textMenuPrinci" href="queHacemos.html">Qué hacemos</a>
+                <a class="textMenuPrinci" href="queHacemos.php">Qué hacemos</a>
             </li>
             <li class="texto">
                 <a class="textMenuPrinci" href="hazteVoluntario.php">Hazte Voluntario</a>
@@ -59,19 +66,10 @@
             </li>
         </ul>
     </div>
-</nav>
-
+</nav>-->
 
 <?php
-
-
-
-
-
-
-
-
-
+include("views/partials/cabecera.part.php");
 ?>
 
 <script src="js/jquery-3.3.1.min.js"></script>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <head>
     <title>gatos</title>
@@ -15,7 +15,6 @@
 </head>
 <body>
 
-<!--<?php require __DIR__."views/partials/cabecera.part.php";?>-->
 <div class="container-fluid">
     <header class="row mt-3 justify-content-md-around">
 
@@ -41,10 +40,10 @@
     <div class="collapse navbar-collapse menuPrincipal" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="texto">
-                <a class="textMenuPrinci" href="index.html">Inicio</a>
+                <a class="textMenuPrinci" href="index.php">Inicio</a>
             </li>
             <li class="texto">
-                <a class="textMenuPrinci" href="queHacemos.html">Qué hacemos</a>
+                <a class="textMenuPrinci" href="queHacemos.php">Qué hacemos</a>
             </li>
             <li class="texto">
                 <a class="textMenuPrinci" href="hazteVoluntario.php">Hazte Voluntario</a>
@@ -60,8 +59,9 @@
             </li>
         </ul>
     </div>
-</nav>
+</nav>-->
 
+<?php require __DIR__."/views/partials/cabecera.part.php";?>
 
 
 <script src="js/jquery-3.3.1.min.js"></script>
