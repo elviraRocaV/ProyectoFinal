@@ -320,6 +320,12 @@ h1
     font-size: 120%;
 }
 
+.boton1
+{
+    color:white;
+    border-color:#1CA421;
+}
+
 .boton1:hover
 {
     background-color:#1CA421;

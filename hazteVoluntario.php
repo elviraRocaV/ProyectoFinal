@@ -252,7 +252,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 
 
         <div class="row">
-            <div class="col-md-3 mt-md-3 offset-md-2 mt-md-5">
+            <div class="col-md-3 offset-md-2 mt-md-5 mb-md-3">
                 <label class="textFormularioVoluntario">Contraseña Usuario <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
@@ -262,7 +262,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             <div class="col-md-1 mt-md-5">
                 <div id="visto1"></div>
             </div>
-            <div class="col-md-3 mt-md-3 offset-md-1 mt-md-5">
+            <div class="col-md-3 offset-md-1 mt-md-5 mb-md-3">
                 <label class="textFormularioVoluntario">Vuelva a introducir la contraseña <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
@@ -276,37 +276,17 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 
         <div class="container">
             <div class="row justify-content-md-center">
-                <div class=" cajaBoton mt-md-5">
-                    <a class="btn btn-primary boton1" role="button">Enviar</a>
+
+                <div class=" cajaBoton cajaBoton mt-md-5 mb-md-5">
+                    <div class="btn btn-primary boton1" role="button">Enviar</div>
                 </div>
 
-                <div class=" cajaBoton mt-md-5 ml-md-5">
+                <div class=" cajaBoton mt-md-5 offset-md-2 mb-md-5">
                     <a href="coloniasGatos.php" class="btn btn-primary boton1" role="button">Siguiente </a>
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </form>
-
-
-    <div class="container">
-
-    </div>
-
 </div>
 
 
