@@ -274,16 +274,14 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
         </div>
 
-        <div class="container">
-            <div class="row justify-content-md-center">
+        <div class="row justify-content-md-center">
 
-                <div class=" cajaBoton cajaBoton mt-md-5 mb-md-5">
-                    <div class="btn btn-primary boton1" role="button">Enviar</div>
-                </div>
+            <div class=" cajaBoton cajaBoton mt-md-5 mb-md-5">
+                <div class="btn btn-primary boton1" role="button">Enviar</div>
+            </div>
 
-                <div class=" cajaBoton mt-md-5 offset-md-2 mb-md-5">
-                    <a href="coloniasGatos.php" class="btn btn-primary boton1" role="button">Siguiente </a>
-                </div>
+            <div class=" cajaBoton mt-md-5 offset-md-2 mb-md-5">
+                <a href="coloniasGatos.php" class="btn btn-primary boton1" role="button">Siguiente </a>
             </div>
         </div>
     </form>

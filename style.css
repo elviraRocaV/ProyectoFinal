@@ -233,6 +233,21 @@ h1
     border: 1px solid #1CA421;
     border-radius:5%;
 }
+
+.lineaGatos
+{
+    padding: 3.5% 20%;
+    border: 1px solid #1CA421;
+    border-radius:5%;
+}
+
+.lineahazteVoluntarioGatos
+{
+    padding: 2% 20%;
+    border: 1px solid #1CA421;
+    border-radius:5%;
+}
+
 .lineahazteVoluntarioFechaMes
 {
     padding: 2% 2%;
@@ -318,6 +333,11 @@ h1
 .textFormularioVoluntario
 {
     font-size: 120%;
+}
+
+.textFormularioVoluntarioBotonAnyadir
+{
+
 }
 
 .boton1
