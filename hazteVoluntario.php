@@ -66,9 +66,11 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
                     <input class="linea lineahazteVoluntario fondocaja" type="text" name="usuario" id="usuario" placeholder="Nombre" onclick="cambiarFondoUsuario()" onblur="cambiarFondoUsuarios(this)">
                 </div>
-            </div>
-            <div class="col-md-1 col-sm-1 mt-md-5 mt-sm-5">
-                <div id="visto1"></div>
+            </div
+            >
+            <div class="col-md-1 col-sm-1 mt-md-3">
+                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                <div class="input-group" id="visto1"></div>
             </div>
 
             <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
@@ -80,8 +82,9 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                     <input class="linea lineahazteVoluntario fondocaja" type="text" name="apellido" id="apellido" placeholder="Apellido1 Apellido2" onclick="cambiarFondoApellido()" onblur="cambiarFondoApellidos(this)">
                 </div>
             </div>
-            <div class="col-md-1 col-sm-1 mt-md-5 mt-sm-5">
-                <div id="visto2"></div>
+            <div class="col-md-1 col-sm-1 mt-md-3">
+                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                <div class="input-group" id="visto2"></div>
             </div>
         </div>
 
@@ -95,9 +98,13 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                     <input class="linea lineahazteVoluntario fondocaja" type="text" name="dni" id="dni" placeholder="00000000-X" onclick="cambiarFondoDNI()" onblur="cambiarFondoDNIs(this)">
                 </div>
             </div>
-           <div class="col-md-1 col-sm-1 mt-md-5 mt-sm-5 ubicarVisto">
-                <div id="visto3"></div>
+            <div class="col-md-1 col-sm-1 mt-md-5">
+                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                <div class="input-group" id="visto3"></div>
             </div>
+           <!--<div class="col-md-1 col-sm-1 mt-md-5 mt-sm-5 ubicarVisto">
+                <div id="visto3"></div>
+            </div>-->
 
             <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
 
@@ -151,8 +158,9 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                     </div>
                 </div>
             </div>
-            <div class="col-md-1 mt-md-5">
-                <div id="visto4"></div>
+            <div class="col-md-1 col-sm-1 mt-md-5">
+                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                <div class="input-group" id="visto4"></div>
             </div>
         </div>
 
@@ -189,9 +197,11 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                     </div>
                 </div>
            </div>
-            <div class="col-md-1 mt-md-5">
-                <div id="visto5"></div>
+            <div class="col-md-1 col-sm-1 mt-md-3">
+                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                <div class="input-group" id="visto5"></div>
             </div>
+
         </div>
 
         <div class="row">
@@ -199,7 +209,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                 <label class="textFormularioVoluntario">Zona donde reside <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
-                     <select class="lineahazteVoluntarioZona linea" name="zona" id="zona" onblur="cambiarFondoResides(this)">
+                     <select class="lineahazteVoluntarioZona linea" name="zona" id="zona" onchange="cambiarFondoResides(this)">
                          <option class="textFormularioVoluntario" value="">Zona a Elegir</option>
                          <option value="Moncada">Moncada</option>
                          <option value="Barrio">Barrio</option>
@@ -209,8 +219,9 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                      </select>
                  </div>
             </div>
-            <div class="col-md-1 mt-md-5 mr-md-5">
-                <div id="visto6"></div>
+            <div class="col-md-1 col-sm-1 mt-md-5">
+                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                <div class="input-group" id="visto6"></div>
             </div>
         </div>
 
@@ -225,8 +236,9 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                     <input class="linea lineahazteVoluntarioCorreo fondocaja" type="text" name="correo" id="correo" placeholder="xxxxx@xxx.xxx" onclick="cambiarFondoCorreo()" onblur="cambiarFondoCorreos(this)" >
                 </div>
             </div>
-            <div class="col-md-1 mt-md-5">
-                <div id="visto7"></div>
+            <div class="col-md-1 col-sm-1 mt-md-3">
+                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                <div class="input-group" id="visto7"></div>
             </div>
             <div class="col-md-2 mt-md-3">
                 <label class="textFormularioVoluntario">Telefono 1 <span class="asterisco">*</span></label><br>
@@ -235,8 +247,9 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                     <input class="linea lineahazteVoluntarioTelef fondocaja" type="text" name="telefono1" id="telefono1" placeholder="Telefono 1" onclick="cambiarFondoTelf1()" onblur="cambiarFondoTelf1s(this)">
                 </div>
             </div>
-            <div class="col-md-1 mt-md-5">
-                <div id="visto8"></div>
+            <div class="col-md-1 col-sm-1 mt-md-3">
+                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                <div class="input-group" id="visto8"></div>
             </div>
             <div class="col-md-2 mt-md-3">
                 <label class="textFormularioVoluntario">Telefono 2</label><br>
@@ -247,9 +260,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
         </div>
 
-
         <hr class="lineaH mt-md-5">
-
 
         <div class="row">
             <div class="col-md-3 offset-md-2 mt-md-5 mb-md-3">
@@ -269,8 +280,9 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                     <input class="linea lineahazteVoluntario fondocaja" type="password" name="password2" id="password2" placeholder="contraseña" onclick="cambiarFondoPassword2()" onblur="cambiarFondoPassword2s(this)">
                 </div>
             </div>
-            <div class="col-md-1 mt-md-5">
-                <div id="visto10"></div>
+            <div class="col-md-1 col-sm-1 mt-md-5">
+                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                <div class="input-group" id="visto10"></div>
             </div>
         </div>
 

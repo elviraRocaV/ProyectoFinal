@@ -39,29 +39,30 @@
     </div>
 </div>
 
-<nav class=" navbar navbar-expand-lg navbar-light bg-light">
+<nav class=" navbar navbar-expand-md navbar-light bg-light">
     <button class="navbar-toggler botonMenu" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon "></span>
     </button>
 
     <div class="collapse navbar-collapse menuPrincipal" id="navbarNavDropdown">
+
+        <a class="navbar-brand mb-md-5 ml-md-5 gato" href="index.php">
+            <img src="imagenes/gatoBlanco.png" style="width: 50px">
+        </a>
         <ul class="navbar-nav">
-            <li class="texto">
-                <a class="textMenuPrinci" href="index.php">Inicio</a>
-            </li>
-            <li class="texto">
+            <li class="texto mt-md-2 ml-md-4">
                 <a class="textMenuPrinci" href="queHacemos.php">Qué hacemos</a>
             </li>
-            <li class="texto">
+            <li class="texto mt-md-2 ml-md-4">
                 <a class="textMenuPrinci" href="hazteVoluntario.php">Hazte Voluntario</a>
             </li>
-            <li class="texto">
-                <a class="textMenuPrinci" href="ayudanos.php">Ayudanos</a>
+            <li class="texto mt-md-2 ml-md-4">
+                <a class="textMenuPrinci" href="ayudanos.php">Ayúdanos</a>
             </li>
-            <li class="texto">
+            <li class="texto mt-md-2 ml-md-4">
                 <a class="textMenuPrinci" href="eventos.php">Eventos</a>
             </li>
-            <li class="texto">
+            <li class="texto mt-md-2 ml-md-4">
                 <a class="textMenuPrinci" href="adopcion.php">Adopción</a>
             </li>
         </ul>

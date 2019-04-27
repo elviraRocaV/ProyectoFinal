@@ -54,7 +54,6 @@ function anyadirColonia()
     let botonDesactivar;
     botonDesactivar = document.getElementsByTagName("div")[32].style.display="none";
 
-
     form=document.getElementsByTagName("form")[0];
 
     divPrincipal=document.createElement("div");   //div principal                                    //1

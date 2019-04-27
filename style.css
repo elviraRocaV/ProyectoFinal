@@ -22,7 +22,7 @@ h1
 {
     color: white;
     font-family: 'Bree Serif', serif;
-    font-size: 120%;
+    font-size: 130%;
     /* margin: 1% 0%;*/
 }
 
@@ -47,7 +47,7 @@ h1
 .textMenuPrinci
 {
     color: white;
-    font-size: 120%;
+    font-size: 130%;
 }
 
 .textMenuPrinci:hover
@@ -209,6 +209,41 @@ h1
 .color
 {
     background-color: #b5e8bf;
+}
+
+/*  --------------------- index -------------------------------------------*/
+
+.fotoGato { width: 100%; }
+
+.textoDentroFoto
+{
+    font-family: 'Bree Serif', serif;
+    letter-spacing: 4px;
+    font-size: 270%;
+}
+
+.subtitulo
+{
+    font-weight: bold;
+    font-size: 250%;
+    font-family: 'Bree Serif', serif;
+    letter-spacing: 2px;
+    color: #667c72;
+}
+
+.indexHazteVoluntario
+{
+    font-weight: bold;
+    font-size: 180%;
+    font-family: 'Bree Serif', serif;
+    letter-spacing: 4px;
+    color: #1CA421;
+
+}
+
+.indexHazteVoluntarioParraf
+{
+    letter-spacing: 1px;
 }
 
 /*  --------------------- hazte Voluntario -------------------------------------------*/

@@ -1,76 +1,85 @@
-<!--<!DOCTYPE html>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>gatos</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kanit|Lobster" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link href="icono/fonts/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-
-<div class="container-fluid">
-    <header class="row mt-3 justify-content-md-around">
-
-        <div class="col-md-2 col-sm-6 col-6 mt-md-4 mt-sm-1 text-sm-left ml-md-2 posLogo1">
-            <img class="imagenlogo" src="imagenes/logoAyunt.png">
-        </div>
-
-        <div class="col-md-7 col-sm-12 col-12 ml-5 textoPlan text-md-center text-sm-center text-center">
-            <h1 class="pt-md-4"><em><strong>Plan Esterilización Felina</strong></em></h1>
-        </div>
-
-        <div class="col-md-2 col-sm-6 col-6 mt-md-3 mt-sm-1 ml-md-4 mr-md-1 text-sm-right text-right posLogo2">
-            <img class="imagenlogo" src="imagenes/logoCEU.png">
-        </div>
-    </header>
-</div>-->
-
-<!--<div class="container-fluid">
-    <div class="row justify-content-md-end justify-content-sm-start">
-        <div class="col-md-2 col-sm-12 col-12 mt-2 accesoVoluntarios">
-            <a class="textoAcceso" href="accesoVoluntarios.html">Acceso voluntarios<span class="icon-enter icono ml-2"></span></a>
-        </div>
-    </div>
-</div>
-
-<nav class=" navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler botonMenu" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon "></span>
-    </button>
-
-    <div class="collapse navbar-collapse menuPrincipal" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-            <li class="texto">
-                <a class="textMenuPrinci" href="index.php">Inicio</a>
-            </li>
-            <li class="texto">
-                <a class="textMenuPrinci" href="queHacemos.php">Qué hacemos</a>
-            </li>
-            <li class="texto">
-                <a class="textMenuPrinci" href="hazteVoluntario.php">Hazte Voluntario</a>
-            </li>
-            <li class="texto">
-                <a class="textMenuPrinci" href="ayudanos.html">Ayudanos</a>
-            </li>
-            <li class="texto">
-                <a class="textMenuPrinci" href="eventos.html">Eventos</a>
-            </li>
-            <li class="texto">
-                <a class="textMenuPrinci" href="adopcion.html">Adopción</a>
-            </li>
-        </ul>
-    </div>
-</nav>-->
 
 <?php
 include("views/partials/cabecera.part.php");
 ?>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 offset-md-1">
+            <p class="subtitulo">Inicio</p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mt-md-5 ">
+            <div class="carousel slide" id="principal-carousel" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-caption d-block">
+                                <p class="textoDentroFoto">Gatos en adopción</p>
+                        </div>
+                        <img class="fotoGato" src="gatosAdopcion/03.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="fotoGato" src="gatosAdopcion/02.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="fotoGato" src="gatosAdopcion/01.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="fotoGato" src="gatosAdopcion/04.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="fotoGato" src="gatosAdopcion/05.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="fotoGato" src="gatosAdopcion/07.jpg">
+                    </div>
+                </div>
+                        
+                <a href="#principal-carousel" class="carousel-control-next" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">siguiente</span>
+                </a>
+                        
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 indexHazteVoluntario mt-md-5 ml-md-5">
+            <p>Hazte voluntario</p>
+        </div>
+        <div class="col-md-10 indexHazteVoluntarioParraf mt-md-1 ml-md-5">
+            <p>Si quieres colaborar con nosostros, puedes hacerte voluntario, lo único que tienes que hacer es rellenar
+                    el formulario y así formalizar la inscripción.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="cajaBoton cajaBoton mt-md-1 mb-md-1 offset-md-9">
+            <a href="hazteVoluntario.php" class="btn btn-primary boton1" role="button">Hazte Voluntario</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 indexHazteVoluntario mt-md-5 ml-md-5">
+            <p>Ayúdanos</p>
+        </div>
+        <div class="col-md-10 indexHazteVoluntarioParraf mt-md-1 ml-md-5">
+            <p>Nos gustaría mucho que nos ayudases haciéndote socio, es muy fácil, únicamnete debes rellenar un formulario. Tu aportación, hará más por los animales.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="cajaBoton cajaBoton mt-md-1 mb-md-1 offset-md-9">
+            <a href="hazteVoluntario.php" class="btn btn-primary boton1" role="button">Ayúdanos</a>
+        </div>
+    </div>
+
+
+
+
+
+
+</div>
+
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/popper.min.js"></script>
