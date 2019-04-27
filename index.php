@@ -73,6 +73,16 @@ include("views/partials/cabecera.part.php");
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-12 indexHazteVoluntario mt-md-5 ml-md-5">
+            <p>Adopta</p>
+        </div>
+        <div class="col-md-10 indexHazteVoluntarioParraf mt-md-1 ml-md-5">
+            <p>Estos son algunos de los gatos que están esperando para ser adoptados.</p>
+        </div>
+
+    </div>
+
 
 
 

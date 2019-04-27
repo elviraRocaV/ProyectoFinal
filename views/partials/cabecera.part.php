@@ -46,23 +46,23 @@
 
     <div class="collapse navbar-collapse menuPrincipal" id="navbarNavDropdown">
 
-        <a class="navbar-brand mb-md-5 ml-md-5 gato" href="index.php">
-            <img src="imagenes/gatoBlanco.png" style="width: 50px">
+        <a class="navbar-brand mb-md-4 ml-md-5 gato" href="index.php">
+            <img src="imagenes/gatoBlanco.png" style="width: 45px">
         </a>
         <ul class="navbar-nav">
-            <li class="texto mt-md-2 ml-md-4">
+            <li class="texto mt-md-2 ml-md-3">
                 <a class="textMenuPrinci" href="queHacemos.php">Qué hacemos</a>
             </li>
-            <li class="texto mt-md-2 ml-md-4">
+            <li class="texto mt-md-2 ml-md-3">
                 <a class="textMenuPrinci" href="hazteVoluntario.php">Hazte Voluntario</a>
             </li>
-            <li class="texto mt-md-2 ml-md-4">
+            <li class="texto mt-md-2 ml-md-3">
                 <a class="textMenuPrinci" href="ayudanos.php">Ayúdanos</a>
             </li>
-            <li class="texto mt-md-2 ml-md-4">
+            <li class="texto mt-md-2 ml-md-3">
                 <a class="textMenuPrinci" href="eventos.php">Eventos</a>
             </li>
-            <li class="texto mt-md-2 ml-md-4">
+            <li class="texto mt-md-2 ml-md-3">
                 <a class="textMenuPrinci" href="adopcion.php">Adopción</a>
             </li>
         </ul>
