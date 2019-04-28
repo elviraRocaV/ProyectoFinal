@@ -234,16 +234,19 @@ h1
 .indexHazteVoluntario
 {
     font-weight: bold;
-    font-size: 180%;
+    font-size: 110%;
     font-family: 'Bree Serif', serif;
     letter-spacing: 4px;
     color: #1CA421;
 
 }
 
-.indexHazteVoluntarioParraf
+.indexHazteVoluntarioParraf { letter-spacing: 1px; }
+
+.fotoIndex1,.fotoIndex2
 {
-    letter-spacing: 1px;
+    width: 35%;
+
 }
 
 /*  --------------------- hazte Voluntario -------------------------------------------*/
