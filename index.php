@@ -26,9 +26,6 @@ include("views/partials/cabecera.part.php");
                         <img class="fotoGato" src="gatosAdopcion/01.jpg">
                     </div>
                     <div class="carousel-item">
-                        <img class="fotoGato" src="gatosAdopcion/04.jpg">
-                    </div>
-                    <div class="carousel-item">
                         <img class="fotoGato" src="gatosAdopcion/03.jpg">
                     </div>
                     <div class="carousel-item">
@@ -91,9 +88,6 @@ include("views/partials/cabecera.part.php");
 
     </div>
 
-
-
-
     <div class="row">
         <div class="col-md-12 indexHazteVoluntario mt-md-5 offset-md-1">
             <p>Adopta</p>
@@ -104,13 +98,10 @@ include("views/partials/cabecera.part.php");
 
     </div>
 
-
-
-
-
-
+    <?php
+    include("views/partials/footer.part.php");
+    ?>
 </div>
-
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/popper.min.js"></script>
