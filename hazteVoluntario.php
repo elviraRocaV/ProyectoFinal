@@ -52,7 +52,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 ?>
 
 <div class="container-fluid">
-    <div class="row mt-3">
+    <div class="row mt-3 mb-md-5">
         <div class="col-md-12 text-md-center acceso">
             <h2>Hazte Voluntario</h2>
         </div>
@@ -60,14 +60,13 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 
     <form action="hazteVoluntario.php" method="post">
         <div class="row">
-            <div class="col-md-3 col-sm-6 mt-md-3 offset-md-2">
+            <div class="col-md-3 col-sm-6 mt-md-3 mt-sm-4 offset-md-2 offset-sm-1">
                 <label class="textFormularioVoluntario">Nombre <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
-                    <input class="linea lineahazteVoluntario fondocaja" type="text" name="usuario" id="usuario" placeholder="Nombre" onclick="cambiarFondoUsuario()" onblur="cambiarFondoUsuarios(this)">
+                    <input class="linea lineahazteVoluntario fondocaja" type="text" name="usuario" id="usuario" placeholder="Nombre" required onclick="cambiarFondoUsuario()" onblur="cambiarFondoUsuarios(this)">
                 </div>
-            </div
-            >
+            </div>
             <div class="col-md-1 col-sm-1 mt-md-3">
                 <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
                 <div class="input-group" id="visto1"></div>
@@ -75,11 +74,11 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 
             <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
 
-            <div class="col-md-3 col-sm-6 mt-md-3 mt-sm-4 offset-md-1">
+            <div class="col-md-3 col-sm-6 mt-md-3 mt-sm-4 offset-md-1 offset-sm-1">
                 <label class="textFormularioVoluntario">Apellidos <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
-                    <input class="linea lineahazteVoluntario fondocaja" type="text" name="apellido" id="apellido" placeholder="Apellido1 Apellido2" onclick="cambiarFondoApellido()" onblur="cambiarFondoApellidos(this)">
+                    <input class="linea lineahazteVoluntario fondocaja" type="text" name="apellido" id="apellido" placeholder="Apellido1 Apellido2" required onclick="cambiarFondoApellido()" onblur="cambiarFondoApellidos(this)">
                 </div>
             </div>
             <div class="col-md-1 col-sm-1 mt-md-3">
@@ -91,30 +90,29 @@ if($_SERVER['REQUEST_METHOD']=="POST")
         <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
 
         <div class="row">
-            <div class="col-md-3 col-sm-6 mt-md-5 mt-sm-4 offset-md-2">
+            <div class="col-md-3 col-sm-6 mt-md-5 mt-sm-4 offset-md-2 offset-sm-1">
                 <label class="textFormularioVoluntario">DNI <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-list-alt"></i></span>
-                    <input class="linea lineahazteVoluntario fondocaja" type="text" name="dni" id="dni" placeholder="00000000-X" onclick="cambiarFondoDNI()" onblur="cambiarFondoDNIs(this)">
+                    <input class="linea lineahazteVoluntario fondocaja" type="text" name="dni" id="dni" placeholder="00000000-X" required onclick="cambiarFondoDNI()" onblur="cambiarFondoDNIs(this)">
                 </div>
             </div>
             <div class="col-md-1 col-sm-1 mt-md-5">
-                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                <label class="textFormularioVoluntario">&nbsp<span class="asterisco"></span></label><br>
                 <div class="input-group" id="visto3"></div>
             </div>
-           <!--<div class="col-md-1 col-sm-1 mt-md-5 mt-sm-5 ubicarVisto">
-                <div id="visto3"></div>
-            </div>-->
 
             <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
 
-            <div class="col-md-3 mt-md-5 offset-md-1">
+
+
+            <div class="col-md-3 mt-md-5 mt-sm-4 offset-md-1 offset-sm-1">
                 <div class="row">
                     <div class="col-md-12">
                         <label class="textFormularioVoluntario">Fecha nacimiento <span class="asterisco">*</span></label><br>
                         <div class="input-group">
                             <span class="input-group-addon icono2"><i class="glyphicon glyphicon-calendar"></i></span>
-                            <select class="lineahazteVoluntarioFecha linea" name="diaFecha" id="diaFecha" onblur="cambiarFondoDia(this)">
+                            <select class="lineahazteVoluntarioFecha linea" name="diaFecha" id="diaFecha" required onblur="cambiarFondoDia(this)">
                                 <option value="">Día</option>
                                 <?php
                                 for($i=1;$i<=31;$i++):
@@ -164,34 +162,32 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
         </div>
 
-
         <hr class="lineaH mt-md-5">
 
-
         <div class="row">
-            <div class="col-md-4 mt-3 offset-md-2">
+            <div class="col-md-4 mt-md-4 offset-md-2 offset-sm-1">
                 <label class="textFormularioVoluntario">Dirección <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
-                    <input class="linea lineahazteVoluntarioDirecion" type="text" name="direccion" id="direccion" placeholder="Dirección" onclick="cambiarFondoDireccion(this)">
+                    <input class="linea lineahazteVoluntarioDirecion" type="text" name="direccion" id="direccion" placeholder="Dirección" required onclick="cambiarFondoDireccion(this)">
                 </div>
             </div>
 
-           <div class="col-md-3 mt-md-3 offset-md-1">
-                <div class="row justify-content-md-around">
-                    <div class="col-md-3">
-                        <label class="textFormularioVoluntario">Nº<span class="asterisco"> *</span></label><br>
-                        <input class="linea lineahazteVoluntarioDirec1" type="text" name="numero" id="numero" placeholder="" onclick="cambiarFondoNumero(this)">
+           <div class="col-md-3 offset-md-1 offset-sm-1">
+                <div class="row">
+                    <div class="col-md-2 col-sm-12 mt-sm-4 ml-md-1">
+                        <label class="textFormularioVoluntario">Nº<span class="asterisco">*</span></label><br>
+                        <input class="linea lineahazteVoluntarioDirec1" type="text" name="numero" id="numero" placeholder="" required onclick="cambiarFondoNumero(this)">
                     </div>
-                   <div class="col-md-3">
+                   <div class="col-md-2 col-sm-12 mt-sm-4 ml-md-5">
                         <label class="textFormularioVoluntario">Portal</label><br>
                         <input class="linea lineahazteVoluntarioDirec2" type="text" name="portal" id="portal" placeholder="" onclick="cambiarFondoPortal()">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2 col-sm-12 mt-sm-4 ml-md-5">
                         <label class="textFormularioVoluntario">Piso</label><br>
                         <input class="linea lineahazteVoluntarioDirec3" type="text" name="piso" id="piso" placeholder="" onclick="cambiarFondoPiso()">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2 col-sm-12 mt-sm-4 ml-md-5">
                         <label class="textFormularioVoluntario">Letra</label><br>
                         <input class="linea lineahazteVoluntarioDirec4" type="text" name="letra" id="letra" placeholder="" onclick="cambiarFondoLetra()">
                     </div>
@@ -201,15 +197,14 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                 <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
                 <div class="input-group" id="visto5"></div>
             </div>
-
         </div>
 
         <div class="row">
-            <div class="col-md-5 mt-md-5 offset-md-2">
+            <div class="col-md-3 mt-md-5 offset-md-2 offset-sm-1">
                 <label class="textFormularioVoluntario">Zona donde reside <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
-                     <select class="lineahazteVoluntarioZona linea" name="zona" id="zona" onchange="cambiarFondoResides(this)">
+                     <select class="lineahazteVoluntarioZona linea" name="zona" id="zona" required onchange="cambiarFondoResides(this)">
                          <option class="textFormularioVoluntario" value="">Zona a Elegir</option>
                          <option value="Moncada">Moncada</option>
                          <option value="Barrio">Barrio</option>
@@ -227,83 +222,93 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 
         <hr class="lineaH mt-md-5">
 
+    </div>
 
-        <div class="row mb-md-5">
-            <div class="col-md-2 mt-md-3 offset-md-2">
-                <label class="textFormularioVoluntario">Correo Electrónico <span class="asterisco">*</span></label><br>
+    <div class="container">
+            <div class="col-md-2 mt-md-3 mt-sm-3 offset-md-1">
+                <label class="textFormularioVoluntario">Mail<span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-envelope"></i></span>
-                    <input class="linea lineahazteVoluntarioCorreo fondocaja" type="text" name="correo" id="correo" placeholder="xxxxx@xxx.xxx" onclick="cambiarFondoCorreo()" onblur="cambiarFondoCorreos(this)" >
+                    <input class="linea lineahazteVoluntarioCorreo fondocaja" type="text" name="correo" id="correo" placeholder="xxxxx@xxx.xxx" required onclick="cambiarFondoCorreo()" onblur="cambiarFondoCorreos(this)" >
                 </div>
             </div>
             <div class="col-md-1 col-sm-1 mt-md-3">
                 <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
                 <div class="input-group" id="visto7"></div>
             </div>
-            <div class="col-md-2 mt-md-3">
+            <div class="col-md-2 mt-md-3 offset-sm-1">
                 <label class="textFormularioVoluntario">Telefono 1 <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-earphone"></i></span>
-                    <input class="linea lineahazteVoluntarioTelef fondocaja" type="text" name="telefono1" id="telefono1" placeholder="Telefono 1" onclick="cambiarFondoTelf1()" onblur="cambiarFondoTelf1s(this)">
+                    <input class="linea lineahazteVoluntarioTelef fondocaja" type="text" name="telefono1" id="telefono1" placeholder="Telefono 1" required onclick="cambiarFondoTelf1()" onblur="cambiarFondoTelf1s(this)">
                 </div>
             </div>
             <div class="col-md-1 col-sm-1 mt-md-3">
                 <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
                 <div class="input-group" id="visto8"></div>
             </div>
-            <div class="col-md-2 mt-md-3">
+            <div class="col-md-2 mt-md-3 offset-sm-1 ml-md-3">
                 <label class="textFormularioVoluntario">Telefono 2</label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-earphone"></i></span>
-                    <input class="linea lineahazteVoluntarioTelef2 fondocaja" type="text" name="telefono2" id="telefono2" placeholder="Telefono 2" onclick="cambiarFondoTelf2()" onblur="cambiarFondoTelf2s(this)">
+                    <input class="linea lineahazteVoluntarioTelef2 fondocaja" type="text" name="telefono2" id="telefono2" placeholder="Telefono 2" required onclick="cambiarFondoTelf2()" onblur="cambiarFondoTelf2s(this)">
                 </div>
+            </div>
+            <div class="col-md-2 mt-md-3 offset-sm-1">
             </div>
         </div>
 
         <hr class="lineaH mt-md-5">
 
-        <div class="row">
-            <div class="col-md-3 offset-md-2 mt-md-5 mb-md-3">
-                <label class="textFormularioVoluntario">Contraseña Usuario <span class="asterisco">*</span></label><br>
-                <div class="input-group">
-                    <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
-                    <input class="linea lineahazteVoluntario fondocaja" type="password" name="password1" id="password1" placeholder="contraseña" onclick="cambiarFondoPassword1()" onblur="cambiarFondoPassword1s(this)">
+    <div class="container">
+            <div class="row">
+                <div class="col-md-3 offset-md-1 mt-md-5 mb-md-3 mt-sm-4 offset-sm-1 mr-md-5">
+                    <label class="textFormularioVoluntario">Contraseña Usuario <span class="asterisco">*</span></label><br>
+                        <div class="input-group">
+                            <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
+                            <input class="linea lineahazteVoluntario fondocaja" type="password" name="password1" id="password1" placeholder="contraseña" required onclick="cambiarFondoPassword1()" onblur="cambiarFondoPassword1s(this)">
+                        </div>
                 </div>
-            </div>
-            <div class="col-md-1 mt-md-5">
-                <div id="visto1"></div>
-            </div>
-            <div class="col-md-3 offset-md-1 mt-md-5 mb-md-3">
-                <label class="textFormularioVoluntario">Vuelva a introducir la contraseña <span class="asterisco">*</span></label><br>
-                <div class="input-group">
-                    <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
-                    <input class="linea lineahazteVoluntario fondocaja" type="password" name="password2" id="password2" placeholder="contraseña" onclick="cambiarFondoPassword2()" onblur="cambiarFondoPassword2s(this)">
+                <div class="col-md-1 col-sm-1 mt-md-5">
+                    <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                    <div class="input-group" id="visto9"></div>
                 </div>
-            </div>
-            <div class="col-md-1 col-sm-1 mt-md-5">
-                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
-                <div class="input-group" id="visto10"></div>
-            </div>
-        </div>
 
+                <div class="col-md-3 offset-md-2 mt-md-5 mb-md-3 cajaContrasenyas">
+                    <label class="textFormularioVoluntario">Contraseña Usuario <span class="asterisco">*</span></label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
+                        <input class="linea lineahazteVoluntario fondocaja" type="password" name="password2" id="password2" placeholder="contraseña" required onclick="cambiarFondoPassword2()" onblur="cambiarFondoPassword2s(this)">
+                    </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 mt-md-5">
+                        <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                        <div class="input-group" id="visto10"></div>
+                    </div>
+            </div>
+    </div>
+
+    <div class="container-fluid">
         <div class="row justify-content-md-center">
-
-            <div class=" cajaBoton cajaBoton mt-md-5 mb-md-5">
-                <div class="btn btn-primary boton1" role="button">Enviar</div>
+            <div class="mt-md-5 mb-md-5">
+                <div class="btn btn-primary boton1" role="button" id="button1">Enviar</div>
             </div>
 
-            <div class=" cajaBoton mt-md-5 offset-md-2 mb-md-5">
-                <a href="coloniasGatos.php" class="btn btn-primary boton1" role="button">Siguiente </a>
+            <div class="mt-md-5 mb-md-5">
+                <div class="btn btn-primary boton1" role="button" id="button1">Siguiente</div>
             </div>
+
+            <!--<div class="offset-md-2 mt-md-5 mb-md-5">
+                <a href="coloniasGatos.php" class="btn btn-primary boton1" id="boton2" style="display:inline" role="button">Siguiente </a>
+            </div>-->
         </div>
+    </div>
     </form>
-</div>
 
+
+<?php
+include("views/partials/footer.part.php");
+?>
 
 <script type="text/javascript" src="jsValidar/validar.js"></script>
 
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-</body>
-</html>

@@ -21,8 +21,8 @@
             <img class="imagenlogo" src="imagenes/logoAyunt.png">
         </div>
 
-        <div class="col-md-7 col-sm-12 col-12 ml-5 textoPlan text-md-center text-sm-center text-center">
-            <h1 class="pt-md-4"><em><strong>Plan Esterilización Felina</strong></em></h1>
+        <div class="col-md-7  ml-5 textoPlan text-md-center text-sm-center text-center">
+            <h1 class="pt-md-4 textoTitle"><em><strong>Plan Esterilización Felina</strong></em></h1>
         </div>
 
         <div class="col-md-2 col-sm-6 col-6 mt-md-3 mt-sm-1 ml-md-4 mr-md-1 text-sm-right text-right posLogo2">
@@ -34,13 +34,13 @@
 
 <div class="container-fluid">
     <div class="row justify-content-md-end justify-content-sm-start">
-        <div class="col-md-2 col-sm-12 col-12 mt-2 accesoVoluntarios">
+        <div class="col-md-2 col-sm-4 col-4 mt-2 accesoVoluntarios">
             <a class="textoAcceso" href="accesoVoluntarios.html">Acceso voluntarios<span class="icon-enter icono ml-2"></span></a>
         </div>
     </div>
 </div>
 
-<nav class=" navbar navbar-expand-md navbar-light bg-light">
+<nav class=" navbar navbar-expand-lg navbar-light bg-light justify-content-sm-start">
     <button class="navbar-toggler botonMenu" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon "></span>
     </button>
@@ -51,14 +51,11 @@
             <img src="imagenes/gatoBlanco.png" style="width: 45px">
         </a>
         <ul class="navbar-nav">
-            <li class="texto mt-md-2 ml-md-3">
-                <a class="textMenuPrinci" href="queHacemos.php">Qué hacemos</a>
+            <li class="texto mt-md-2 ml-md-3 ">
+                <a class="textMenuPrinci anchoCeldaMenu" href="hazteVoluntario.php">Hazte Voluntario</a>
             </li>
             <li class="texto mt-md-2 ml-md-3">
-                <a class="textMenuPrinci" href="hazteVoluntario.php">Hazte Voluntario</a>
-            </li>
-            <li class="texto mt-md-2 ml-md-3">
-                <a class="textMenuPrinci" href="ayudanos.php">Ayúdanos</a>
+                <a class="textMenuPrinci" href="ayudanos.php">Hazte Sócio</a>
             </li>
             <li class="texto mt-md-2 ml-md-3">
                 <a class="textMenuPrinci" href="eventos.php">Eventos</a>

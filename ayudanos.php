@@ -1,210 +1,359 @@
-<!--<!DOCTYPE html>
-<html>
-<head>
-    <title>gatos</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kanit|Lobster" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link href="icono/fonts/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-</head>
-<body>
-
-
-<div class="container-fluid">
-    <header class="row mt-3 justify-content-md-around">
-
-        <div class="col-md-2 col-sm-6 col-6 mt-md-4 mt-sm-1 text-sm-left ml-md-2 posLogo1">
-            <img class="imagenlogo" src="imagenes/logoAyunt.png">
-        </div>
-
-        <div class="col-md-7 col-sm-12 col-12 ml-5 textoPlan text-md-center text-sm-center text-center">
-            <h1 class="pt-md-4"><em><strong>Plan Esterilización Felina</strong></em></h1>
-        </div>
-
-        <div class="col-md-2 col-sm-6 col-6 mt-md-3 mt-sm-1 ml-md-4 mr-md-1 text-sm-right text-right posLogo2">
-            <img class="imagenlogo" src="imagenes/logoCEU.png">
-        </div>
-    </header>
-</div>
-
-<nav class=" navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler botonMenu" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse menuPrincipal" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-            <li class="texto">
-                <a class="textMenuPrinci" href="index.php">Inicio</a>
-            </li>
-            <li class="texto">
-                <a class="textMenuPrinci" href="queHacemos.php">Qué hacemos</a>
-            </li>
-            <li class="texto">
-                <a class="textMenuPrinci" href="hazteVoluntario.php">Hazte Voluntario</a>
-            </li>
-            <li class="texto">
-                <a class="textMenuPrinci" href="ayudanos.php">Ayudanos</a>
-            </li>
-            <li class="texto">
-                <a class="textMenuPrinci" href="eventos.html">Eventos</a>
-            </li>
-            <li class="texto">
-                <a class="textMenuPrinci" href="adopcion.html">Adopción</a>
-            </li>
-        </ul>
-    </div>
-</nav>-->
 
 <?php require __DIR__."/views/partials/cabecera.part.php";?>
 
-
-<div class="container">
-    <div class="row mb-5">
-        <div class="col">
-            <form action="">
-                <div class="form-group caixa mt-5">
-                    <div class="row justify-content-around">
-                        <div class="caixa1 col-md-3">
-                            <label>Nombre</label><br>
-                            <input class="linea fondocaja" type="text" name="nombre" id="nombre" placeholder="Nombre">
-                        </div>
-
-                        <div class="caixa2 col-md-7">
-                            <label>Apellidos</label><br>
-                            <input class="linea fondocaja" type="text" name="apellidos" id="nombre" placeholder="Apellidos">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group caixa mt-5 mb-5">
-                    <div class="row justify-content-around">
-                        <div class="caixa1 col-md-3">
-                            <label>DNI/NIE</label><br>
-                            <input class="linea fondocaja" type="text" name="dni" id="dni" placeholder="DNI/NIE">
-                        </div>
-                        <div class="caixa2 col-md-7">
-                            <label>Fecha de nacimiento</label><br>
-                            <input class="linea fondocaja" type="text" name="nacimiento" id="nacimiento" placeholder="dd/mm/yyyy">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="caixa2 col-md-3 ml-4">
-                    <div class="from-check ">
-                        <label>Sexo</label><br>
-                        <label class="form-check-label">
-                            <input class="linea from-check-input mr-2" type="radio" name="sexo" id="hombre">Hombre
-                        </label>
-                    </div>
-                    <div class="from-check">
-                        <label class="form-check-label">
-                            <input class="linea from-check-input mr-2" type="radio" name="sexo" id="hombre">Mujer
-                        </label>
-                    </div>
-                </div>
-
-                <hr class="linea">
-
-                <div class="form-group caixa mt-5 mb-5">
-                    <div class="row justify-content-around">
-                        <div class="caixa1 col-md-3">
-                            <label>Dirección</label><br>
-                            <input class="linea fondocaja" type="text" name="direccion" id="direccion" placeholder="Direccion">
-                        </div>
-                        <div class="caixa2 col-md-1">
-                            <label>Nº</label><br>
-                            <input class="direc linea fondocaja" type="text" name="numero" id="numero">
-                        </div>
-                        <div class="caixa2 col-md-1">
-                            <label>Portal</label><br>
-                            <input class="direc linea fondocaja" type="text" name="portal" id="portal">
-                        </div>
-                        <div class="caixa2 col-md-1">
-                            <label>Piso</label><br>
-                            <input class="direc linea fondocaja" type="text" name="piso" id="piso">
-                        </div>
-                        <div class="caixa2 col-md-1">
-                            <label>Letra</label><br>
-                            <input class="direc linea fondocaja" type="text" name="letra" id="letra">
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="linea">
-
-                <div class="form-group caixa mt-5 mb-5">
-                    <div class="row justify-content-around">
-                        <div class="caixa1 col-md-3">
-                            <label>Población</label><br>
-                            <input class="linea fondocaja" type="text" name="poblacion" id="poblacion" placeholder="Población">
-                        </div>
-                        <div class="caixa1 col-md-3">
-                            <label>Código postal</label><br>
-                            <input class="linea fondocaja" type="text" name="cp" id="cp" placeholder="Código postal">
-                        </div>
-                        <div class="caixa1 col-md-3">
-                            <label>Provincia</label><br>
-                            <input class="linea fondocaja" type="text" name="provincia" id="provincia" placeholder="Provincia">
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="linea">
-
-                <div class="form-group caixa mt-5 mb-5">
-                    <div class="row justify-content-around">
-                        <div class="caixa1 col-md-3">
-                            <label>Correo electrónico</label><br>
-                            <input class="linea fondocaja" type="text" name="mail" id="mail" placeholder="Correo electrónico">
-                        </div>
-                        <div class="caixa2 col-md-7">
-                            <label>Teléfono</label><br>
-                            <input class="linea fondocaja" type="text" name="telefono" id="telefono" placeholder="Teléfono">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="from-check col-md-12">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" name="terminos" id="terminos">Acepto Terminos y Condiciones
-                    </label>
-                </div>
-
-                <div class="row justify-content-around">
-                    <div class="col-12 col-sm-12 col-md-5 cajaBoton">
-                        <button class="btn btn-primary boton" type="submit">Enviar </button>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-7 cajaBoton">
-                        <button class="btn btn-primary boton1" type="submit">Limpiar </button>
-                    </div>
-                </div>
-            </form>
+<div class="container-fluid">
+    <div class="row mt-3 mb-md-5">
+        <div class="col-md-12 text-md-center acceso">
+            <h2>Hazte Socio</h2>
         </div>
     </div>
 </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p class="subtitle">Datos Personales</p>
+        </div>
+    </div>
+
+    <form action="hazteVoluntario.php" method="post">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-3 col-sm-6 mt-md-3 mt-sm-4 offset-md-1 offset-sm-1">
+                    <label class="textFormularioVoluntario">Nombre <span class="asterisco">*</span></label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
+                        <input class="lineahazteVoluntario fondocaja colorLineaCaja" type="text" name="usuarioSocio" id="usuarioSocio" placeholder="Nombre" required onclick="cambiarFondoCajaUsuarioSocio()" onblur="cambiarFondoUsuarios(this)">
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-1 mt-md-3">
+                    <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                    <div class="input-group" id="visto1"></div>
+                </div>
+
+                <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
+
+                <div class="col-md-4 col-sm-6 mt-md-3 mt-sm-4 offset-md-2 offset-sm-1">
+                    <label class="textFormularioVoluntario">Apellidos <span class="asterisco">*</span></label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
+                        <input class="fondocaja cajaApellidosSocio colorLineaCaja" type="text" name="apellidoSocio" id="apellidoSocio" placeholder="Apellido1 Apellido2" required onclick="cambiarFondoCajaApellidos()" onblur="cambiarFondoApellidos(this)">
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-1 mt-md-3">
+                    <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                    <div class="input-group" id="visto2"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="col-md-3 col-sm-6 mt-md-5 mt-sm-4 offset-md-1 offset-sm-1">
+                    <label class="textFormularioVoluntario">DNI <span class="asterisco">*</span></label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-list-alt"></i></span>
+                        <input class="lineahazteVoluntario fondocaja colorLineaCaja" type="text" name="dniSocio" id="dniSocio" placeholder="00000000-X" required onclick="cambiarFondoDNISocio()" onblur="cambiarFondoDNIs(this)">
+                    </div>
+                </div>
+                <div class="col-md-1 col-sm-1 mt-md-5">
+                    <label class="textFormularioVoluntario">&nbsp<span class="asterisco"></span></label><br>
+                    <div class="input-group" id="visto3"></div>
+                </div>
+
+                <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
+
+                <div class="col-md-4 mt-md-5 mt-sm-4 offset-md-2 offset-sm-1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="textFormularioVoluntario">Fecha nacimiento <span class="asterisco">*</span></label><br>
+                            <div class="input-group">
+                                <span class="input-group-addon icono2"><i class="glyphicon glyphicon-calendar"></i></span>
+                                <select class="lineahazteVoluntarioFecha lineaDiaSocio colorLineaCaja" name="diaFecha" id="diaFecha" required onblur="cambiarFondoDia(this)">
+                                    <option value="">Día</option>
+                                    <?php
+                                    for($i=1;$i<=31;$i++):
+                                        ?> <option value="<?php echo $i ?> "> <?php echo $i ?> </option>
+                                    <?php
+                                    endfor;
+                                    ?>
+                                </select>
+
+                                <select class="lineahazteVoluntarioFechaMes lineaMesSocio colorLineaCaja" name="mesFecha" id="mesFecha" onblur="cambiarFondoMes(this)">
+                                    <option value="">Mes</option>
+                                    <option value="Enero">Enero</option>
+                                    <option value="Febrero">Febrero</option>
+                                    <option value="Marzo">Marzo</option>
+                                    <option value="Abril">Abril</option>
+                                    <option value="Mayo">Mayo</option>
+                                    <option value="Junio">Junio</option>
+                                    <option value="Julio">Julio</option>
+                                    <option value="Agosto">Agosto</option>
+                                    <option value="Septiembre">Septiembre</option>
+                                    <option value="Octubre">Octubre</option>
+                                    <option value="Noviembre">Noviembre</option>
+                                    <option value="Diciembre">Diciembre</option>
+                                </select>
+
+                                <select class="lineahazteVoluntarioFecha lineaDiaSocio colorLineaCaja" name="anyoFecha" id="anyoFecha" onblur="cambiarFondoAnyo(this)">
+                                    <option value="">Año</option>
+                                    <?php
+
+                                    $anyoActual=date("Y",time());
+                                    $anyoMin=$anyoActual-18;
+
+                                    for($j=$anyoMin;$j>=diaAnyo;$j--):
+
+                                        ?> <option value="<?php echo $j ?> "> <?php echo $j ?> </option>
+                                    <?php
+                                    endfor;
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-1 mt-md-5">
+                    <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                    <div class="input-group" id="visto4"></div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="lineaH mt-md-5">
 
 
-<?php
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-4 mt-md-4 offset-md-1 offset-sm-1">
+                    <label class="textFormularioVoluntario">Dirección <span class="asterisco">*</span></label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
+                        <input class="lineahazteVoluntarioDirecion colorLineaCaja" type="text" name="direccionSocio" id="direccionSocio" placeholder="Dirección" required onclick="cambiarFondoDireccionSocio()">
+                    </div>
+                </div>
+
+                <div class="col-md-4 offset-md-2 offset-sm-1">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12 mt-sm-4 ml-md-1">
+                            <label class="textFormularioVoluntario">Nº<span class="asterisco">*</span></label><br>
+                            <input class="linea lineahazteVoluntarioDirec1 colorLineaCaja" type="text" name="numeroSocio" id="numeroSocio" required onclick="cambiarFondoNumeroSocio()">
+                        </div>
+                        <div class="col-md-2 col-sm-12 mt-sm-4 ml-md-5">
+                            <label class="textFormularioVoluntario">Portal</label><br>
+                            <input class="linea lineahazteVoluntarioDirec2 colorLineaCaja" type="text" name="portalSocio" id="portalSocio" onclick="cambiarFondoPortalSocio()">
+                        </div>
+                        <div class="col-md-2 col-sm-12 mt-sm-4 ml-md-5">
+                            <label class="textFormularioVoluntario">Piso</label><br>
+                            <input class="linea lineahazteVoluntarioDirec3 colorLineaCaja" type="text" name="pisoSocio" id="pisoSocio" onclick="cambiarFondoPisoSocio()">
+                        </div>
+                        <div class="col-md-2 col-sm-12 mt-sm-4 ml-md-5">
+                            <label class="textFormularioVoluntario">Letra</label><br>
+                            <input class="linea lineahazteVoluntarioDirec4 colorLineaCaja" type="text" name="letraSocio" id="letraSocio" onclick="cambiarFondoLetraSocio()">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-1 mt-md-3">
+                    <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                    <div class="input-group" id="visto5"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-12">
+
+                <div class="col-md-2 mt-md-5 mt-sm-3 offset-md-1">
+                    <label class="textFormularioVoluntario">Población<span class="asterisco">*</span></label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
+                        <input class="lineahazteVoluntarioPoblacionSocio fondocaja colorLineaCaja" type="text" name="poblacionSocio" id="poblacionSocio" placeholder="Población" required onclick="cambiarFondoPoblacionSocio()" onblur="cambiarFondoCorreos(this)" >
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-1 mt-md-3">
+                    <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                    <div class="input-group" id="visto8"></div>
+                </div>
+
+                <div class="col-md-2 mt-md-5 offset-sm-1">
+                    <label class="textFormularioVoluntario">Código Postal <span class="asterisco">*</span></label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
+                        <input class="lineahazteVoluntarioViviendaSocio fondocaja colorLineaCaja" type="text" name="CPSocio" id="CPSocio" placeholder="C.P" required onclick="cambiarFondoCPSocio()" onblur="cambiarFondoTelf1s(this)">
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-1 mt-md-3">
+                    <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                    <div class="input-group" id="visto8"></div>
+                </div>
+
+                <div class="col-md-2 mt-md-5 offset-sm-1 ml-md-1">
+                    <label class="textFormularioVoluntario">Provincia <span class="asterisco">*</span></label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
+                        <input class="lineahazteVoluntarioViviendaSocio fondocaja colorLineaCaja" type="text" name="provinciaSocio" id="provinciaSocio" placeholder="Provincia" required onclick="cambiarFondoProvinciaSocio()" onblur="cambiarFondoTelf2s(this)">
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-1 mt-md-3">
+                    <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                    <div class="input-group" id="visto8"></div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="lineaH mt-md-5">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-2 mt-md-4 mt-sm-3 offset-md-1">
+                    <label class="textFormularioVoluntario">Mail<span class="asterisco">*</span></label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input class="lineahazteVoluntarioPoblacionSocio fondocaja colorLineaCaja" type="text" name="correoSocio" id="correoSocio" placeholder="xxxxx@xxx.xxx" required onclick="cambiarFondoCorreoSocio()" onblur="cambiarFondoCorreos(this)" >
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-1 mt-md-3">
+                    <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                    <div class="input-group" id="visto7"></div>
+                </div>
+                <div class="col-md-2 mt-md-4 offset-sm-1">
+                    <label class="textFormularioVoluntario">Telefono 1 <span class="asterisco">*</span></label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input class="lineahazteVoluntarioViviendaSocio fondocaja colorLineaCaja" type="text" name="telefono1Socio" id="telefono1Socio" placeholder="Telefono 1" required onclick="cambiarFondoTelf1Socio()" onblur="cambiarFondoTelf1s(this)">
+                    </div>
+                </div>
+                <div class="col-md-1 col-sm-1 mt-md-3">
+                    <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                    <div class="input-group" id="visto8"></div>
+                </div>
+                <div class="col-md-2 mt-md-4 offset-sm-1 ml-md-1">
+                    <label class="textFormularioVoluntario">Telefono 2</label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input class="lineahazteVoluntarioViviendaSocio fondocaja colorLineaCaja" type="text" name="telefono2Socio" id="telefono2Socio" placeholder="Telefono 2" required onclick="cambiarFondoTelf2Socio()" onblur="cambiarFondoTelf2s(this)">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="lineaH mt-md-5">
+
+        <div class="row">
+            <div class="col-md-12">
+                <p class="subtitle">Cantidad a aportar</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-2 offset-md-1 mt-md-4">
+                    <input type="radio" name="cantidad" value="5"><b>   5€</b>
+                </div>
+                <div class="col-md-2 mt-md-4">
+                    <input type="radio" name="cantidad" value="10"><b>   10€</b>
+                </div>
+                <div class="col-md-1 mt-md-4">
+                    <input type="radio" name="cantidad" value="15"><b>   15€</b>
+                </div>
+                <div class="col-md-2 mt-md-4 ml-md-4 ml-md-5">
+                    <label class="textFormularioVoluntario">otras cantidades</label>
+                </div>
+
+                <div class="col-md-3 mt-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-usd"></i></span>
+                        <input class="lineaAportarSocio colorLineaCaja" type="text" name="cantidadSocio" id="cantidadSocio" placeholder="Otras cantidades" required onclick="cambiarFondoCantidadesSocio()" onblur="cambiarFondoTelf1s(this)">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="lineaH mt-md-5">
+
+        <div class="row">
+            <div class="col-md-12">
+                <p class="subtitle">Cuenta Bancaria</p>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-12 mt-md-4">
+                <div class="col-md-2 offset-md-1 mr-md-5">
+                    <label class="textFormularioVoluntario">IBAN</label>
+                </div>
+                <div class="col-md-2 mr-md-1">
+                    <label class="textFormularioVoluntario">Banco</label>
+                </div>
+                <div class="col-md-2 mr-md-1">
+                    <label class="textFormularioVoluntario">Oficina</label>
+                </div>
+                <div class="col-md-2">
+                    <label class="textFormularioVoluntario text-center ">DC</label>
+                </div>
+                <div class="col-md-2 ">
+                    <label class="textFormularioVoluntario">Cuenta</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-start">
+                <div class="col-md-2 offset-md-1 mr-md-5">
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-credit-card"></i></span>
+                        <input class="lineaBancoSocioIcono colorLineaCaja" type="text" name="iban" id="direccion" placeholder="IBAN" required onclick="cambiarFondoDireccion(this)">
+                    </div>
+                </div>
+
+                <div class="col-md-2 mb-md-5">
+                    <input class="lineaBancoSocio colorLineaCaja" type="text" name="direccion" id="direccion" placeholder="0000" required onclick="cambiarFondoDireccion(this)">
+                </div>
+
+                <div class="col-md-2 mb-md-5">
+                    <input class="lineaBancoSocio colorLineaCaja" type="text" name="direccion" id="direccion" placeholder="0000" required onclick="cambiarFondoDireccion(this)">
+                </div>
+
+                <div class="col-md-1 mb-md-5">
+                    <input class="lineaBancoSocioDC colorLineaCaja" type="text" name="direccion" id="direccion" placeholder="00" required onclick="cambiarFondoDireccion(this)">
+                </div>
+
+                <div class="col-md-2 mb-md-5">
+                    <input class="lineaBancoSocioCuenta colorLineaCaja" type="text" name="direccion" id="direccion" placeholder="0000000000" required onclick="cambiarFondoDireccion(this)">
+                </div>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="mt-md-5 mb-md-5">
+                    <button class="btn btn-primary boton1"  type="submit" role="button" id="button1">Enviar</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+<?php  include("views/partials/footer.part.php");  ?>
+<!--<script type="text/javascript" src="jsValidar/validar.js"></script>-->
+<script type="text/javascript" src="jsValidar/validarGatosAdopcion.js"></script>
 
 
 
 
 
-
-
-
-
-?>
-
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-</body>
-</html>

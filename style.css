@@ -180,15 +180,29 @@ h1
 
 /*  --------------------- Footer -------------------------------------------*/
 
-.textFooter
+.textFooter { letter-spacing: 1px; color: white; font-weight: bold}
+
+.iconos { color: white; }
+
+a:hover { text-decoration: none; color: black;}
+
+.alturaIcono
 {
-    color: white;
-    letter-spacing: 1px;
+    font-size: 120%;
 }
 
-.iconos
+.distanciaFooter
 {
-    color: white;
+    width: 15%;
+}
+.anchoCelda
+{
+    width: 10%;
+}
+
+.bordeIcono
+{
+    width: 7%;
 }
 
 
@@ -224,6 +238,11 @@ h1
     background-color: #b5e8bf;
 }
 
+.cajaReside
+{
+    padding: 3px 0px;
+}
+
 /*  --------------------- index -------------------------------------------*/
 
 .fotoGato { width: 100%; }
@@ -231,8 +250,8 @@ h1
 .textoDentroFoto
 {
     font-family: 'Bree Serif', serif;
-    letter-spacing: 4px;
-    font-size: 270%;
+    letter-spacing: 2px;
+    font-size: 200%;
 }
 
 .subtitulo
@@ -241,6 +260,14 @@ h1
     font-size: 250%;
     font-family: 'Bree Serif', serif;
     letter-spacing: 2px;
+    color: #667c72;
+}
+
+.subtitle
+{
+    font-weight: bold;
+    font-size: 150%;
+    font-family: 'Bree Serif', serif;
     color: #667c72;
 }
 
@@ -299,60 +326,386 @@ h1
     border-radius:5%;
 }
 
+
+
+@media(max-width:828px)   /* xs plan esterilizacion felina*/
+{
+    .textoTitle
+    {
+        font-size: 280%;
+    }
+}
+
+
+
+@media(max-width:543px)   /* xs nombre, apellidos, dni*/
+{
+    .lineahazteVoluntario
+    {
+        padding: 1% 14%;
+        border: 1px solid #1CA421;
+        border-radius:5%;
+    }
+}
+
+
+
 .lineahazteVoluntarioFechaMes
 {
-    padding: 2% 2%;
     border: 1px solid #1CA421;
-    border-radius:5%;
+    border-radius: 5%;
 }
+
 .lineahazteVoluntarioFecha
 {
-    padding: 2% 3%;
+    border: 1px solid #1CA421;
+    border-radius: 5%;
+}
+
+
+
+
+@media(min-width:952px)   /* md parte 1 fecha*/
+{
+    .lineahazteVoluntarioFechaMes {
+        padding: 2.5% 3%;
+    }
+
+    .lineahazteVoluntarioFecha {
+        padding: 2.5% 3%;
+    }
+}
+@media(max-width:951px)   /* sm  parte 2 fecha*/
+{
+
+    .lineahazteVoluntarioFechaMes {
+        padding: 2.5% 1%;
+    }
+
+    .lineahazteVoluntarioFecha {
+        padding: 2.5% 1%;
+    }
+}
+
+@media(max-width:768px)   /* sm  parte 2 fecha*/
+{
+
+    .lineahazteVoluntarioFechaMes {
+        padding: 1% 1%;
+    }
+
+    .lineahazteVoluntarioFecha {
+        padding: 1% 1%;
+    }
+}
+
+@media(max-width:543px)   /* sm    parte 3*/
+{
+    .lineahazteVoluntarioFechaMes {
+        padding: 1.2% 1%;
+    }
+
+    .lineahazteVoluntarioFecha {
+        padding: 1.2% 1%;
+    }
+}
+
+
+
+
+.lineahazteVoluntarioDirecion
+{
     border: 1px solid #1CA421;
     border-radius:5%;
 }
 
-.lineahazteVoluntarioDirecion
+
+@media(min-width:768px)   /* md */
 {
-    padding: 1.5% 29%;
-    border: 1px solid #1CA421;
-    border-radius:5%;
+    .lineahazteVoluntarioDirecion
+    {
+        padding: 1.5% 29%;
+    }
 }
+
+@media(max-width:768px)   /* sm */
+{
+    .lineahazteVoluntarioDirecion
+    {
+        padding: 1% 8%;
+    }
+}
+
+@media(max-width:543px)   /* sm */
+{
+    .lineahazteVoluntarioDirecion
+    {
+        padding: 1% 14%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .lineahazteVoluntarioDirec1
 {
     border: 1px solid #1CA421;
     border-radius:5%;
-    width:85%;
-    height:60%;
 }
 .lineahazteVoluntarioDirec2
 {
     border: 1px solid #1CA421;
     border-radius:5%;
-    width:85%;
-    height:60%;
 }
 .lineahazteVoluntarioDirec3
 {
     border: 1px solid #1CA421;
     border-radius:5%;
-    width:85%;
-    height:60%;
 }
 .lineahazteVoluntarioDirec4
 {
     border: 1px solid #1CA421;
     border-radius:5%;
-    width:85%;
-    height:60%;
 }
+
+
+@media(min-width:768px)   /* md  parte 1*/
+{
+    .lineahazteVoluntarioDirec1
+    {
+        width:55px;
+        height:60%;
+    }
+    .lineahazteVoluntarioDirec2
+    {
+        width:55px;
+        height:60%;
+    }
+    .lineahazteVoluntarioDirec3
+    {
+        width:55px;
+        height:60%;
+    }
+    .lineahazteVoluntarioDirec4
+    {
+        width:55px;
+        height:60%;
+    }
+}
+
+@media(max-width:767px)   /* sm  parte 2*/
+{
+    .lineahazteVoluntarioDirec1
+    {
+        width:43%;
+        height:64%;
+    }
+    .lineahazteVoluntarioDirec2
+    {
+        width:43%;
+        height:64%;
+    }
+    .lineahazteVoluntarioDirec3
+    {
+        width:43%;
+        height:64%;
+    }
+    .lineahazteVoluntarioDirec4
+    {
+        width:43%;
+        height:64%;
+    }
+}
+
+@media(max-width:543px)   /* sm    parte 3*/
+{
+    .lineahazteVoluntarioDirec1
+    {
+        width:42%;
+        height:65%;
+    }
+    .lineahazteVoluntarioDirec2
+    {
+        width:42%;
+        height:65%;
+        margin-bottom: 10px;
+    }
+    .lineahazteVoluntarioDirec3
+    {
+        width:42%;
+        height:65%;
+        margin-bottom: 10px;
+    }
+    .lineahazteVoluntarioDirec4
+    {
+        width:42%;
+        height:65%;
+        margin-bottom: 10px;
+    }
+}
+
+
+@media(max-width:544px)   /* col    parte 4*/
+{
+    .lineahazteVoluntarioDirec1
+    {
+        width:42px;
+        height:30px;
+    }
+    .lineahazteVoluntarioDirec2
+    {
+        width:42px;
+        height:30px;
+        margin-bottom: 10px;
+    }
+    .lineahazteVoluntarioDirec3
+    {
+        width:42px;
+        height:30px;
+        margin-bottom: 10px;
+    }
+    .lineahazteVoluntarioDirec4
+    {
+        width:42px;
+        height:30px;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .lineahazteVoluntarioZona
 {
-    padding: 1.5% 4%;
     border: 1px solid #1CA421;
     border-radius:5%;
+}
+
+
+
+@media(min-width:768px)   /* md */
+{
+    .lineahazteVoluntarioZona
+    {
+        padding: 2.2% 4%;
+    }
+}
+
+@media(max-width:768px)   /* sm */
+{
+    .lineahazteVoluntarioZona
+    {
+        padding: 1% 4%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.lineahazteVoluntarioCorreo
+{
+    border: 1px solid #1CA421;
+    border-radius:5%;
+}
+
+.lineahazteVoluntarioTelef
+{
+    border: 1px solid #1CA421;
+    border-radius:5%;
+}
+
+.lineahazteVoluntarioTelef2
+{
+    border: 1px solid #1CA421;
+    border-radius:5%;
+}
+
+
+
+@media(min-width:768px)   /* md */
+{
+    .lineahazteVoluntarioCorreo
+    {
+        padding:4% 16%;
+    }
+
+    .lineahazteVoluntarioTelef
+    {
+        padding:4% 15%;
+    }
+
+    .lineahazteVoluntarioTelef2
+    {
+        padding:4% 15%;
+    }
+}
+
+@media(max-width:768px)   /* sm */
+{
+    .lineahazteVoluntarioCorreo
+    {
+        padding:1% 8%;
+    }
+
+    .lineahazteVoluntarioTelef
+    {
+        padding:1% 8%;
+    }
+
+    .lineahazteVoluntarioTelef2
+    {
+        padding:1% 8%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:768px)   /* sm */
+{
+    .lineahazteVoluntario
+    {
+        border: 1px solid #1CA421;
+        border-radius:5%;
+        padding:1% 8%;
+    }
 }
 
 .lineaH
@@ -360,35 +713,9 @@ h1
     border-color: #b5e8bf;
 }
 
-.lineahazteVoluntarioCorreo
-{
-    border: 1px solid #1CA421;
-    border-radius:5%;
-    padding:3% 8%;
-}
-
-.lineahazteVoluntarioTelef
-{
-    border: 1px solid #1CA421;
-    border-radius:5%;
-    padding:3% 8%;
-}
-
-.lineahazteVoluntarioTelef2
-{
-    border: 1px solid #1CA421;
-    border-radius:5%;
-    padding:3% 8%;
-}
-
 .textFormularioVoluntario
 {
     font-size: 120%;
-}
-
-.textFormularioVoluntarioBotonAnyadir
-{
-
 }
 
 .boton1
@@ -405,14 +732,74 @@ h1
 }
 
 
-/*  --------------------- ayudanos -------------------------------------------*/
+/*  --------------------- SOCIOS -------------------------------------------*/
 
-.linea
+.colorLineaCaja
 {
-    border-color: #1CA421;
+    border: 1px solid #1CA421;
+    border-radius:5%;
 }
 
-.direc
+.cajaApellidosSocio
 {
-    width:100%;
+    padding: 2% 25%;
+}
+
+.lineaDiaSocio
+{
+    padding: 2% 5%;
+}
+
+.lineaMesSocio
+{
+    padding: 2% 4%;
+}
+
+
+.lineaAportarSocio
+{
+    padding: 2% 7%;
+}
+
+.lineahazteVoluntarioPoblacionSocio
+{
+    padding: 3% 35%;
+}
+.lineahazteVoluntarioViviendaSocio
+{
+    padding: 3% 20%;
+}
+
+.lineahazteVoluntarioMailSocio
+{
+    padding: 3% 35%;
+}
+
+.lineaBancoSocioIcono
+{
+    padding: 3% 14%;
+}
+.lineaBancoSocio
+{
+    padding: 3% 14%;
+}
+
+.lineaBancoSocioDC
+{
+    padding: 6.8% 5%;
+}
+
+.lineaBancoSocioCuenta
+{
+    padding: 2.8% 20%;
+}
+
+.centrarTextoDC
+{
+    border: 1px solid red;
+}
+
+.distanciaFooter
+{
+    margin-bottom: 10%;
 }

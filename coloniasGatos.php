@@ -26,7 +26,7 @@ require __DIR__."/views/partials/cabecera.part.php";
 
             <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
 
-            <div class="col-md-3 col-sm-6 mt-md-3 mt-sm-4 offset-md-2 mb-md-4">
+            <div class="col-md-3 col-sm-6 mt-md-3 mt-sm-4 offset-md-1 mb-md-4">
                 <label class="textFormularioVoluntario">Nº total de gatos/as de la colonia<span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-edit"></i></span>

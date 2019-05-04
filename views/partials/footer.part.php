@@ -1,31 +1,47 @@
 
-<footer class="page-footer menuPrincipal pt-md-3 pb-md-3 mb-md-3">
-    <div class="row justify-content-md-center">
-        <div class="col-md-auto textFooter">
-            <p>Hazte Voluntario</p>
-        </div>
+<div class="container-fluid">
 
-        <div class="col-md-1 textFooter">
-            <p>Ayúdanos</p>
-        </div>
+    <div class="row">
 
-        <div class="col-md-1 textFooter">
-            <p>Eventos</p>
-        </div>
+        <div class="col-md-12 menuPrincipal mt-md-3 pt-md-5">
 
-        <div class="col-md-1 textFooter">
-            <p>Adopción</p>
-        </div>
+            <div class="col-md-2 offset-md-1 distanciaFooter">
+                <a class="textFooter" href="hazteVoluntario.php">Hazte Voluntario</a>
+            </div>
 
-        <div class="col-md-auto iconos">
-            <span class="icon-whatsapp alturaIcono"></span>
-        </div>
+            <div class="col-md-2 anchoCelda">
+                <a class="textFooter" href="ayudanos.php">Ayúdanos</a>
+            </div>
 
-        <div class="col-md-auto iconos">
-            <span class="icon-facebook"></span>
-        </div>
+            <div class="col-md-2 pl-md-5 anchoCelda">
+                <a class="textFooter" href="eventos.php">Eventos</a>
+            </div>
 
-        <div class="col-md-auto iconos">
-            <span class="icon-icon-twitter"></span>
+            <div class="col-md-2 anchoCelda">
+                <a class="textFooter" href="adopcion.php">Adopción</a>
+            </div>
+
+            <div class="col-md-2">
+                <a class="textFooter" href="bajaSocios.php">Darse de baja Socios</a>
+            </div>
+
+            <div class="col-md-1 iconos alturaIcono bordeIcono">
+                <span class="icon-whatsapp"></span>
+            </div>
+
+            <div class="col-md-1 iconos alturaIcono bordeIcono">
+                <span class="icon-facebook"></span>
+            </div>
+
+            <div class="col-md-1 iconos alturaIcono bordeIcono">
+                <span class="icon-icon-twitter"></span>
+            </div>
         </div>
-</footer>
+    </div>
+</div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
