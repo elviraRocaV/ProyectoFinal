@@ -122,7 +122,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                                 ?>
                             </select>
 
-                            <select class="lineahazteVoluntarioFechaMes linea" name="mesFecha" id="mesFecha" onblur="cambiarFondoMes(this)">
+                            <select class="lineahazteVoluntarioFechaMes linea" name="mesFecha" id="mesFecha" required onblur="cambiarFondoMes(this)">
                                 <option value="">Mes</option>
                                 <option value="Enero">Enero</option>
                                 <option value="Febrero">Febrero</option>
@@ -138,7 +138,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                                 <option value="Diciembre">Diciembre</option>
                             </select>
 
-                            <select class="lineahazteVoluntarioFecha linea" name="anyoFecha" id="anyoFecha" onblur="cambiarFondoAnyo(this)">
+                            <select class="lineahazteVoluntarioFecha linea" name="anyoFecha" id="anyoFecha" required onblur="cambiarFondoAnyo(this)">
                                 <option value="">Año</option>
                                 <?php
 

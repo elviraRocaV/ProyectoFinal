@@ -424,7 +424,7 @@ a:hover { text-decoration: none; color: black;}
 {
     .lineahazteVoluntarioDirecion
     {
-        padding: 1.5% 29%;
+        padding: 1.8% 29%;
     }
 }
 
@@ -483,22 +483,22 @@ a:hover { text-decoration: none; color: black;}
 {
     .lineahazteVoluntarioDirec1
     {
-        width:55px;
+        width:60px;
         height:60%;
     }
     .lineahazteVoluntarioDirec2
     {
-        width:55px;
+        width:60px;
         height:60%;
     }
     .lineahazteVoluntarioDirec3
     {
-        width:55px;
+        width:60px;
         height:60%;
     }
     .lineahazteVoluntarioDirec4
     {
-        width:55px;
+        width:60px;
         height:60%;
     }
 }
@@ -755,7 +755,6 @@ a:hover { text-decoration: none; color: black;}
     padding: 2% 4%;
 }
 
-
 .lineaAportarSocio
 {
     padding: 2% 7%;
@@ -765,14 +764,10 @@ a:hover { text-decoration: none; color: black;}
 {
     padding: 3% 35%;
 }
+
 .lineahazteVoluntarioViviendaSocio
 {
     padding: 3% 20%;
-}
-
-.lineahazteVoluntarioMailSocio
-{
-    padding: 3% 35%;
 }
 
 .lineaBancoSocioIcono
@@ -802,4 +797,53 @@ a:hover { text-decoration: none; color: black;}
 .distanciaFooter
 {
     margin-bottom: 10%;
+}
+
+@media (max-width: 768px)
+{
+    .lineahazteVoluntario { padding: 2% 25%; }
+
+    .lineahazteVoluntarioFechaMes { padding: 1.2% 1%; }
+
+    .lineahazteVoluntarioFecha { padding: 1.2% 1%;}
+
+    .lineahazteVoluntarioDirecion { padding: 1.2% 10.5%; }
+
+    .lineahazteVoluntarioDirec1, .lineahazteVoluntarioDirec2, .lineahazteVoluntarioDirec3, .lineahazteVoluntarioDirec4 { padding: 0.15% 28.5%; }
+
+    .lineahazteVoluntarioPoblacion{ padding: 1.2% 10%;}
+
+    .lineahazteVoluntarioCuenta { padding: 1.2% 12%; }
+
+    .lineahazteVoluntarioCuenta2 { padding: 1.2% 15%; }
+}
+
+@media (max-width: 575px)
+{
+    .lineahazteVoluntario { padding: 1% 10%;}
+
+    .cajaApellidosSocio{ padding: 1% 10%;}
+
+    .lineahazteVoluntarioFechaMes { padding: 1.2% 1%; }
+
+    .lineahazteVoluntarioFecha { padding: 1.2% 1%;}
+
+    .lineahazteVoluntarioDirecion { padding: 1.2% 10.5%; }
+
+    .lineahazteVoluntarioDirec1, .lineahazteVoluntarioDirec2, .lineahazteVoluntarioDirec3, .lineahazteVoluntarioDirec4 { padding: 0.10% 27.5%; }
+
+    .lineahazteVoluntarioPoblacion{ padding: 1% 10%;}
+
+    .lineahazteVoluntarioCuenta { padding: 1% 12%; }
+
+    .lineahazteVoluntarioCuenta2 { padding: 1% 15%; }
+}
+
+@media (max-width: 332px)
+{
+    .lineahazteVoluntarioFechaMes { padding: 1% 1.2%; }
+
+    .lineahazteVoluntarioFecha { padding: 1% 1.2%;}
+
+
 }
