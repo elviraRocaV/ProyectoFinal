@@ -26,12 +26,12 @@ if($_SERVER['REQUEST_METHOD']!=="GET") {
         throw new UploadException("Error, este fichero no se ha subido");
     }
 
-    $rutaFotos = "FotosGatosAdopcion/" . $fotoGato;     //nombre de la carpeta del servidor
+    $rutaFotos = "\\FotosGatosAdopcion\\" . $fotoGato;     //nombre de la carpeta del servidor
 
     if (is_file($rutaFotos) === true) {
         $coletilla = time();
         $photoGato = $coletilla . "_" . $fotoGato;
-        $rutaFotos = "/FotosGatosAdopcion/" . "_" . $fotoGato;
+        $rutaFotos = "\\FotosGatosAdopcion\\" . "_" . $fotoGato;
 
 
         move_uploaded_file($_FILES['fotoGato']['name'], $rutaFotos);

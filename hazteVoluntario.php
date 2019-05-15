@@ -7,24 +7,88 @@ require __DIR__."/views/partials/cabecera.part.php";
 
 if($_SERVER['REQUEST_METHOD']=="POST")
 {
-    $name=$_POST["usuario"];
-    $apellidos=$_POST["apellido"];
-    $dni=$_POST["dni"];
-    $dia=$_POST["diaFecha"];
-    $mes=$_POST["mesFecha"];
-    $anyo=$_POST["anyoFecha"];
-    $fechaNacimiento=$dia."/".$mes."/".$anyo;
-    $direccion=$_POST["direccion"];
-    $num=$_POST["numero"];
-    $portal=$_POST["portal"];
-    $piso=$_POST["piso"];
-    $letra=$_POST["letra"];
-    $zonaReside=$_POST["zona"];  //????????????? no sé si lo cogerá
-    $mail=$_POST["correo"];
-    $telf1=$_POST["telefono1"];
-    $telf2=$_POST["telefono2"];
-    $pass1=$_POST["password1"];
-    $pass2=$_POST["password2"];
+    if(isset($_POST["usuario"]))
+    {
+        $name=$_POST["usuario"];
+    }
+
+    if(isset($_POST["apellido"]))
+    {
+        $apellidos=$_POST["apellido"];
+    }
+
+    if(isset($_POST["dni"]))
+    {
+        $dni=$_POST["dni"];
+    }
+
+    if(isset($_POST["diaFecha"]))
+    {
+        $dia=$_POST["diaFecha"];
+    }
+
+    if(isset($_POST["mesFecha"]))
+    {
+        $mes=$_POST["mesFecha"];
+    }
+
+    if(isset($_POST["anyoFecha"]))
+    {
+        $anyo=$_POST["anyoFecha"];
+    }
+
+    //$fechaNacimiento=$dia."/".$mes."/".$anyo;
+
+    if(isset($_POST["direccion"]))
+    {
+        $direccion=$_POST["direccion"];
+    }
+
+    if(isset($_POST["numero"]))
+    {
+        $num=$_POST["numero"];
+    }
+
+    if(isset($_POST["portal"]))
+    {
+        $portal=$_POST["portal"];
+    }
+
+    if(isset($_POST["piso"]))
+    {
+        $piso=$_POST["piso"];
+    }
+
+    if(isset($_POST["letra"]))
+    {
+        $letra=$_POST["letra"];
+    }
+
+    if(isset($_POST["zona"]))
+    {
+        $zonaReside=$_POST["zona"];  //????????????? no sé si lo cogerá
+    }
+
+    if(isset($_POST["correo"]))
+    {
+        $mail=$_POST["correo"];
+    }
+
+    if(isset($_POST["telefono1"]))
+    {
+        $telf1=$_POST["telefono1"];
+    }
+
+    if(isset($_POST["telefono2"]))
+    {
+        $telf2=$_POST["telefono2"];
+    }
+
+    if(isset($_POST["password1"]))
+    {
+        $pass1=$_POST["password1"];
+    }
+
 
     $churropassword=password_hash($pass1, PASSWORD_DEFAULT, ["cost"=>15]);
 
@@ -294,13 +358,9 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                 <div class="btn btn-primary boton1" role="button" id="button1">Enviar</div>
             </div>
 
-            <div class="mt-md-5 mb-md-5">
-                <div class="btn btn-primary boton1" role="button" id="button1">Siguiente</div>
-            </div>
-
-            <!--<div class="offset-md-2 mt-md-5 mb-md-5">
+            <div class="offset-md-2 mt-md-5 mb-md-5">
                 <a href="coloniasGatos.php" class="btn btn-primary boton1" id="boton2" style="display:inline" role="button">Siguiente </a>
-            </div>-->
+            </div>
         </div>
     </div>
     </form>

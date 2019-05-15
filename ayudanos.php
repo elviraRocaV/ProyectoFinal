@@ -27,6 +27,8 @@ $banco="";
 $oficina="";
 $dc="";
 $cuenta="";
+$churropassword="";
+$passwordSocio="";
 
 
 if($_SERVER['REQUEST_METHOD']!=="GET")
@@ -116,6 +118,11 @@ if($_SERVER['REQUEST_METHOD']!=="GET")
         $telf2=$_POST["telefono2Socio"];
     }
 
+    if(isset($_POST["passwordSocio"]))
+    {
+        $passwordSocio=$_POST["passwordSocio"];
+    }
+
     if(isset($_POST["cantidad"]))
     {
         $aportacion=$_POST["cantidad"];
@@ -145,293 +152,315 @@ if($_SERVER['REQUEST_METHOD']!=="GET")
     {
         $cuenta=$_POST["cuentaSocio"];
     }
-}
 
-/*$stmt = $dbh->prepare("insert into usuarios (usuarioSocio, apellidoSocio, dniSocio, diaFecha, mesFecha, anyoFecha, direccionSocio, numeroSocio, portalSocio, pisoSocio, letraSocio, poblacionSocio, CPSocio, provinciaSocio, correoSocio, telefono1Socio, telefono2Socio, cantidad, ibaSocio, bancoSocio, oficinaSocio, DCSocio, cuentaSocio)
- values(:usuarioSocio, :apellidoSocio, :dniSocio, :diaFecha, :mesFecha, :anyoFecha, :direccionSocio, :numeroSocio, :portalSocio, :pisoSocio, :letraSocio, :poblacionSocio, :CPSocio, :provinciaSocio, :correoSocio, :telefono1Socio, :telefono2Socio, :cantidad, :ibaSocio, :bancoSocio, :oficinaSocio, :DCSocio, :cuentaSocio)");
-$stmt->execute([":usuarioSocio"=>$nom ,":apellidoSocio"=>$apellidos ,":dniSocio"=>$dni ,":diaFecha"=>$diaNacimiento ,":mesFecha"=>$mesNacimiento ,":anyoFecha"=>$anyNacimiento ,":direccionSocio"=>$direccion, ":numeroSocio"=>$num ,":portalSocio"=>$portal ,":pisoSocio"=>$piso ,":letraSocio"=>$letra ,":poblacionSocio"=>$poblacion ,":CPSocio"=>$codPost ,":provinciaSocio"=>$provincia ,":correoSocio"=>$mail ,":telefono1Socio"=>$telf1 ,":telefono2Socio"=>$telf2 ,":cantidad"=>$aportacion ,":ibaSocio"=>$iban ,":bancoSocio"=>$banco ,":oficinaSocio"=>$oficina ,":DCSocio"=>$dc ,":cuentaSocio"=>$cuenta]);*/
-?>
+    $churropassword=password_hash($passwordSocio, PASSWORD_DEFAULT, ["cost"=>15]);
+
+$stmt = $dbh->prepare("INSERT INTO socios (usuarioSocio, apellidoSocio, dniSocio, diaFecha, mesFecha, anyoFecha, direccionSocio, numeroSocio, portalSocio, pisoSocio, letraSocio, poblacionSocio, CPSocio, provinciaSocio, correoSocio, telefono1Socio, telefono2Socio, passwordSocio, cantidad, ibaSocio, bancoSocio, oficinaSocio, DCSocio, cuentaSocio)
+ values(:usuarioSocio, :apellidoSocio, :dniSocio, :diaFecha, :mesFecha, :anyoFecha, :direccionSocio, :numeroSocio, :portalSocio, :pisoSocio, :letraSocio, :poblacionSocio, :CPSocio, :provinciaSocio, :correoSocio, :telefono1Socio, :telefono2Socio, :contrasenya, :cantidad, :ibaSocio, :bancoSocio, :oficinaSocio, :DCSocio, :cuentaSocio)");
+$stmt->execute([":usuarioSocio"=>$nom ,":apellidoSocio"=>$apellidos ,":dniSocio"=>$dni ,":diaFecha"=>$diaNacimiento ,":mesFecha"=>$mesNacimiento ,":anyoFecha"=>$anyNacimiento ,":direccionSocio"=>$direccion, ":numeroSocio"=>$num ,":portalSocio"=>$portal ,":pisoSocio"=>$piso ,":letraSocio"=>$letra ,":poblacionSocio"=>$poblacion ,":CPSocio"=>$codPost ,":provinciaSocio"=>$provincia ,":correoSocio"=>$mail ,":telefono1Socio"=>$telf1 ,":telefono2Socio"=>$telf2 , ":contrasenya"=>$churropassword,":cantidad"=>$aportacion ,":ibaSocio"=>$iban ,":bancoSocio"=>$banco ,":oficinaSocio"=>$oficina ,":DCSocio"=>$dc ,":cuentaSocio"=>$cuenta]);}?>
 
 
+<div class="container sinPadding">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center mb-md-2">
+            <p class="subtitulo">Hazte Socio</p>
+        </div>
+    </div>
 
-        <div class="container-fluid">
-            <div class="row mt-3 mb-md-5">
-                <div class="col-md-12 text-md-center acceso">
-                    <h2>Hazte Socio</h2>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3 col-12 d-flex justify-content-center">
+            <p class="subtitle">Datos Personales</p>
+        </div>
+        <div class="col-md-8"></div>
+    </div>
+
+    <form action="ayudanos.php" method="post">
+
+        <div class="row">
+            <div class="col-md-3 col-12 mt-md-5 mt-4 offset-md-1 offset-1">
+                <label class="textFormularioVoluntario">Nombre <span class="asterisco">*</span></label><br>
+                <div class="input-group">
+                    <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
+                    <input class="lineahazteVoluntario fondocaja colorLineaCaja" type="text" name="usuarioSocio" id="usuarioSocio" placeholder="Nombre" required onclick="cambiarFondoCajaUsuarioSocio()" onblur="cambiarFondoUsuariosSocios(this)">
+                </div>
+            </div>
+
+            <div class="mt-md-3 ml-md-1">
+                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                <div class="input-group" id="visto11"></div>
+            </div>
+
+
+            <div class="col-md-3 col-12 mt-md-5 mt-4 offset-md-3 offset-1">
+                <label class="textFormularioVoluntario">Apellidos <span class="asterisco">*</span></label><br>
+                <div class="input-group">
+                    <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
+                    <input class="lineahazteVoluntarioApellidos fondocaja cajaApellidosSocio colorLineaCaja" type="text" name="apellidoSocio" id="apellidoSocio" placeholder="Apellido1 Apellido2" required onclick="cambiarFondoCajaApellidos()" onblur="cambiarFondoApellidosSocios(this)">
+                </div>
+            </div>
+
+            <div class="mt-md-3 ml-md-5">
+                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                <div class="input-group" id="visto12"></div>
+            </div>
+        </div>
+
+        <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
+
+        <div class="row">
+            <div class="col-md-3 col-12 mt-md-5 mt-4 offset-md-1 offset-1">
+                <label class="textFormularioVoluntario">DNI <span class="asterisco">*</span></label><br>
+                <div class="input-group">
+                    <span class="input-group-addon icono2"><i class="glyphicon glyphicon-list-alt"></i></span>
+                    <input class="lineahazteVoluntario fondocaja colorLineaCaja" type="text" name="dniSocio" id="dniSocio" placeholder="00000000-X" required onclick="cambiarFondoDNISocio()" onblur="cambiarFondoDNIsSocio(this)">
+                </div>
+            </div>
+            <div class="mt-md-5">
+                <label class="textFormularioVoluntario">&nbsp<span class="asterisco"></span></label><br>
+                <div class="input-group" id="visto13"></div>
+            </div>
+
+
+            <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
+
+
+            <div class="col-md-3 col-12 mt-md-5 mt-4 offset-md-3 offset-1">
+                <label class="textFormularioVoluntario">Fecha nacimiento <span class="asterisco">*</span></label><br>
+                <div class="input-group">
+                    <span class="input-group-addon icono2"><i class="glyphicon glyphicon-calendar"></i></span>
+                    <div class="alinearDiaMesAnyo">
+                        <select class="lineahazteVoluntarioFecha lineaDiaSocio colorLineaCaja" name="diaFecha" id="diaFecha" required onblur="cambiarFondoDiaSocio(this)">
+                            <option value="">Día</option>
+                            <?php
+                            for($i=1;$i<=31;$i++):
+                                ?>
+                                <option value="<?php echo $i ?> "> <?php echo $i ?> </option>
+                            <?php
+                            endfor;
+                            ?>
+                        </select>
+
+                        <select class="lineahazteVoluntarioFechaMes lineaMesSocio colorLineaCaja" name="mesFecha" id="mesFecha" required onblur="cambiarFondoMesSocio(this)">
+                            <option value="">Mes</option>
+                            <option value="Enero">Enero</option>
+                            <option value="Febrero">Febrero</option>
+                            <option value="Marzo">Marzo</option>
+                            <option value="Abril">Abril</option>
+                            <option value="Mayo">Mayo</option>
+                            <option value="Junio">Junio</option>
+                            <option value="Julio">Julio</option>
+                            <option value="Agosto">Agosto</option>
+                            <option value="Septiembre">Septiembre</option>
+                            <option value="Octubre">Octubre</option>
+                            <option value="Noviembre">Noviembre</option>
+                            <option value="Diciembre">Diciembre</option>
+                        </select>
+
+                        <select class="lineahazteVoluntarioFecha lineaDiaSocio colorLineaCaja" name="anyoFecha" id="anyoFecha" required onblur="cambiarFondoAnyoSocio(this)">
+                            <option value="">Año</option>
+                            <?php
+                            $anyoActual=date("Y",time());
+                            $anyoMin=$anyoActual-18;
+
+                            for($j=$anyoMin;$j>=diaAnyo;$j--):
+
+                                ?> <option value="<?php echo $j ?> "> <?php echo $j ?> </option>
+                            <?php
+                            endfor;
+                            ?>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-md-5 ml-md-5">
+                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                <div class="input-group" id="visto14"></div>
+            </div>
+        </div>
+
+        <hr class="lineaH mt-5">
+
+
+        <div class="row">
+            <div class="col-md-3 col-12 mt-md-5 mt-3 offset-md-1 offset-1">
+                <label class="textFormularioVoluntario">Dirección <span class="asterisco">*</span></label><br>
+                <div class="input-group">
+                    <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
+                    <input class="lineahazteVoluntarioDirecion colorLineaCaja" type="text" name="direccionSocio" id="direccionSocio" placeholder="Dirección" required onclick="cambiarFondoDireccionSocio()" onblur="cambiarFondoDireccionesSocio(this)">
+                </div>
+            </div>
+
+            <div class="mt-md-4 circuloVisto">
+                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                <div class="input-group" id="visto15"></div>
+            </div>
+
+            <div class="col-md-3 offset-sm-1 offset-md-2">
+                <div class="row">
+                    <div class="alinearCajasDireccionSocio offset-1 offset-md-2 offset-sm-0 d-flex justify-content-md-between">
+
+                        <div class="col-md-2 mt-1 col-sm-12 mt-md-5 desplazarDerecha">
+                            <label class="textFormularioVoluntario">Nº<span class="asterisco">*</span></label><br>
+                            <input class="lineahazteVoluntarioDirec1" type="text" name="numeroSocio" id="numeroSocio" required onclick="cambiarFondoNumeroSocio()" onblur="cambiarFondoNumerosSocios(this)">
+                        </div>
+
+                        <div class="col-md-2 col-sm-12 mt-1 desplazarDerecha mt-md-5">
+                            <label class="textFormularioVoluntario">Portal</label><br>
+                            <input class="lineahazteVoluntarioDirec2" type="text" name="portalSocio" id="portalSocio" onclick="cambiarFondoPortalSocio()">
+                        </div>
+
+                        <div class="col-md-2 col-sm-12 mt-1 desplazarDerecha mt-md-5">
+                            <label class="textFormularioVoluntario">Piso</label><br>
+                            <input class="lineahazteVoluntarioDirec3" type="text" name="pisoSocio" id="pisoSocio" onclick="cambiarFondoPisoSocio()">
+                        </div>
+
+                        <div class="col-md-2 col-sm-12 mt-1 desplazarDerecha mt-md-5">
+                            <label class="textFormularioVoluntario">Letra</label><br>
+                            <input class="lineahazteVoluntarioDirec4" type="text" name="letraSocio" id="letraSocio" onclick="cambiarFondoLetraSocio()">
+                        </div>
+
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-md-4 circuloVisto1">
+                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                <div class="input-group" id="visto16"></div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="centrarDatosSocio">
+                <div class="col-md-3 col-12 mt-md-5 mt-3 offset-1 offset-md-1 mr-md-5">
+                    <label class="textFormularioVoluntario">Población<span class="asterisco">*</span></label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
+                        <input class="lineaPoblacionSocio fondocaja colorLineaCaja " type="text" name="poblacionSocio" id="poblacionSocio" placeholder="Población" required onclick="cambiarFondoPoblacionSocio()" onblur="cambiarFondoPoblacionsSocio(this)" >
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-12 mt-md-5 mt-5 offset-1 offset-md-1">
+                    <label class="textFormularioVoluntario">Código Postal <span class="asterisco">*</span></label><br>
+                    <div class="input-group ">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
+                        <input class="lineahazteSocioCP fondocaja colorLineaCaja" type="text" name="CPSocio" id="CPSocio" placeholder="C.P" required onclick="cambiarFondoCPSocio()" onblur="cambiarFondoCPsSocio(this)">
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-12 mt-md-5 mt-5 offset-1 mt-4 offset-md-1">
+                    <label class="textFormularioVoluntario">Provincia <span class="asterisco">*</span></label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
+                        <input class="lineahazteSocioProv fondocaja colorLineaCaja" type="text" name="provinciaSocio" id="provinciaSocio" placeholder="Provincia" required onclick="cambiarFondoProvinciaSocio()" onblur="cambiarFondoProvinciasSocio(this)">
+                    </div>
+                </div>
+            </div>
+
+                <div class="mt-md-5">
+                    <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                    <div class="input-group circuloVisto2" id="visto17"></div>
+                </div>
+        </div>
+
+        <hr class="lineaH mt-5">
+
+        <div class="row">
+            <div class="centrarDatosSocio">
+                <div class="col-md-3 col-12 mt-md-5 mt-4 offset-md-1 offset-1 mr-md-5">
+                    <label class="textFormularioVoluntario">Mail<span class="asterisco">*</span></label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input class="mailSocio fondocaja colorLineaCaja" type="text" name="correoSocio" id="correoSocio" placeholder="xxxxx@xxx.xxx" required onclick="cambiarFondoCorreoSocio()" onblur="cambiarFondoCorreosSocio(this)" >
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-12 mt-md-5 mt-4 offset-1 offset-md-1 mr-md-2">
+                    <label class="textFormularioVoluntario">Telefono 1 <span class="asterisco">*</span></label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input class="telf1Socio fondocaja colorLineaCaja" type="text" name="telefono1Socio" id="telefono1Socio" placeholder="Telefono 1" required onclick="cambiarFondoTelf1Socio()" onblur="cambiarFondoTelf1sSocio(this)">
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-12 mt-md-5 mt-4 offset-1 offset-md-1">
+                    <label class="textFormularioVoluntario">Telefono 2</label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input class="telf2Socio fondocaja colorLineaCaja" type="text" name="telefono2Socio" id="telefono2Socio" placeholder="Telefono 2" onclick="cambiarFondoTelf2Socio()" onblur="cambiarFondoTelf2sSocio(this)">
+                    </div>
+              </div>
+            </div>
+
+            <div class="mt-md-3">
+                <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                <div class="input-group circuloVisto2" id="visto18"></div>
+            </div>
+        </div>
+
+        <hr class="lineaH mt-md-5">
+
+        <div class="row">
+            <div class="centrarCajaPassword">
+                <div class="col-md-12">
+                    <div class="col-md-3 col-12 mt-md-3 mt-md-5 mt-4 offset-1 desplazarPassord1">
+                        <label class="textFormularioVoluntario">Contraseña <span class="asterisco">*</span></label><br>
+                        <div class="input-group">
+                            <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
+                            <input class="passwordSocio1 fondocaja colorLineaCaja" type="password" name="passwordSocio" id="passwordSocio" placeholder="Contraseña" required onclick="cambiarFondoCajaSocioPassword()" onblur="cambiarFondoCajaSociosPassword()">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-12 mt-md-5 mt-4 offset-md-3 offset-1 desplazarPassord2">
+                        <label class="textFormularioVoluntario">Introduce contaseña <span class="asterisco">*</span></label><br>
+                        <div class="input-group">
+                            <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
+                            <input class="passwordSocio2 fondocaja cajaApellidosSocio colorLineaCaja" type="password" name="password2Socio" id="password2Socio" placeholder="contraseña" required onclick="cambiarFondoCajaSocioPassword2()" onblur="cambiarFondoCajaSociosPassword2()">
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-1 mt-md-3">
+                        <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
+                        <div class="input-group" id="visto19"></div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p class="subtitle">Datos Personales</p>
-                </div>
-            </div>
-
-            <form action="ayudanos.php" method="post">
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-3 col-sm-6 mt-md-3 mt-sm-4 offset-md-1 offset-sm-1">
-                            <label class="textFormularioVoluntario">Nombre <span class="asterisco">*</span></label><br>
-                            <div class="input-group">
-                                <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
-                                <input class="lineahazteVoluntario fondocaja colorLineaCaja" type="text" name="usuarioSocio" id="usuarioSocio" placeholder="Nombre" required onclick="cambiarFondoCajaUsuarioSocio()" onblur="cambiarFondoUsuariosSocios(this)">
-                            </div>
-                        </div>
-
-                        <div class="col-md-1 col-sm-1 mt-md-3">
-                            <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
-                            <div class="input-group" id="visto11"></div>
-                        </div>
-
-                        <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
-
-                        <div class="col-md-4 col-sm-6 mt-md-3 mt-sm-4 offset-md-2 offset-sm-1">
-                            <label class="textFormularioVoluntario">Apellidos <span class="asterisco">*</span></label><br>
-                            <div class="input-group">
-                                <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
-                                <input class="fondocaja cajaApellidosSocio colorLineaCaja" type="text" name="apellidoSocio" id="apellidoSocio" placeholder="Apellido1 Apellido2" required onclick="cambiarFondoCajaApellidos()" onblur="cambiarFondoApellidosSocios(this)">
-                            </div>
-                        </div>
-
-                        <div class="col-md-1 col-sm-1 mt-md-3">
-                            <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
-                            <div class="input-group" id="visto12"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
-
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <div class="col-md-3 col-sm-6 mt-md-5 mt-sm-4 offset-md-1 offset-sm-1">
-                            <label class="textFormularioVoluntario">DNI <span class="asterisco">*</span></label><br>
-                            <div class="input-group">
-                                <span class="input-group-addon icono2"><i class="glyphicon glyphicon-list-alt"></i></span>
-                                <input class="lineahazteVoluntario fondocaja colorLineaCaja" type="text" name="dniSocio" id="dniSocio" placeholder="00000000-X" required onclick="cambiarFondoDNISocio()" onblur="cambiarFondoDNIsSocio(this)">
-                            </div>
-                        </div>
-                        <div class="col-md-1 col-sm-1 mt-md-5">
-                            <label class="textFormularioVoluntario">&nbsp<span class="asterisco"></span></label><br>
-                            <div class="input-group" id="visto13"></div>
-                        </div>
-
-                        <div class="w-100 d-none d-sm-block d-md-none mb-sm-2"></div>
-
-                        <div class="col-md-4 mt-md-5 mt-sm-4 offset-md-2 offset-sm-1">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label class="textFormularioVoluntario">Fecha nacimiento <span class="asterisco">*</span></label><br>
-                                    <div class="input-group">
-                                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-calendar"></i></span>
-                                        <select class="lineahazteVoluntarioFecha lineaDiaSocio colorLineaCaja" name="diaFecha" id="diaFecha" required onblur="cambiarFondoDiaSocio(this)">
-                                            <option value="">Día</option>
-                                            <?php
-                                            for($i=1;$i<=31;$i++):
-                                                ?> <option value="<?php echo $i ?> "> <?php echo $i ?> </option>
-                                            <?php
-                                            endfor;
-                                            ?>
-                                        </select>
-
-                                        <select class="lineahazteVoluntarioFechaMes lineaMesSocio colorLineaCaja" name="mesFecha" id="mesFecha" required onblur="cambiarFondoMesSocio(this)">
-                                            <option value="">Mes</option>
-                                            <option value="Enero">Enero</option>
-                                            <option value="Febrero">Febrero</option>
-                                            <option value="Marzo">Marzo</option>
-                                            <option value="Abril">Abril</option>
-                                            <option value="Mayo">Mayo</option>
-                                            <option value="Junio">Junio</option>
-                                            <option value="Julio">Julio</option>
-                                            <option value="Agosto">Agosto</option>
-                                            <option value="Septiembre">Septiembre</option>
-                                            <option value="Octubre">Octubre</option>
-                                            <option value="Noviembre">Noviembre</option>
-                                            <option value="Diciembre">Diciembre</option>
-                                        </select>
-
-                                        <select class="lineahazteVoluntarioFecha lineaDiaSocio colorLineaCaja" name="anyoFecha" id="anyoFecha" required onblur="cambiarFondoAnyoSocio(this)">
-                                            <option value="">Año</option>
-                                            <?php
-
-                                            $anyoActual=date("Y",time());
-                                            $anyoMin=$anyoActual-18;
-
-                                            for($j=$anyoMin;$j>=diaAnyo;$j--):
-
-                                                ?> <option value="<?php echo $j ?> "> <?php echo $j ?> </option>
-                                            <?php
-                                            endfor;
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-1 col-sm-1 mt-md-5">
-                            <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
-                            <div class="input-group" id="visto14"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="lineaH mt-md-5">
+        <hr class="lineaH mt-md-5">
 
 
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-4 mt-md-4 offset-md-1 offset-sm-1">
-                            <label class="textFormularioVoluntario">Dirección <span class="asterisco">*</span></label><br>
-                            <div class="input-group">
-                                <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
-                                <input class="lineahazteVoluntarioDirecion colorLineaCaja" type="text" name="direccionSocio" id="direccionSocio" placeholder="Dirección" required onclick="cambiarFondoDireccionSocio()" onblur="cambiarFondoDireccionesSocio(this)">
-                            </div>
-                        </div>
-                        <div class="col-md-1 col-sm-1 mt-md-4">
-                            <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
-                            <div class="input-group" id="visto15"></div>
-                        </div>
-
-                        <div class="col-md-4 offset-md-1 offset-sm-1">
-                            <div class="row">
-                                <div class="col-md-2 col-sm-12 mt-sm-4 mr-md-5 mt-md-4">
-                                    <label class="textFormularioVoluntario">Nº<span class="asterisco">*</span></label><br>
-                                    <input class="linea lineahazteVoluntarioDirec1 colorLineaCaja" type="text" name="numeroSocio" id="numeroSocio" required onclick="cambiarFondoNumeroSocio()" onblur="cambiarFondoNumerosSocios(this)">
-                                </div>
-                                <div class="col-md-2 col-sm-12 mt-sm-5 mr-md-5 mt-md-4 mt-5">
-                                    <label class="textFormularioVoluntario">Portal</label><br>
-                                    <input class="linea lineahazteVoluntarioDirec2 colorLineaCaja" type="text" name="portalSocio" id="portalSocio" onclick="cambiarFondoPortalSocio()">
-                                </div>
-                                <div class="col-md-2 col-sm-12 mt-sm-5 mr-md-5 mt-md-4 mt-5">
-                                    <label class="textFormularioVoluntario">Piso</label><br>
-                                    <input class="linea lineahazteVoluntarioDirec3 colorLineaCaja" type="text" name="pisoSocio" id="pisoSocio" onclick="cambiarFondoPisoSocio()">
-                                </div>
-                                <div class="col-md-2 col-sm-12 mt-sm-5 mr-md-5 mt-md-4 mt-5">
-                                    <label class="textFormularioVoluntario">Letra</label><br>
-                                    <input class="linea lineahazteVoluntarioDirec4 colorLineaCaja" type="text" name="letraSocio" id="letraSocio" onclick="cambiarFondoLetraSocio()">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-1 col-sm-1 mt-md-4">
-                            <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
-                            <div class="input-group" id="visto16"></div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row justify-content-md-center">
-                    <div class="col-md-12">
-
-                        <div class="col-md-3 mt-md-5 mt-sm-3 offset-md-1 offset-sm-1">
-                            <label class="textFormularioVoluntario">Población<span class="asterisco">*</span></label><br>
-                            <div class="input-group">
-                                <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
-                                <input class="lineahazteVoluntario  lineahazteVoluntarioPoblacion fondocaja colorLineaCaja" type="text" name="poblacionSocio" id="poblacionSocio" placeholder="Población" required onclick="cambiarFondoPoblacionSocio()" onblur="cambiarFondoPoblacionsSocio(this)" >
-                            </div>
-                        </div>
-
-                        <div class="col-md-1 col-sm-1 mt-md-5">
-                            <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
-                            <div class="input-group" id="visto17"></div>
-                        </div>
-
-                        <div class="col-md-2 mt-md-5 offset-sm-1 ml-md-1">
-                            <label class="textFormularioVoluntario">Código Postal <span class="asterisco">*</span></label><br>
-                            <div class="input-group ">
-                                <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
-                                <input class="lineahazteVoluntarioViviendaSocio lineahazteVoluntarioPoblacion fondocaja colorLineaCaja" type="text" name="CPSocio" id="CPSocio" placeholder="C.P" required onclick="cambiarFondoCPSocio()" onblur="cambiarFondoCPsSocio(this)">
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 mt-md-5 offset-sm-1 mt-sm-5 mt-5">
-                            <label class="textFormularioVoluntario">Provincia <span class="asterisco">*</span></label><br>
-                            <div class="input-group">
-                                <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
-                                <input class="lineahazteVoluntarioViviendaSocio lineahazteVoluntarioPoblacion fondocaja colorLineaCaja" type="text" name="provinciaSocio" id="provinciaSocio" placeholder="Provincia" required onclick="cambiarFondoProvinciaSocio()" onblur="cambiarFondoProvinciasSocio(this)">
-                            </div>
-                        </div>
-
-                        <div class="col-md-1 col-sm-1 mt-md-5 pl-md-3 bordeRojo">
-                            <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
-                            <div class="input-group" id="visto18"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="lineaH mt-md-5">
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-3 mt-md-4 mt-sm-3 offset-md-1 offset-sm-1">
-                            <label class="textFormularioVoluntario">Mail<span class="asterisco">*</span></label><br>
-                            <div class="input-group">
-                                <span class="input-group-addon icono2"><i class="glyphicon glyphicon-envelope"></i></span>
-                                <input class="lineahazteVoluntario lineahazteVoluntarioPoblacion fondocaja colorLineaCaja" type="text" name="correoSocio" id="correoSocio" placeholder="xxxxx@xxx.xxx" required onclick="cambiarFondoCorreoSocio()" onblur="cambiarFondoCorreosSocio(this)" >
-                            </div>
-                        </div>
-
-                        <div class="col-md-1 col-sm-1 mt-md-4">
-                            <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
-                            <div class="input-group" id="visto19"></div>
-                        </div>
-                        <div class="col-md-2 mt-md-4 offset-sm-1 ml-md-1">
-                            <label class="textFormularioVoluntario">Telefono 1 <span class="asterisco">*</span></label><br>
-                            <div class="input-group">
-                                <span class="input-group-addon icono2"><i class="glyphicon glyphicon-earphone"></i></span>
-                                <input class="lineahazteVoluntarioViviendaSocio lineahazteVoluntarioPoblacion fondocaja colorLineaCaja" type="text" name="telefono1Socio" id="telefono1Socio" placeholder="Telefono 1" required onclick="cambiarFondoTelf1Socio()" onblur="cambiarFondoTelf1sSocio(this)">
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 mt-md-4 offset-sm-1 mt-sm-5 mt-5">
-                            <label class="textFormularioVoluntario">Telefono 2</label><br>
-                            <div class="input-group">
-                                <span class="input-group-addon icono2"><i class="glyphicon glyphicon-earphone"></i></span>
-                                <input class="lineahazteVoluntarioViviendaSocio lineahazteVoluntarioPoblacion fondocaja colorLineaCaja" type="text" name="telefono2Socio" id="telefono2Socio" placeholder="Telefono 2" onclick="cambiarFondoTelf2Socio()" onblur="cambiarFondoTelf2sSocio(this)">
-                            </div>
-                        </div>
-
-                        <div class="col-md-1 col-sm-1 mt-md-3">
-                            <label class="textFormularioVoluntario">&nbsp;<span class="asterisco"></span></label><br>
-                            <div class="input-group" id="visto20"></div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <hr class="lineaH mt-md-5">
-
-                <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 col-12 d-flex justify-content-center">
                         <p class="subtitle">Cantidad a aportar</p>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-2 offset-md-1 mt-md-4">
-                            <label><input type="radio" class="circulo" name="cantidad" id="cantidad" value=""><b>   5€</b></label>
-                        </div>
-                        <div class="col-md-2 mt-md-4">
-                           <label><input type="radio" class="circulo" name="cantidad" id="cantidad" value="1"><b>   10€</b></label>
-                        </div>
-                        <div class="col-md-1 mt-md-4">
-                            <label><input type="radio" class="circulo" name="cantidad" id="cantidad" value=""><b>   15€</b></label>
-                        </div>
-                        <div class="col-md-2 mt-md-4 ml-md-4 ml-md-5">
-                            <label class="textFormularioVoluntario">otras cantidades</label>
+                    <div class="dineroAportar">
+                        <div class="enLinea offset-1">
+                            <div class="col-md-2 col-12 mt-4 offset-1">
+                                <label><input type="radio" class="circulo" name="cantidad" id="cantidad" value=""><b>   5€</b></label>
+                            </div>
+                            <div class="col-md-2 mt-4 col-12 offset-1">
+                               <label><input type="radio" class="circulo" name="cantidad" id="cantidad" value="1"><b>   10€</b></label>
+                            </div>
+                            <div class="col-md-2 mt-4 col-12 offset-1">
+                                <label><input type="radio" class="circulo" name="cantidad" id="cantidad" value=""><b>   15€</b></label>
+                            </div>
                         </div>
 
-                        <div class="col-md-3 mt-md-4 offset-sm-1">
+                        <div class="col-md-5 col-12 mt-4 enlineaCajaAportar offset-1">
+                            <div>
+                                <label class="textFormularioVoluntario">otras cantidades</label>
+                            </div>
                             <div class="input-group">
                                 <span class="input-group-addon icono2"><i class="glyphicon glyphicon-usd"></i></span>
-                                <input class="lineaAportarSocio lineahazteVoluntarioPoblacion colorLineaCaja circulo" type="text" name="cantidad" id="cantidad" placeholder="Otras cantidades" onclick="cambiarFondoCantidadesSocio()" onblur="cambiarFondoCantidadessSocio(this)">                      </div>
+                                <input class="lineaAportarSocio lineahazteVoluntarioPoblacion colorLineaCaja circulo" type="text" name="cantidad" id="cantidad" placeholder="Otras cantidades" onclick="cambiarFondoCantidadesSocio()" onblur="cambiarFondoCantidadessSocio(this)">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -439,53 +468,55 @@ $stmt->execute([":usuarioSocio"=>$nom ,":apellidoSocio"=>$apellidos ,":dniSocio"
                 <hr class="lineaH mt-md-5">
 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-12 d-flex justify-content-center">
                         <p class="subtitle">Cuenta Bancaria</p>
                     </div>
                 </div>
 
                 <div class="row">
-
-                    <div class="col-md-2 mt-md-4 mt-sm-4 offset-md-1 offset-sm-1 mt-4">
-                        <label class="textFormularioVoluntario col-sm-12">IBAN 3 dig</label>
-                        <div class="input-group">
-                            <span class="input-group-addon icono2"><i class="glyphicon glyphicon-credit-card"></i></span>
-                            <input class="lineaBancoSocioIcono colorLineaCaja lineahazteVoluntarioCuenta" type="text" name="ibaSocio" id="ibaSocio" placeholder="000" required onclick="cambiarFondoIBANSocio()" onblur="cambiarFondoIBANsSocio(this)">
+                    <div class="cajaCuentaBancaria">
+                        <div class="col-12 col-md-2 offset-md-1 offset-1 mt-4 ml-md-5">
+                            <label class="textFormularioVoluntario textoBanco">IBAN</label>
+                            <div class="input-group">
+                                <span class="input-group-addon icono2"><i class="glyphicon glyphicon-credit-card"></i></span>
+                                <input class="colorLineaCaja lineahazteSocioCuenta" type="text" name="ibaSocio" id="ibaSocio" placeholder="000" required onclick="cambiarFondoIBANSocio()" onblur="cambiarFondoIBANsSocio(this)">
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-2 mt-md-4 mt-sm-4 offset-sm-1 mt-4">
-                        <label class="textFormularioVoluntario col-sm-12">Banco 4 dig</label>
-                        <input class="lineaBancoSocio colorLineaCaja lineahazteVoluntarioCuenta2" type="text" name="bancoSocio" id="bancoSocio" placeholder="0000" required onclick="cambiarFondoBancoSocio()" onblur="cambiarFondoBancosSocio(this)">
-                    </div>
+                        <div class="col-12 col-md-2 mt-4 ml-md-5 offset-1">
+                            <label class="textFormularioVoluntario textoBanco">Banco 4 dig</label>
+                            <input class="colorLineaCaja lineahazteSocioCuenta2" type="text" name="bancoSocio" id="bancoSocio" placeholder="0000" required onclick="cambiarFondoBancoSocio()" onblur="cambiarFondoBancosSocio(this)">
+                        </div>
 
-                    <div class="col-md-2 mt-md-4 mt-sm-4 offset-sm-1 mt-4">
-                        <label class="textFormularioVoluntario col-sm-12">Oficina 4 dig</label>
-                        <input class="lineaBancoSocio colorLineaCaja lineahazteVoluntarioCuenta2" type="text" name="oficinaSocio" id="oficinaSocio" placeholder="0000" required onclick="cambiarFondoOficinaSocio()" onblur="cambiarFondoOficinasSocio(this)">
-                    </div>
+                        <div class="col-12 col-md-2 mt-4 ml-md-5 offset-1">
+                            <label class="textFormularioVoluntario textoBanco">Oficina 4 dig</label>
+                            <input class="colorLineaCaja lineahazteSocioCuenta2" type="text" name="oficinaSocio" id="oficinaSocio" placeholder="0000" required onclick="cambiarFondoOficinaSocio()" onblur="cambiarFondoOficinasSocio(this)">
+                        </div>
 
-                    <div class="col-md-2 mt-md-4 mt-sm-4 offset-sm-1 mt-4">
-                        <label class="textFormularioVoluntario text-sm-left col-sm-12">DC 2 dig</label>
-                        <input class="lineaBancoSocio colorLineaCaja lineahazteVoluntarioCuenta2" type="text" name="oficinaSocio" id="oficinaSocio" placeholder="00" required onclick="cambiarFondoOficinaSocio()" onblur="cambiarFondoOficinasSocio(this)">
-                    </div>
+                        <div class="col-12 col-md-2 mt-4 ml-md-5 offset-1">
+                            <label class="textFormularioVoluntario text-sm-left  textoBanco">DC 2dig</label>
+                            <input class="colorLineaCaja lineahazteSocioCuenta" type="text" name="oficinaSocio" id="oficinaSocio" placeholder="00" required onclick="cambiarFondoOficinaSocio()" onblur="cambiarFondoOficinasSocio(this)">
+                        </div>
 
-                    <div class="col-md-2 mt-md-4 mt-sm-4 offset-sm-1 mt-4">
-                        <label class="textFormularioVoluntario col-sm-12">Cuenta 10 dig</label>
-                        <input class="lineaBancoSocioCuenta colorLineaCaja lineahazteVoluntarioCuenta2" type="text" name="cuentaSocio" id="cuentaSocio" placeholder="0000000000" required onclick="cambiarFondocuentaSocio()" onblur="cambiarFondocuentasSocio(this)">
+                        <div class="col-12 col-md-2 mt-4 ml-md-5 offset-1">
+                            <label class="textFormularioVoluntario textoBanco">Cuenta 10 dig</label>
+                            <input class="colorLineaCaja lineahazteSocioCuenta2" type="text" name="cuentaSocio" id="cuentaSocio" placeholder="0000000000" required onclick="cambiarFondocuentaSocio()" onblur="cambiarFondocuentasSocio(this)">
+                        </div>
+                        <div class="col-md-2"></div>
                     </div>
                 </div>
 
                 <div class="container">
-                    <div class="row justify-content-md-center">
+                    <div class="row justify-content-md-center offset-1">
                         <div class="mt-md-5 mb-md-5 mt-sm-5 mb-sm-5 mt-5 mb-5">
                             <button class="btn btn-primary boton1"  type="submit" role="button" id="button1">Enviar</button>
                         </div>
                     </div>
                 </div>
 
+
             </form>
         </div>
-
 
 
 
