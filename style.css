@@ -63,6 +63,44 @@ h1
     text-decoration: none;
 }
 
+.accesoVoluntarios
+{
+    background-color: #1CA421;
+}
+.textoAcceso
+{
+    color: white;
+    font-family: 'Bree Serif', serif;
+    font-size: 130%;
+    /* margin: 1% 0%;*/
+}
+.textoAcceso:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.menuPrincipal {
+    background-color: #1CA421;
+}
+
+.texto {
+    padding: 1% 13%;
+    color: white;
+    font-family: 'Bree Serif', serif;
+    font-size: 100%;
+}
+
+.boton {
+    background-color: #1CA421;
+    border-color: #1CA421;
+}
+
+.boton1 {
+    background-color: #1CA421;
+    border-color: #1CA421;
+}
+
+
 
 /*  ---------------------Pagina principal -------------------------------------------*/
 
@@ -205,12 +243,6 @@ h1
 
 }
 
-.alinearDiaMesAnyo  /* caja de dia mes y año*/
-{
-    display: inline-flex;
-    width: 300px;
-}
-
 .lineahazteVoluntarioFechaMes
 {
     border: 1px solid #1CA421;
@@ -236,19 +268,14 @@ h1
     border-radius:5%;
 }
 
-.lineaPoblacionSocio { padding: 3% 20%;}
+/*.lineaPoblacionSocio { padding: 3% 20%;}
 
 .lineahazteSocioCP { padding: 3% 5%;}
 
-.lineahazteSocioProv { padding: 3% 10%;}
+.lineahazteSocioProv { padding: 3% 10%;}*/
 
 
-.passwordSocio2
-{
-    border: 1px solid #1CA421;
-    border-radius:5%;
-    padding: 2.5% 25%;
-}
+
 
 
 @media (max-width: 576px)
@@ -258,58 +285,62 @@ h1
     .alinearDiaMesAnyo  /* caja de dia mes y año*/
     {
         display: inline-flex;
-        width: 10px;
+        width: 250px;
     }
 
-    .lineahazteVoluntarioFechaMes { padding: 1% 0%;}
+    .lineahazteVoluntarioFechaMes { padding: 2% 0%;}
 
-    .lineahazteVoluntarioFecha { padding: 1% 0%;}
+    .lineahazteVoluntarioFecha { padding: 2% 0%;}
 
-    .lineahazteVoluntarioDirecion { padding: 0.5% 7%; }
+    .lineahazteVoluntarioDirecion { padding: 0.2% 8%;}
 
     .alinearCajasDireccionSocio
     {
         display: inline-flex;
-        width: 40px;
     }
 
-    .desplazarDerecha { margin-left: 2px; }
+    .desplazarDerecha { margin-left: 0px; }
 
     .lineahazteVoluntarioDirec1, .lineahazteVoluntarioDirec2, .lineahazteVoluntarioDirec3, .lineahazteVoluntarioDirec4 { padding: 0.15% 50%; }
 
-    .lineaPoblacionSocio { padding: 1% 11%;}
+    .lineaPoblacionSocio { padding: 2.5% 25%;}
 
     .poblacionSocio{margin-right: 3%;}
 
-    .lineahazteSocioCP { padding: 1% 11%;}
+    .lineahazteSocioCP { padding: 2.5% 25%;}
 
-    .lineahazteSocioProv { padding: 1% 11%;}
+    .lineahazteSocioProv { padding: 2.5% 25%;}
 
-    .mailSocio{padding: 1% 11%;}
+    .mailSocio{padding: 2.5% 25%;}
 
-    .telf1Socio{padding: 1% 11%;}
+    .telf1Socio{padding: 2.5% 25%;}
 
-    .telf2Socio{padding: 1% 11%;}
+    .telf2Socio{padding: 2.5% 25%;}
 
-    .passwordSocio1{padding: 1% 11%;}
+    .passwordSocio1{padding: 2.5% 25%;}
 
-    .passwordSocio2{padding: 1% 11%;}
+    .passwordSocio2{padding: 2.5% 25%;}
 
-    .lineaAportarSocio { padding: 1% 4%;}
+    .desplazarPassord1{padding-left: 0px;}
+
+    .desplazarPassord2{padding-left: 0px;}
+
+    .lineaAportarSocio { padding: 2% 4%;}
 
     .enLinea
     {
         display: inline-flex;
-        width: 10%;
+        width: 20%;
     }
 
-    .lineahazteSocioCuenta{ padding: 1% 12%; }
+    .lineahazteSocioCuenta{ padding: 1.5% 12%; }
 
-    .lineahazteSocioCuenta2{padding: 1% 15%}
+    .lineahazteSocioCuenta2{padding: 1.5% 15%}
+
 }
 
 
-@media (max-width: 767px)
+@media (min-width: 577px)
 {
     .lineahazteVoluntario { padding: 1% 11%;}
 
@@ -318,7 +349,7 @@ h1
     .alinearDiaMesAnyo  /* caja de dia mes y año*/
     {
         display: inline-flex;
-        width: 300px;
+        width: 350px;
     }
 
     .lineahazteVoluntarioFechaMes { padding: 1% 0%;}
@@ -329,73 +360,83 @@ h1
 
     .desplazarDerecha { margin-left: 0px; }
 
+    .alinearCajasDireccionSocio {
+        display: inline-flex;
+        width: 82px;
+    }
+
     .lineahazteVoluntarioDirec1, .lineahazteVoluntarioDirec2, .lineahazteVoluntarioDirec3, .lineahazteVoluntarioDirec4 { padding: 0.15% 40%; }
 
-    .lineaPoblacionSocio { padding: 1% 11%;}
+    .lineaPoblacionSocio { padding: 3% 40%;}
 
     .poblacionSocio{margin-right: 3%;}
 
-    .lineahazteSocioCP { padding: 1% 11%;}
+    .lineahazteSocioCP { padding: 3% 40%;}
 
-    .lineahazteSocioProv { padding: 1% 11%;}
+    .lineahazteSocioProv { padding: 3% 40%;}
 
-    .mailSocio{padding: 1% 11%;}
+    .mailSocio{padding: 3% 40%;}
 
-    .telf1Socio{padding: 1% 11%;}
+    .telf1Socio{padding: 3% 40%;}
 
-    .telf2Socio{padding: 1% 11%;}
+    .telf2Socio{padding: 3% 40%;}
 
-    .passwordSocio1{padding: 1% 11%;}
+    .passwordSocio1{padding: 3% 40%;}
 
-    .passwordSocio2{padding: 1% 11%;}
+    .passwordSocio2{padding: 3% 40%;}
+
+    .desplazarPassord1 { margin-left: 8%;}
+
+    .desplazarPassord2 { margin-left: 8%;}
 
     .enLinea
     {
         display: inline-flex;
-        width: 10%;
+        width: 40%;
     }
 
-    .lineaAportarSocio { padding: 1% 4%;}
+    .lineaAportarSocio { padding: 2.5% 15%;}
 
-    .lineahazteSocioCuenta{ padding: 1% 12%; }
+    .lineahazteSocioCuenta{ padding: 2% 15%; }
 
-    .lineahazteSocioCuenta2{padding: 1% 15%}
+    .lineahazteSocioCuenta2{padding: 2% 15%}
+
+    .desplazarCuenta{padding-right: 5px;}
 }
 
+@media (min-width: 768px)
+{
+    .lineahazteVoluntario { padding: 2% 22%;}
 
-@media (min-width: 768px) {
-    .centrarDatosSocio {
-        width: 80%;
+    .lineahazteVoluntarioApellidos{padding: 2% 22%;}
+
+    .alinearDiaMesAnyo  /* caja de dia mes y año*/
+    {
+        display: inline-flex;
+        width: 250px;
     }
 
-    .lineaPoblacionSocio {
-        padding: 3% 30%;
-    }
+    .lineahazteVoluntarioDirecion{padding: 2% 22%;}
 
-    .lineahazteSocioProv {
-        padding: 3% 26%;
-    }
 
-    .lineahazteSocioCP {
-        padding: 3% 20%;
-    }
+    .centrarDatosSocio {width: 80%;}
+
+    .lineaPoblacionSocio {padding: 3% 30%;}
+
+    .lineahazteSocioProv {padding: 3% 26%;}
+
+    .lineahazteSocioCP {padding: 3% 20%;}
 
     .alinearCajasDireccionSocio {
         display: inline-flex;
-        width: 40px;
+        width: 35px;
     }
 
-    .textoBanco {
-        font-size: 90%;
-    }
+    .textoBanco {font-size: 90%;}
 
-    .lineaDiaSocio {
-        padding: 2% 2%;
-    }
+    .lineaDiaSocio {padding: 2% 2%;}
 
-    .lineaMesSocio {
-        padding: 2% 5%;
-    }
+    .lineaMesSocio {padding: 2% 5%;}
 
     .lineahazteVoluntarioDirec1, .lineahazteVoluntarioDirec2, .lineahazteVoluntarioDirec3, .lineahazteVoluntarioDirec4 {
         border: 1px solid #1CA421;
@@ -404,56 +445,37 @@ h1
         height: 60%;
     }
 
-    .desplazarDerecha {
-        margin-left: 50px;
-    }
+    .desplazarDerecha { margin-left: 50px;}
 
-    .mailSocio {
-        padding: 3% 30%;
-    }
+    .mailSocio { padding: 3% 30%;}
 
-    .telf1Socio {
-        padding: 3% 20%;
-    }
+    .telf1Socio { padding: 3% 20%;}
 
-    .telf2Socio {
-        padding: 3% 26%;
-    }
+    .telf2Socio { padding: 3% 26%;}
 
-    .centrarDatosSocio {
+    .centrarDatosSocio
+    {
         display: inline-flex;
         width: 900px;
         margin-left: 1%;
     }
 
-    .passwordSocio1 {
-        padding: 2% 22%;
-    }
+    .passwordSocio1{ padding: 2% 22%;}
 
-    .passwordSocio2 {
-        padding: 2% 22%;
-    }
+    .passwordSocio2{ padding: 2% 22%;}
 
-    .desplazarPassord1 {
-        margin-left: 6%;
-    }
+    .desplazarPassord1{ margin-left: 6%;}
 
-    .desplazarPassord2 {
-        margin-left: 30%;
-    }
+    .desplazarPassord2{ margin-left: 30%;}
 
-    .centrarCajaPassword {
-        width: 2000px;
-    }
+    .centrarCajaPassword{ width: 2000px;}
 
     .dineroAportar {
         width: 1500px;
         display: inline-flex;
     }
 
-    .lineaAportarSocio {
-        padding: 1% 4%;
-    }
+    .lineaAportarSocio {padding: 1% 4%;}
 
     .enLinea {
         display: inline-flex;
@@ -465,21 +487,251 @@ h1
         margin-right: 1%;
     }
 
-    .cajaCuentaBancaria
-    {
-        width: 1000px;
-    }
+    .cajaCuentaBancaria{ width: 1000px;}
 
     .lineahazteSocioCuenta{ padding: 3% 5%; }
 
     .lineahazteSocioCuenta2{padding: 3% 10%;}
 
-
+    .passwordSocio2
+    {
+        border: 1px solid #1CA421;
+        border-radius:5%;
+        padding: 2.5% 25%;
+    }
 
 
 }
 
+
 /*---------------------------- ACABA SOCIO  ------------------------------------------------------------------------*/
+
+
+/*---------------------------- EMPIEZA VOLUNTARIO  ------------------------------------------------------------------------*/
+
+.lineahazteVoluntarioZona
+{
+   border: 1px solid #1CA421;
+   border-radius: 5%;
+   padding: 2.2% 8%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------- EMPIEZA HOJASOCIO  ------------------------------------------------------------------------*/
+
+.navbar{padding-bottom: 0px;}
+
+.etiquetas   /*label*/
+{
+    font-size: 18px;
+}
+
+.cajaResultadoSocio
+{
+    width: 180px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.centrarTextoCajas
+{
+    display: inline;
+    text-align: center;
+}
+
+.sinBorde { border: 0;}
+
+.sinMargenes{margin-left: 0px; margin-right: 0px;}
+
+.navbar{margin-bottom: 0px;}
+
+.cajaFechaSocio
+{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.textoFecha {font-size: 16px;}
+
+.cajaNombreCalleSocio
+{
+    width: 300px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cajaNumeroSocio, .cajaPortalSocio, .cajaPisoSocio, .cajaLetraSocio
+{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cajaDatoIbanSocio
+{
+    width: 90px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.cajaDatoBancoSocio, .cajaDatoOficinaSocio
+{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cajaDatoDCSocio
+{
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cajaDatoCuentaSocio
+{
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.fondoGatoSocio
+{
+    height: 100%;
+    display: block;
+    position: relative;
+}
+
+.sinMargin { margin-bottom: 0px;}
+
+.fondoGatoSocio::after
+{
+    content: "";
+    background: url(gatosAdopcion/03.jpg);
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: #dc3545;
+}
+
+.botonSocEdit, .botonSocElim { background-color: #1CA421; border: 1px solid #1CA421;}
+
+
+
+@media (max-width: 576px)
+{
+    .centrarTexto  /*COMPROBAR QUE VAYA AQUI*/
+    {
+        text-align: center;
+        display: contents;
+    }
+
+    .centrarTextoDireccion
+    {
+        text-align: center;
+        display: contents;
+    }
+
+    .centrarTextoBanco
+    {
+        text-align: center;
+        display: contents;
+    }
+}
+
+@media (min-width: 576px)
+{
+    .centrarTexto  /*COMPROBAR QUE VAYA AQUI*/
+    {
+        display: contents;
+        text-align: center;
+    }
+
+    .centrarTextoDireccion
+    {
+        text-align: center;
+        display: contents;
+    }
+
+    .centrarTextoBanco
+    {
+        text-align: center;
+        display: contents;
+    }
+}
+
+
+@media (min-width: 768px)
+{
+    .alinearFecha {display: inline-flex;}
+
+    .alinearDireccion{display: inline-flex;}
+
+    .etiquetas   /*label*/
+    {
+        font-size: 18px;
+        margin-right: 5px;
+    }
+
+    .centrarVivienda { display: inline-flex;}
+
+    .centrarTextoBanco
+    {
+        text-align: center;
+        display: flex;
+    }
+
+}
+
+
     /*.lineaDiaSocio
     {
         padding: 2% 2%;
@@ -496,23 +748,6 @@ h1
         border-radius: 5%;
     }
 
-    .circuloVisto
-    {
-        margin-left: 4%;
-    }
-
-    .circuloVisto1
-    {
-        margin-left: 7%;
-    }
-
-    .circuloVisto2
-    {
-        margin-left:60%;
-    }
-
-
-
 
 
 
@@ -522,51 +757,16 @@ h1
     .lineahazteSocioTelf
     {
         padding: 3% 15%;
-    }
+    }*/
 
 
-    .accesoVoluntarios
-    {
-        background-color: #1CA421;
-    }
-    .textoAcceso
-    {
-        color: white;
-        font-family: 'Bree Serif', serif;
-        font-size: 130%;
-        /* margin: 1% 0%;*/
-    /*}*/
-    .textoAcceso:hover {
-        color: black;
-        text-decoration: none;
-    }
-
-    .menuPrincipal {
-        background-color: #1CA421;
-    }
-
-    .texto {
-        padding: 1% 13%;
-        color: white;
-        font-family: 'Bree Serif', serif;
-        font-size: 100%;
-    }
-
-    .boton {
-        background-color: #1CA421;
-        border-color: #1CA421;
-    }
-
-    .boton1 {
-        background-color: #1CA421;
-        border-color: #1CA421;
-    }
 
     .icon {
         display: inline-block;
     }
 
-    @media (max-width: 991px)  /*md*/ {
+    /*@media (max-width: 991px)  /*md*/
+    /*{
         .posLogo2 {
             order: 2;
         }
@@ -615,35 +815,7 @@ h1
     }
 
     /*  --------------------- accesoVoluntario -------------------------------------------*/
-    .acceso {
-        color: #1CA421;
-        font-family: 'Bree Serif', serif;
-    }
 
-    .lineaVoluntario {
-        padding: 2.5% 2%;
-        border-radius: 3px;
-    }
-
-    .icono {
-        margin-left: 10%;
-    }
-
-    .botonGrande {
-        background-color: #1CA421;
-        border-color: #1CA421;
-        color: white;
-        padding: 2px 8px;
-    }
-
-    /*.glyphicon-user:before{content:"\e008"}*/
-    .color {
-        background-color: #b5e8bf;
-    }
-
-    .cajaReside {
-        padding: 3px 0px;
-    }
 
     /*  --------------------- index -------------------------------------------*/
     .fotoGato {
@@ -672,7 +844,7 @@ h1
     }
 
     /*  --------------------- hazte Voluntario -------------------------------------------*/
-    .asterisco {
+    /*.asterisco {
         color: #dc3545;
     }
 
@@ -696,16 +868,16 @@ h1
         border-radius: 5%;
     }
 
-    @media (max-width: 828px)   /* xs plan esterilizacion felina*/ {
-        .textoTitle {
+    @media (max-width: 828px)   /* xs plan esterilizacion felina*/ /*{
+      /*  .textoTitle {
             font-size: 280%;
         }
     }
 
 
 
-    @media (max-width: 543px)   /* xs nombre, apellidos, dni*/ {
-        .lineahazteVoluntario {
+    @media (max-width: 543px)   /* xs nombre, apellidos, dni*/ /*{
+       /* .lineahazteVoluntario {
             padding: 1% 14%;
             border: 1px solid #1CA421;
             border-radius: 5%;
@@ -713,37 +885,11 @@ h1
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @media (max-width: 543px)   /* sm */ {
-        .lineahazteVoluntarioDirecion {
+    @media (max-width: 543px)   /* sm *//* {
+        /*.lineahazteVoluntarioDirecion {
             padding: 1% 14%;
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     .lineahazteVoluntarioDirec1 {
@@ -766,8 +912,8 @@ h1
         border-radius: 5%;
     }
 
-    @media (max-width: 767px)   /* sm  parte 2*/ {
-        .lineahazteVoluntarioDirec1 {
+    @media (max-width: 767px)   /* sm  parte 2*/ /*{
+/*        .lineahazteVoluntarioDirec1 {
             width: 43%;
             height: 64%;
         }
@@ -788,8 +934,8 @@ h1
         }
     }
 
-    @media (max-width: 543px)   /* sm    parte 3*/ {
-        .lineahazteVoluntarioDirec1 {
+    @media (max-width: 543px)   /* sm    parte 3*/ /*{
+  /*      .lineahazteVoluntarioDirec1 {
             width: 42%;
             height: 65%;
         }
@@ -814,8 +960,8 @@ h1
     }
 
 
-    @media (max-width: 544px)   /* col    parte 4*/ {
-        .lineahazteVoluntarioDirec1 {
+    @media (max-width: 544px)   /* col    parte 4*/ /*{
+    /*    .lineahazteVoluntarioDirec1 {
             width: 42px;
             height: 30px;
         }
@@ -850,33 +996,28 @@ h1
 
 
 
-    .lineahazteVoluntarioZona {
+   /* .lineahazteVoluntarioZona {
         border: 1px solid #1CA421;
         border-radius: 5%;
     }
 
-    @media (min-width: 768px)   /* md */ {
+    @media (min-width: 768px)   /* md */ /*{
         .lineahazteVoluntarioZona {
             padding: 2.2% 4%;
         }
     }
 
-    @media (max-width: 768px)   /* sm */ {
+    @media (max-width: 768px)   /* sm *//* {
         .lineahazteVoluntarioZona {
             padding: 1% 4%;
         }
-    }
+    }*/
 
 
 
 
 
-
-
-
-
-
-    .lineahazteVoluntarioCorreo {
+   /* .lineahazteVoluntarioCorreo {
         border: 1px solid #1CA421;
         border-radius: 5%;
     }
@@ -891,8 +1032,8 @@ h1
         border-radius: 5%;
     }
 
-    @media (min-width: 768px)   /* md */ {
-        .lineahazteVoluntarioCorreo {
+    @media (min-width: 768px)   /* md */ /*{
+     /*   .lineahazteVoluntarioCorreo {
             padding: 4% 16%;
         }
 
@@ -905,7 +1046,7 @@ h1
         }
     }
 
-    @media (max-width: 768px)   /* sm */ {
+    @media (max-width: 768px)   /* sm */ /*{
         .lineahazteVoluntarioCorreo {
             padding: 1% 8%;
         }
@@ -954,7 +1095,7 @@ h1
     }
 
     /*  --------------------- SOCIOS -------------------------------------------*/
-    @media (max-width: 575px)
+  /*  @media (max-width: 575px)
     {
         .lineahazteVoluntario { padding: 1% 10%;}
 
@@ -1110,4 +1251,58 @@ h1
 
 
 
+@media (max-width: 576px)   /* xs */
+{
+    .imagenlogoAyunt /*img ayuntamiento*/
+    {
+        width: 40%;
+    }
+
+    .imagenlogoCeu /*img CEU*/
+    {
+        width: 60%;
+    }
+
+    .textoPlan /*texto plan esterilizacion*/
+    {
+        font-size: 50%;
+    }
+
+    .texto
+    {
+        margin: 1px; /*texto menu*/
+        width: 100px;
+    }
+
+    .posLogo2 /*logo ceu*/
+    {
+        order: 3;
+    }
+
+    .textoPlan /*texto plan esterilizacion*/
+    {
+        order: 1;
+    }
+
+    .posLogo1 /*img ayuntamiento*/
+    {
+        order: 2;
+    }
+
+    .botonMenu
+    {
+        background-color: #1CA421;
+    }
+
+    .textMenuPrinci /*texto menu*/
+    {
+        font-size: 3px;
+    }
+
+    .accesoVoluntarios /*texto botón acceso usuarios*/
+    {
+        font-size: 10px;
+    }
+
+}
 

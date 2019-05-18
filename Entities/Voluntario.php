@@ -8,7 +8,7 @@
 
 class Voluntario
 {
-    private $nombre;
+    private $usuario;
     private $apellidos;
     private $dni;
     private $fechaNacimiento;
@@ -24,9 +24,9 @@ class Voluntario
     private $password1;
     private $password2;
 
-    public function __construct($nombre=" ",$apellidos=" ",$dni=" ",$fechaNacimiento=" ",$direccion=" ",$n=" ",$portal=" ",$piso=" ",$letra=" ",$zonaReside=" ", $correoElectronico=" ",$telef1=" ",$telef2=" ",$password1=" ",$password2=" ")
+    public function __construct($usuario=" ",$apellidos=" ",$dni=" ",$fechaNacimiento=" ",$direccion=" ",$n=" ",$portal=" ",$piso=" ",$letra=" ",$zonaReside=" ", $correoElectronico=" ",$telef1=" ",$telef2=" ",$password1=" ",$password2=" ")
     {
-        $this->nombre=$nombre;
+        $this->usuario=$usuario;
         $this->apellidos=$apellidos;
         $this->dni=$dni;
         $this->fechaNacimiento=$fechaNacimiento;
@@ -48,7 +48,7 @@ class Voluntario
      */
     public function getNombre()
     {
-        return $this->nombre;
+        return $this->usuario;
     }
 
     /**
@@ -56,7 +56,7 @@ class Voluntario
      */
     public function setNombre($nombre)
     {
-        $this->nombre = $nombre;
+        $this->usuario = $nombre;
     }
 
     /**

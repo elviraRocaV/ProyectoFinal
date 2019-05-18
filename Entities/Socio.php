@@ -25,6 +25,7 @@ class Socio
     private $telef2;
     private $password;
     private $aportacion;
+    private $cantidadSocio;
     private $iban;
     private $banco;
     private $oficina;
@@ -32,7 +33,7 @@ class Socio
     private $cuenta;
 
 
-    public function __construct($nombre=" ",$apellidos=" ",$dni=" ",$fechaNacimiento=" ",$direccion=" ",$n=" ",$portal=" ",$piso=" ",$letra=" ",$poblacion=" ", $codigoPostal=" ",$provincia=" ",$mail=" ",$telef1=" ",$telef2=" ",$password=" ", $aportacion=" ",$iban=" ", $banco=" ", $oficina=" ", $dc=" ", $cuenta=" ")
+    public function __construct($nombre=" ",$apellidos=" ",$dni=" ",$fechaNacimiento=" ",$direccion=" ",$n=" ",$portal=" ",$piso=" ",$letra=" ",$poblacion=" ", $codigoPostal=" ",$provincia=" ",$mail=" ",$telef1=" ",$telef2=" ",$password=" ", $aportacion=" ", $cantidadSocio=" ",$iban=" ", $banco=" ", $oficina=" ", $dc=" ", $cuenta=" ")
     {
         $this->nombre=$nombre;
         $this->apellidos=$apellidos;
@@ -55,6 +56,8 @@ class Socio
         $this->oficina=$oficina;
         $this->dc=$dc;
         $this->cuenta=$cuenta;
+        $this->cantidadSocio=$cantidadSocio;
+        $this->codigoPostal=$codigoPostal;
     }
 
     /**

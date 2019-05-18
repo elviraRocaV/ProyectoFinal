@@ -32,7 +32,7 @@
 
     <div class="row d-flex justify-content-md-end d-flex justify-content-sm-start">
         <div class="col-md-2 col-sm-4 col-4 mt-2 accesoVoluntarios sinMargin">
-            <a class="textoAcceso" href="accesoVoluntarios.html">Acceso voluntarios<span class="icon-enter"></span></a>
+            <a class="textoAcceso" href="accesoVoluntarios.php">Acceso voluntarios<span class="icon-enter"></span></a>
         </div>
     </div>
 </div>
