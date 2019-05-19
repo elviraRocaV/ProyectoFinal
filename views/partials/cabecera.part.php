@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker3.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kanit|Lobster" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -53,7 +54,7 @@
                 <li class="texto mt-md-3 mr-md-3">
                     <a class="textMenuPrinci" href="hazteVoluntario.php">Hazte Voluntario</a>
                 </li>
-                <li class="texto mt-md-3 mr-md-3">
+                <li id="menuSocio" class="texto mt-md-3 mr-md-3">
                     <a class="textMenuPrinci" href="ayudanos.php">Hazte Sócio</a>
                 </li>
                 <li class="texto mt-md-3 mr-md-3">
@@ -66,3 +67,5 @@
         </div>
     </nav>
 </div>
+
+<script src="js/jquery-3.3.1.min.js"></script>

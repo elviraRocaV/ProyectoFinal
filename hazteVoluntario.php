@@ -147,7 +147,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     <form action="hazteVoluntario.php" method="post">
 
         <div class="row">
-            <div class="col-md-3 mt-md-5 mt-4 offset-md-1 offset-1">
+            <div class="col-md-3 mt-md-5 mt-4 offset-1">
                 <label class="textFormularioVoluntario">Nombre <span class="asterisco">*</span></label><br>
                 <div class="input-group">
                     <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>

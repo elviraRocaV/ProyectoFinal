@@ -37,8 +37,9 @@
     </div>
 </div>
 
-<script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/moment-with-locales.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
 </body>
 </html>
