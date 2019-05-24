@@ -41,5 +41,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/moment-with-locales.js"></script>
 <script src="js/bootstrap-datepicker.js"></script>
+<script src="js/jquery.mask.js"</script>
+<script src="locales/bootstrap-datepicker.es.min.js"</script>
 </body>
 </html>

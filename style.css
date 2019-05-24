@@ -44,8 +44,6 @@ h1
     padding-right: 0px;
 }
 
-.iconoPuerta { padding-left: 14px; }
-
 .botonMenu   /* NO BORRAR VALE!!!!!!!  */
 {
     background-color: #1CA421;
@@ -109,6 +107,15 @@ h1
 {
     font-weight: bold;
     font-size: 150%;
+    font-family: 'Bree Serif', serif;
+    letter-spacing: 4px;
+    color: #1CA421;
+}
+
+.indexHazteVoluntario1
+{
+    font-weight: bold;
+    font-size: 200%;
     font-family: 'Bree Serif', serif;
     letter-spacing: 4px;
     color: #1CA421;
@@ -282,7 +289,9 @@ h1
 
     .lineahazteVoluntarioDNI{padding: 1% 11%;}
 
-  /*  .lineahazteVoluntarioFechaNa{padding: 1% 11%;}*/
+    .lineahazteVoluntarioFechaNa{padding: 2% 11%; height: 2%;}
+
+    .anchoFecha{width: 65%;}
 
     .lineahazteVoluntarioDirecion { padding: 1% 11%;}
 
@@ -302,7 +311,9 @@ h1
 
     .lineahazteSocioCP { padding: 1% 11%;}
 
-    .lineahazteSocioProv { padding: 1% 11%;}
+    .lineahazteVoluntarioProvincia{ padding: 1.5% 11%; }
+
+    .ancho{width: 260%;}
 
     .mailSocio{padding: 1% 11%;}
 
@@ -318,15 +329,11 @@ h1
 
     .desplazarPassord2{padding-left: 0px;}
 
+    .anchoCantidad{ width: 120px;}
+
     .lineaAportarSocio { padding: 2% 4%;}
 
-    .desplazarDcha { margin-right: 25%;}
-
     .lineahazteSocioCuenta{ padding: 1% 11%; }
-
-    .lineahazteSocioCuenta2{padding: 1% 11%}
-
-    .desplazarDcha{ margin-left: 6%;}
 
 }
 
@@ -339,7 +346,7 @@ h1
 
     .lineahazteVoluntarioDNI{padding: 1% 11%;}
 
-    .lineahazteVoluntarioFecha { padding: 1% 3%;}
+    .anchoFecha{width: 55%;}
 
     .lineahazteVoluntarioDirecion { padding: 1% 11%; }
 
@@ -354,6 +361,10 @@ h1
 
     .lineahazteSocioCP { padding: 1% 11%;}
 
+    .lineahazteVoluntarioProvincia{ padding: 1.3% 11%; }
+
+    .ancho{width: 220%;}
+
     .lineahazteSocioProv { padding: 1% 11%;}
 
     .mailSocio{padding: 1% 11%;}
@@ -366,21 +377,14 @@ h1
 
     .passwordSocio2{padding: 1% 11%;}
 
-  /*  .desplazarPassord1 { margin-left: 8%;}
-
-    .desplazarPassord2 { margin-left: 8%;}*/
-
-    .enLinea
+    .anchoCantidad
     {
         display: inline-flex;
-        width: 40%;
     }
 
     .lineaAportarSocio { padding: 1% 11%;}
 
     .lineahazteSocioCuenta{ padding: 1% 11%; }
-
-    .lineahazteSocioCuenta2{padding: 1% 11%}
 
 }
 
@@ -393,15 +397,21 @@ h1
 
     .lineahazteVoluntarioDNI {padding: 2% 15%;}
 
+    .lineahazteVoluntarioFechaNa{padding: 2% 5%; width: 10px;}
+
+    .anchoFecha{width: 90%;}
+
     .lineahazteVoluntarioDirecion {padding: 2% 15%;}
 
-    .anchoCajas {width: 800px;}
+    .anchoCajas {width: 700px;}
 
     .lineaPoblacionSocio {padding: 2% 15%;}
 
     .lineahazteSocioCP {padding: 2% 15%;}
 
-    .lineahazteSocioProv {padding: 2% 15%;}
+    .lineahazteVoluntarioProvincia{ padding: 2% 15%; height: 30px; }
+
+    .ancho{width: 270%;}
 
     .mailSocio {padding: 2% 15%;}
 
@@ -417,7 +427,7 @@ h1
     .lineahazteVoluntarioDirec1, .lineahazteVoluntarioDirec2, .lineahazteVoluntarioDirec3, .lineahazteVoluntarioDirec4 {
         border: 1px solid #1CA421;
         border-radius: 5%;
-        width: 65px;
+        width: 60px;
         height: 70%;
     }
 
@@ -425,7 +435,10 @@ h1
 
     .passwordSocio2 { padding: 2% 15%;}
 
-    .lineahazteSocioCuenta{ padding: 2% 15%; }
+    .lineahazteSocioCuenta{ padding: 3% 12%; }
+
+    .vistoPassword {margin-top: 6%;}
+
 
 }
 
@@ -679,7 +692,12 @@ h1
 
 
 
+/*--------------------------------  EMPIEZA COLONIASGATOS------------------------------------------*/
 
+.separacionHorizontal
+{
+    margin-top: 5%;
+}
 
 
 
@@ -1068,8 +1086,11 @@ h1
         }
     }
 
-    /*@media(min-width:768px)   /*md*/
-    /*{*/
+    @media(min-width:768px)   /*md*/
+    {
+
+    .iconoPuerta { padding-left: 10px; }
+
     .textoPlan {
         font-size: 90%; /*titulo plan esterilizacion felina*/
     }
@@ -1097,7 +1118,8 @@ h1
         margin: 2px 0px; /*texto menu*/
     }
 
-    /*}*/
+    }
+
     @media (max-width: 576px)   /* xs */
     {
         .imagenlogoAyunt /*img ayuntamiento*/

@@ -337,7 +337,7 @@ $resultados = $stmt->fetchAll(PDo::FETCH_OBJ);
 </div>
 
 <?php include("views/partials/footer.part.php"); ?>
-<script type="text/javascript" src="jsValidar/validarGatosAdopcion.js"></script>
+<script type="text/javascript" src="jsValidar/validarDatosSocioVoluntario.js"></script>
 <script type="text/javascript">
     setEditing(false)
 </script>

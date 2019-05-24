@@ -6,44 +6,54 @@ include("views/partials/cabecera.part.php");
 
 
 <?php
-
-$nomGato="";
-$descripGato="";
-$fotoGato="";
-
-if($_SERVER['REQUEST_METHOD']!=="GET") {
-    if (isset($_POST["nombreGato"])) {
-        $nomGato = $_POST["nombreGato"];
-    }
-
-    if (isset($_POST["descripcionGato"])) {
-        $descripGato = $_POST["descripcionGato"];
-    }
-
-    $fotoGato = $_FILES['fotoGato']["name"];  //name indica que estamos subiendo el archivo por su nombre
+if($_SERVER['REQUEST_METHOD']==="POST") {
+    $nombreGato="";
+    $descripcionGato="";
+    if (isset($_POST["nombreGato"]))        {$nombreGato = $_POST["nombreGato"];}
+    if (isset($_POST["descripcionGato"]))   {$descripGato = $_POST["descripcionGato"];}
+    $fotoGato = $_FILES['fotoGato']["name"];  //name es el nombre del archivo
 
     if ($fotoGato == false) {
         throw new UploadException("Error, este fichero no se ha subido");
     }
+    $destfile="";
+    $rutaFotos=".\\FotosGatosAdopcion\\";
+//    echo "RUTA: " . $rutaFotos . "<br>". print_r($_FILES['fotoGato']) - "<br> " . uniqid('',true);
+    if (is_file($_FILES['fotoGato']['tmp_name']) === true) {
+        $array=explode(".", basename($_FILES['fotoGato']['name']));
+        $extension=end($array);
+        $destfile=$rutaFotos . uniqid('', true) . "." . $extension;
+        move_uploaded_file($_FILES['fotoGato']['tmp_name'], $destfile );
+    }
 
-    $rutaFotos = "\\FotosGatosAdopcion\\" . $fotoGato;     //nombre de la carpeta del servidor
+    $rutaRelativa = ltrim(str_replace("\\","/", $destfile), ".");
+    $stmt = $dbh->prepare("insert into gatosadopcion(nombre, descripcion, ruta) values(:nombre, :descripcion, :ruta)");
+    $stmt->execute([":nombre" => $nombreGato, ":descripcion" => $descripcionGato, ":ruta" => $rutaRelativa]);
+
+    /*
+    $rutaFotos = "\\FotosGatosAdopcion\\".$fotoGato;     //nombre de la carpeta del servidor
 
     if (is_file($rutaFotos) === true) {
         $coletilla = time();
-        $photoGato = $coletilla . "_" . $fotoGato;
+        $fotoGato = $coletilla . "_" . $fotoGato;
         $rutaFotos = "\\FotosGatosAdopcion\\" . "_" . $fotoGato;
 
 
-        move_uploaded_file($_FILES['fotoGato']['name'], $rutaFotos);
+        move_uploaded_file($_FILES['fotoGato']['tmp_name'], $rutaFotos);
 
         $stmt = $dbh->prepare("insert into gatosadopcion(nombre, descripcion, ruta) values(:nombre, :descripcion, :ruta)");
         $stmt->execute([":nombre" => $rutaFotos, ":descripcion" => $descripGato, ":ruta" => $rutaFotos]);
     } else {
-        echo "existe";
+       if( move_uploaded_file($_FILES['fotoGato']['tmp_name'], $rutaFotos)){
+           echo "que pasa aquí";
+       }else {
+           echo $_FILES['fotoGato']['name'];
+           echo $rutaFotos;
+       }
     }
+    */
 }
-
-        ?>
+?>
 
         <div class="container-fluid">
             <div class="row">
@@ -94,7 +104,7 @@ if($_SERVER['REQUEST_METHOD']!=="GET") {
                         <button class="btn btn-primary boton1" type="submit" role="button" id="button1">Enviar</button>
                     </div>
                 </div>
-
+                <input type="hidden" name="MAX_FILE_SIZE" value="10000"
             </form>
 
             <?php
@@ -102,5 +112,5 @@ if($_SERVER['REQUEST_METHOD']!=="GET") {
             ?>
         </div>
 
-        <script type="text/javascript" src="jsValidar/validarGatosAdopcion.js"></script>
+        <script type="text/javascript" src="jsValidar/validarDatosSocioVoluntario.js"></script>
 

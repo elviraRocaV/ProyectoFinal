@@ -32,8 +32,9 @@
     </header>
 </div>
 
-<div class="container-fluid">
-    <div class="row justify-content-md-end justify-content-sm-start" >
+<div class="container-fluid sinPadding">
+    <div class="row justify-content-md-end justify-content-sm-start sinPadding">
+        <div class="col-md-10"></div>
         <div class="col-md-2 col-sm-4 col-6 mt-2 accesoVoluntarios">
             <a class="textoAcceso" href="accesoVoluntarios.html">Acceso voluntarios<span class="icon-enter iconoPuerta" href="accesoVoluntarios.html"></span></a>
         </div>

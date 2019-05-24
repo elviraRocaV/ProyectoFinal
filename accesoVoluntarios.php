@@ -16,6 +16,7 @@ $password=$POST["usuario"];
 
     if(password_verify($password, $pass))
     {
+        $_SESSION["dniVoluntario"]=$dniUsuario;
         header("Location: hojaVoluntario.php");
     }else
         {

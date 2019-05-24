@@ -79,4 +79,4 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
 <?php include("views/partials/footer.part.php");  ?>
 
-<script type="text/javascript" src="jsValidar/validarGatosAdopcion.js"></script>
+<script type="text/javascript" src="jsValidar/validarDatosSocioVoluntario.js"></script>

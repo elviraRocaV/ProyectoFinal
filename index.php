@@ -7,23 +7,27 @@ include("views/partials/cabecera.part.php");
 
         <div class="container sinPadding">
             <div class="row">
-                <div class="col-md-12 d-flex  d-flex justify-content-center titInicio">
+                <div class="col-md-12 mt-md-5 d-flex justify-content-center titInicio">
                     <p class="subtitulo">Inicio</p>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-12 indexHazteVoluntario mt-md-5 d-flex justify-content-center">
-                    <p>Hazte voluntario</p>
+                <div class="col-md-12 indexHazteVoluntario1 mt-md-5 d-flex justify-content-center">
+                    <p class="mr-md-5">¿Quieres colaborar con nosotros?</p>
                 </div>
+            </div>
 
+            <div class="row">
+                <div class="col-md-12 indexHazteVoluntario mt-md-5 d-flex justify-content-center">
+                    <p class="mr-md-5">Hazte voluntario</p>
+                </div>
             </div>
 
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-8 indexHazteVoluntarioParraf mt-md-1">
-                    <p>Si quieres colaborar con nosostros, puedes hacerte voluntario, lo único que tienes que hacer es rellenar
-                        el formulario y así formalizar la inscripción.</p>
+                    <p>Si ya eres responsable de una colonia felian o quieres hacerlo, lo único que debes hacer es registrarte y así nos ayudaras con el plan de esterilización felina</p>
                 </div>
                 <div class="col-md-2"></div>
             </div>

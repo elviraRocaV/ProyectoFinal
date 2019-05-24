@@ -12,124 +12,13 @@ function cambiarFondoDescripGato()
 }
 
 
-/*------------------------------  SOCIOS ----------------------------*/
+/*------------------------------  SOCIOS y VOLUNTARIOS ----------------------------*/
 
-/*--------   funcion onclick ----------------------*/
+/*--------   funcion onCliclk ----------------------*/
 
-function  cambiarFondoCajaUsuarioSocio()
+function  cambiarFondoSocio(usuarioVoluntario)
 {
-    document.getElementById("usuarioSocio").style.backgroundColor="#d1d1c6";
-}
-
-
-function  cambiarFondoCajaApellidos()
-{
-    document.getElementById("apellidoSocio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoDNISocio()
-{
-    document.getElementById("dniSocio").style.backgroundColor="#d1d1c6";
-}
-
-function cambiarFondoFechaSocio()
-{
-    document.getElementById("fechaSocio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoDireccionSocio()
-{
-    document.getElementById("direccionSocio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoNumeroSocio()
-{
-    document.getElementById("numeroSocio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoPortalSocio()
-{
-    document.getElementById("portalSocio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoPisoSocio()
-{
-    document.getElementById("pisoSocio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoLetraSocio()
-{
-    document.getElementById("letraSocio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoPoblacionSocio()
-{
-    document.getElementById("poblacionSocio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoCPSocio()
-{
-    document.getElementById("CPSocio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoProvinciaSocio()
-{
-    document.getElementById("provinciaSocio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoCorreoSocio()
-{
-    document.getElementById("correoSocio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoTelf1Socio()
-{
-    document.getElementById("telefono1Socio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoTelf2Socio()
-{
-    document.getElementById("telefono2Socio").style.backgroundColor="#d1d1c6";
-}
-
-function cambiarFondoCajaSocioPassword()
-{
-    document.getElementById("passwordSocio").style.backgroundColor="#d1d1c6";
-}
-
-function cambiarFondoCajaSocioPassword2()
-{
-    document.getElementById("password2Socio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoCantidadesSocio()
-{
-    document.getElementById("cantidadSocio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoIBANSocio()
-{
-    document.getElementById("ibaSocio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoBancoSocio()
-{
-    document.getElementById("bancoSocio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoOficinaSocio()
-{
-    document.getElementById("oficinaSocio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondoDCSocio()
-{
-    document.getElementById("DCSocio").style.backgroundColor="#d1d1c6";
-}
-
-function  cambiarFondocuentaSocio()
-{
-    document.getElementById("cuentaSocio").style.backgroundColor="#d1d1c6";
+    usuarioVoluntario.style.backgroundColor="#d1d1c6";
 }
 
 
@@ -159,14 +48,19 @@ function cambiarFondoApellidosSocios(apellidoSocio)
 
 function cambiarFondoDNIsSocio(dniSocio)
 {
-    console.log("kkkk" + dniSocio.value)
-    if(dniSocio.value.match(/^\d{8}[a-zA-Z]$/))
+    if(dniSocio.value=="")
     {
         dniSocio.style="border-color:#1CA421;"
     }else
-    {
-        dniSocio.style="border-color:red;"
-    }
+        {
+            if(dniSocio.value.match(/^\d{8}[a-zA-Z]$/))
+            {
+                dniSocio.style="border-color:#1CA421;"
+            }else
+            {
+                dniSocio.style="border-color:red;"
+            }
+        }
 }
 
 function cambiarFondoFechassSocio(direccionSocio)
@@ -179,28 +73,6 @@ function cambiarFondoFechassSocio(direccionSocio)
         direccionSocio.style="border-color:#1CA421";
     }
 }
-
-/*function cambiarFondoMesSocio(mesFecha)
-{
-    if(mesFecha.value=="")
-    {
-        mesFecha.style="border-color:red;"
-    }else
-    {
-        mesFecha.style="border-color:#1CA421";
-    }
-}
-
-function cambiarFondoAnyoSocio(anyoFecha)
-{
-    if(anyoFecha.value=="")
-    {
-        anyoFecha.style="border-color:red";
-    }else
-    {
-        anyoFecha.style="border-color:#1CA421";
-    }
-}*/   //funciones mes y año no se usan, hay calendario
 
 function cambiarFondoDireccionesSocio(direccionSocio)
 {
@@ -245,17 +117,6 @@ function cambiarFondoCPsSocio(CPSocio)
     }
 }
 
-/*function cambiarFondoProvinciasSocio(provinciaSocio)
-{
-    if (provinciaSocio.value.match(/^[a-zA-Z]+(\s?[a-zA-Z])*$/))
-    {
-        provinciaSocio.style = "border-color:#1CA421;"
-
-    } else {
-        provinciaSocio.style = "border-color:red;"
-    }
-}*/
-
 function cambiarFondoCorreosSocio(correoSocio)
 {
     if (correoSocio.value.match(/^[a-z,0-9]+\@[a-z]+\.[a-z]+$/))
@@ -294,19 +155,55 @@ function cambiarFondoCajaSociosPassword()
     return document.getElementById("passwordSocio").value;
 }
 
-
 function cambiarFondoCajaSociosPassword2()
 {
     return document.getElementById("password2Socio").value;
 }
 
+/*document.getElementById("cantidadotros").onclick=activarCasilla;
 function activarCasilla()
 {
     document.getElementById("cantidadTexto").style.visibility="visible";
 
     document.getElementById("botonCantidades").style.visibility="hidden";
 
+}*/
+
+function comprobarPassword()
+{
+    let pass1="";
+    let pass2="";
+    let circulo="";
+
+    circulo=document.getElementById("visto1").style.width="24px";
+    circulo=document.getElementById("visto1").style.height="24px";
+    circulo=document.getElementById("visto1").style.backgroundrepeat="no-repeat";
+    circulo=document.getElementById("visto1").style.backgroundSize="cover";
+
+    pass1=document.getElementById("passwordSocio").value;
+    pass2=document.getElementById("password2Socio").value;
+
+    if(pass1==pass2)
+    {
+        document.getElementById("button1").style.visibility="visible";
+        document.getElementById("visto1").style.backgroundImage= 'url("imagenes/vistoVerde.png")';
+        document.getElementById("passwordSocio").style="border-color:#1CA421;"
+        document.getElementById("password2Socio").style="border-color:#1CA421;"
+
+
+    }else
+        {
+            document.getElementById("visto1").style.backgroundImage= 'url("imagenes/vistoRojo.png")';
+            document.getElementById("passwordSocio").style="border-color:red;"
+            document.getElementById("password2Socio").style="border-color:red;"
+
+        }
 }
+
+
+
+
+
 
 /*-------------------------------------------------------------------- FIN SOCIOS --------------------------------------*/
 
@@ -357,25 +254,6 @@ function setSocioMenu(visible) {
         $('#menuSocio').hide()
     }
 }
-
-/*document.getElementById("password2Socio").onchange=visualizarVistoPassword;
-
-function visualizarVistoPassword()
-{
-    let pass1="";
-    let pass2="";
-
-    pass1=cambiarFondoCajaSociosPassword();
-    pass2=cambiarFondoCajaSociosPassword2();
-
-    if(pass1==pass2)
-    {
-        passwordSocio.style = "border-color:#1CA421;"
-    }else
-    {
-        passwordSocio.style = "border-color:red;"
-    }
-}*/
 
 function cambiarFondoCantidadessSocio(cantidad)
 {
