@@ -24,7 +24,8 @@ class Voluntario
     private $password1;
     private $password2;
 
-    public function __construct($usuario=" ",$apellidos=" ",$dni=" ",$fechaNacimiento=" ",$direccion=" ",$n=" ",$portal=" ",$piso=" ",$letra=" ",$zonaReside=" ", $correoElectronico=" ",$telef1=" ",$telef2=" ",$password1=" ",$password2=" ")
+    public function __construct($usuario=" ",$apellidos=" ",$dni=" ",$fechaNacimiento=" ",$direccion=" ",$n=" ",$portal=" ",$piso=" ",
+                                $letra=" ",$zonaReside=" ", $correoElectronico=" ",$telef1=" ",$telef2=" ",$password1=" ",$password2=" ")
     {
         $this->usuario=$usuario;
         $this->apellidos=$apellidos;
@@ -43,250 +44,64 @@ class Voluntario
         $this->password2=$password2;
     }
 
-    /**
-     * @return string
-     */
-    public function getNombre()
-    {
-        return $this->usuario;
-    }
 
-    /**
-     * @param string $nombre
-     */
-    public function setNombre($nombre)
-    {
-        $this->usuario = $nombre;
-    }
+    public function getNombre() {return $this->usuario;}
 
-    /**
-     * @return string
-     */
-    public function getApellidos()
-    {
-        return $this->apellidos;
-    }
+    public function setNombre($nombre) { $this->usuario = $nombre;}
 
-    /**
-     * @param string $apellidos
-     */
-    public function setApellidos($apellidos)
-    {
-        $this->apellidos = $apellidos;
-    }
+    public function getApellidos() {return $this->apellidos;}
 
-    /**
-     * @return string
-     */
-    public function getDni()
-    {
-        return $this->dni;
-    }
+    public function setApellidos($apellidos){$this->apellidos = $apellidos;}
 
-    /**
-     * @param string $dni
-     */
-    public function setDni($dni)
-    {
-        $this->dni = $dni;
-    }
+    public function getDni(){ return $this->dni;}
 
-    /**
-     * @return string
-     */
-    public function getFechaNacimiento()
-    {
-        return $this->fechaNacimiento;
-    }
+    public function setDni($dni){ $this->dni = $dni;}
 
-    /**
-     * @param string $fechaNacimiento
-     */
-    public function setFechaNacimiento($fechaNacimiento)
-    {
-        $this->fechaNacimiento = $fechaNacimiento;
-    }
+    public function getFechaNacimiento(){ return $this->fechaNacimiento;}
 
-    /**
-     * @return string
-     */
-    public function getDireccion()
-    {
-        return $this->direccion;
-    }
+    public function setFechaNacimiento($fechaNacimiento){ $this->fechaNacimiento = $fechaNacimiento;}
 
-    /**
-     * @param string $direccion
-     */
-    public function setDireccion($direccion)
-    {
-        $this->direccion = $direccion;
-    }
+    public function getDireccion(){ return $this->direccion;}
 
-    /**
-     * @return string
-     */
-    public function getN()
-    {
-        return $this->n;
-    }
+    public function setDireccion($direccion){ $this->direccion = $direccion;}
 
-    /**
-     * @param string $n
-     */
-    public function setN($n)
-    {
-        $this->n = $n;
-    }
+    public function getN(){ return $this->n;}
 
-    /**
-     * @return string
-     */
-    public function getPortal()
-    {
-        return $this->portal;
-    }
+    public function setN($n){ $this->n = $n;}
 
-    /**
-     * @param string $portal
-     */
-    public function setPortal($portal)
-    {
-        $this->portal = $portal;
-    }
+    public function getPortal(){ return $this->portal;}
 
-    /**
-     * @return string
-     */
-    public function getPiso()
-    {
-        return $this->piso;
-    }
+    public function setPortal($portal){ $this->portal = $portal;}
 
-    /**
-     * @param string $piso
-     */
-    public function setPiso($piso)
-    {
-        $this->piso = $piso;
-    }
+    public function getPiso(){ return $this->piso;}
 
-    /**
-     * @return string
-     */
-    public function getLetra()
-    {
-        return $this->letra;
-    }
+    public function setPiso($piso){ $this->piso = $piso;}
 
-    /**
-     * @param string $letra
-     */
-    public function setLetra($letra)
-    {
-        $this->letra = $letra;
-    }
+    public function getLetra(){ return $this->letra;}
 
-    /**
-     * @return string
-     */
-    public function getZonaReside()
-    {
-        return $this->zonaReside;
-    }
+    public function setLetra($letra){ $this->letra = $letra;}
 
-    /**
-     * @param string $zonaReside
-     */
-    public function setZonaReside($zonaReside)
-    {
-        $this->zonaReside = $zonaReside;
-    }
+    public function getZonaReside(){ return $this->zonaReside;}
 
-    /**
-     * @return string
-     */
-    public function getCorreoElectronico()
-    {
-        return $this->correoElectronico;
-    }
+    public function setZonaReside($zonaReside){ $this->zonaReside = $zonaReside;}
 
-    /**
-     * @param string $correoElectronico
-     */
-    public function setCorreoElectronico($correoElectronico)
-    {
-        $this->correoElectronico = $correoElectronico;
-    }
+    public function getCorreoElectronico(){ return $this->correoElectronico;}
 
-    /**
-     * @return string
-     */
-    public function getTelef1()
-    {
-        return $this->telef1;
-    }
+    public function setCorreoElectronico($correoElectronico){ $this->correoElectronico = $correoElectronico;}
 
-    /**
-     * @param string $telef1
-     */
-    public function setTelef1($telef1)
-    {
-        $this->telef1 = $telef1;
-    }
+    public function getTelef1(){ return $this->telef1;}
 
-    /**
-     * @return string
-     */
-    public function getTelef2()
-    {
-        return $this->telef2;
-    }
+    public function setTelef1($telef1){ $this->telef1 = $telef1;}
 
-    /**
-     * @param string $telef2
-     */
-    public function setTelef2($telef2)
-    {
-        $this->telef2 = $telef2;
-    }
+    public function getTelef2(){ return $this->telef2;}
 
-    /**
-     * @return string
-     */
-    public function getPassword1()
-    {
-        return $this->password1;
-    }
+    public function setTelef2($telef2){ $this->telef2 = $telef2;}
 
-    /**
-     * @param string $password1
-     */
-    public function setPassword1($password1)
-    {
-        $this->password1 = $password1;
-    }
+    public function getPassword1(){ return $this->password1;}
 
-    /**
-     * @return string
-     */
-    public function getPassword2()
-    {
-        return $this->password2;
-    }
+    public function setPassword1($password1){ $this->password1 = $password1;}
 
-    /**
-     * @param string $password2
-     */
-    public function setPassword2($password2)
-    {
-        $this->password2 = $password2;
-    }
+    public function getPassword2(){ return $this->password2;}
 
-    public function mostrar()
-    {
-        echo "nombre ".$this->nombre." apellidos ".$this->apellidos." dni ".$this->dni." fecha Nacimiento ".$this->fechaNacimiento." direccion ".$this->direccion.
-            " n ".$this->n." portal ".$this->portal." letra ".$this->letra." zonaReside ".$this->zonaReside." correoElectronico ".$this->correoElectronico.
-            " telefono 1 ".$this->telef1." telefono 2 ".$this->telef2." password 1 ".$this->password1." password 2 ".$this->password2;
-    }
+    public function setPassword2($password2){ $this->password2 = $password2;}
 }

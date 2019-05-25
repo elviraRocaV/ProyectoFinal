@@ -20,13 +20,14 @@ if($_SERVER['REQUEST_METHOD']=="POST")
       VALUES (:ubicacion, :numgatostotal, :numgatastotal, :numgatascastradas, :idVoluntario)");
     $stmt->execute([":ubicacion"=>$ubicacion, ":numgatostotal"=>$nunTotalGatos,"numgatastotal"=>$numTotalGatas,
         ":numgatascastradas"=>$numGatasCastradas, ":idVoluntario"=>$dni]);
-    header("Location:hojaVoluntario.php");
+    header("Location:mostrarDatosVoluntario.php");
 }
 
 ?>
 
 
 <div class="container-fluid sinPadding">
+    <div class="row d-flex justify-content-md-center">
 
     <form action="coloniasGatos.php" method="post" class="fondoGatoSocio">
 
@@ -111,6 +112,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             <script type="text/javascript" src="jsValidar/validarDatosColonia.js"></script>
         </div>
     </form>
+</div>
 </div>
 
 

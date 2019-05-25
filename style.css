@@ -1,6 +1,7 @@
 .fondoGato
 {
     height: 100%;
+    width: 100%;
     display: block;
     position: relative;
 }
@@ -15,7 +16,7 @@
 {
     content: "";
     background: url(gatosAdopcion/02.jpg);
-    opacity: 0.3;
+    opacity: 0.4;
     top: 0;
     left: 0;
     bottom: 0;
@@ -99,7 +100,10 @@ h1
     border-color: #1CA421;
 }
 
-
+.anchoVisto  /*visto contraseñas*/
+{
+    width: 5px;
+}
 
 /*  ---------------------Pagina principal -------------------------------------------*/
 
@@ -219,7 +223,7 @@ h1
     .fondoGato::after {
         content: "";
         background: url(gatosAdopcion/fondoMoviles.jpg);
-        opacity: 0.3;
+        opacity: 0.4;
         top: 0;
         left: 0;
         bottom: 0;
@@ -234,6 +238,35 @@ h1
 
 
 /*------------------------- Hazte Socio / Ayudanos ------------------------------------*/
+
+.fondoGatoSocio
+{
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.fondoGatoSocio::after
+{
+    content: "";
+    background: url(gatosAdopcion/03.jpg);
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: #dc3545;
+}
+
+
+
+
+
+
 
 
 .lineahazteVoluntario  /*nombre*/
@@ -311,7 +344,7 @@ h1
 
     .lineahazteSocioCP { padding: 1% 11%;}
 
-    .lineahazteVoluntarioProvincia{ padding: 1.5% 11%; }
+    .lineahazteVoluntarioProvincia{ padding: 1% 11%; }
 
     .ancho{width: 260%;}
 
@@ -361,7 +394,7 @@ h1
 
     .lineahazteSocioCP { padding: 1% 11%;}
 
-    .lineahazteVoluntarioProvincia{ padding: 1.3% 11%; }
+    .lineahazteVoluntarioProvincia{ padding: 1% 11%; }
 
     .ancho{width: 220%;}
 
@@ -390,7 +423,6 @@ h1
 
 @media (min-width: 768px)
 {
-    .anchoContenedor{width: 950px;}
     .lineahazteVoluntarioNombre {padding: 2% 15%;}
 
     .lineahazteVoluntarioApellidos {padding: 2% 15%;}
@@ -403,15 +435,15 @@ h1
 
     .lineahazteVoluntarioDirecion {padding: 2% 15%;}
 
-    .anchoCajas {width: 700px;}
+    .anchoCajas {width: 350px;}
 
     .lineaPoblacionSocio {padding: 2% 15%;}
 
     .lineahazteSocioCP {padding: 2% 15%;}
 
-    .lineahazteVoluntarioProvincia{ padding: 2% 15%; height: 30px; }
+    .lineahazteVoluntarioProvincia{height:38px; width:280px;}
 
-    .ancho{width: 270%;}
+  /*  .ancho{width: 270%;}*/
 
     .mailSocio {padding: 2% 15%;}
 
@@ -438,20 +470,7 @@ h1
     .lineahazteSocioCuenta{ padding: 3% 12%; }
 
     .vistoPassword {margin-top: 6%;}
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*---------------------------- ACABA SOCIO  ------------------------------------------------------------------------*/
@@ -463,7 +482,7 @@ h1
 {
    border: 1px solid #1CA421;
    border-radius: 5%;
-   padding: 2.2% 8%;
+   padding: 2.2% 14%;
 }
 
 
@@ -568,30 +587,8 @@ h1
     font-weight: bold;
 }
 
-.fondoGatoSocio
-{
-    height: 100%;
-    display: block;
-    position: relative;
-}
 
 .sinMargin { margin-bottom: 0px;}
-
-.fondoGatoSocio::after
-{
-    content: "";
-    background: url(gatosAdopcion/03.jpg);
-    opacity: 0.1;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: #dc3545;
-}
 
 .botonSocEdit, .botonSocElim { background-color: #1CA421; border: 1px solid #1CA421;}
 
@@ -799,6 +796,16 @@ h1
     }
 
     /*  --------------------- hazte Voluntario -------------------------------------------*/
+
+
+
+/*-------------------------------- MOSTRARGATOSENADOPCION ---------------------------------*/
+
+
+.caja
+{
+    border: 1px solid red;
+}
 
 
     /*.ubicarVisto {

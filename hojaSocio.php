@@ -6,13 +6,15 @@ $conexion = Connection::make();
 
 $dni = $_SESSION["dniSocio"];  //es un nombre de variable
 
-if ($_SERVER['REQUEST_METHOD'] === "POST") {
+if ($_SERVER['REQUEST_METHOD'] === "POST")
+{
     $nom = "";
     $apellidos = "";
     $dni = "";
     if (isset($_POST["nombre"]))        { $nom = strtoupper($_POST["nombre"]); }
     if (isset($_POST["apellidos"]))     { $apellidos = strtoupper($_POST["apellidos"]); }
     if (isset($_POST["dni"]))           { $dni = strtoupper($_POST["dni"]); }
+
     $stmt = $conexion->prepare("UPDATE SOCIOS SET nombre=:nombre, apellido=:apellido WHERE dni=:dni");
     $stmt->execute([":nombre" => $nom, ":apellido" => $apellidos, ":dni" => $dni]);
 }
