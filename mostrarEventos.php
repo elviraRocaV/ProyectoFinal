@@ -1,7 +1,7 @@
 <?php
-require_once "DataBase/Connection.php";
+require_once "./database/connection.php";
 $dbh = Connection::make();
-include("views/partials/cabecera.part.php");
+include("./views/partials/cabecera.part.php");
 
 $basepath = preg_replace('/(.*\/).*$/m','\\1', $_SERVER['REQUEST_URI']);
 
@@ -45,4 +45,4 @@ $eventos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
     </div>
 </div>
 
-<?php include("views/partials/footer.part.php");  ?>
+<?php include("./views/partials/footer.part.php");  ?>

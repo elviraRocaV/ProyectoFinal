@@ -1,7 +1,7 @@
 <?php
-require_once "DataBase/Connection.php";
+require_once "./database/connection.php";
 $dbh = Connection::make();
-include("views/partials/cabeceraAdministrador.php");
+include("./views/partials/cabeceraAdministrador.php");
 ?>
 
 
@@ -115,8 +115,8 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
     </div>
 </div>
 
-    <?php include("views/partials/footer.part.php"); ?>
+    <?php include("./views/partials/footer.part.php"); ?>
 
 
-<script type="text/javascript" src="jsValidar/validarDatosSocioVoluntario.js"></script>
+<script type="text/javascript" src="./jsvalidar/validardatossociovoluntario.js"></script>
 

@@ -1,5 +1,5 @@
 <?php
-include("views/partials/cabeceraAdministrador.php");
+include("./views/partials/cabeceraAdministrador.php");
 ?>
 <div class="container sinPadding">
     <div class="row">
@@ -34,4 +34,4 @@ include("views/partials/cabeceraAdministrador.php");
 </div>
 
 
-<!--<?php  include("views/partials/footer.part.php");  ?>-->
+<!--<?php  include("./views/partials/footer.part.php");  ?>-->

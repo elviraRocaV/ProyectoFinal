@@ -1,7 +1,7 @@
 <?php
-require_once "DataBase/Connection.php";
+require_once "./database/connection.php";
 $dbh = Connection::make();
-include("views/partials/cabecera.part.php");
+include("./views/partials/cabecera.part.php");
 ?>
 
 
@@ -85,9 +85,9 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
             </form>
 
             <?php
-            include("views/partials/footer.part.php");
+            include("./views/partials/footer.part.php");
             ?>
         </div>
 
-        <script type="text/javascript" src="jsValidar/validarDatosSocioVoluntario.js"></script>
+        <script type="text/javascript" src="./jsvalidar/validardatossociovoluntario.js"></script>
 

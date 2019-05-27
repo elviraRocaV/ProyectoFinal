@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "Database/Connection.php";
+require_once "./database/connection.php";
 require_once "Entities/Socio.php";
 $conexion = Connection::make();
 
@@ -206,12 +206,7 @@ $resultados = $stmt->fetchAll(PDo::FETCH_OBJ);
                         <input type="text" class="cajaResultadoSocio sinBorde" value="<?php echo $resultado->cp; ?>"
                                readonly>
                     </div>
-                    <!--
-                    <div class="col-md-4 mt-5 centrarTextoCajas">
-                        <label class="etiquetas d-flex justify-content-center">Provincia:</label>
-                        <input type="text" class="cajaResultadoSocio sinBorde" value="<?php echo $resultado->provincia; ?>" readonly>
-                    </div>
--->
+
                     <div class="col-md-4 mt-5 centrarTextoCajas">
                         <label class="etiquetas d-flex justify-content-center">Código Postal:</label>
                         <select class="browser-default custom-select fondocaja colorLineaCaja" id="provincias"
@@ -338,8 +333,8 @@ $resultados = $stmt->fetchAll(PDo::FETCH_OBJ);
 </div>
 </div>
 
-<?php include("views/partials/footer.part.php"); ?>
-<script type="text/javascript" src="jsValidar/validarDatosSocioVoluntario.js"></script>
+<?php include("./views/partials/footer.part.php"); ?>
+<script type="text/javascript" src="./jsvalidar/validardatossociovoluntario.js"></script>
 <script type="text/javascript">
     setEditing(false)
 </script>

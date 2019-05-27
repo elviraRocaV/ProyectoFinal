@@ -1,10 +1,10 @@
 <?php
-require_once "Database/Connection.php";
+require_once "./database/connection.php";
 $conexion=Connection::make();
 $showMessage=false;
 $message="";
 
-include("views/partials/cabeceraSinNavegador.part.php");
+include("./views/partials/cabeceraSinNavegador.part.php");
 
 if(isset($_POST["voluntarioEliminar"])) {
     $DniVoluntarioEliminar = $_POST["voluntarioEliminar"];
@@ -158,5 +158,5 @@ if(isset($_POST["voluntarioEliminar"])) {
     </div>
     </form>
 </div>
-<?php include("views/partials/footer.part.php");  ?>
+<?php include("./views/partials/footer.part.php");  ?>
 

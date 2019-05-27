@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "Database/Connection.php";
+require_once "./database/connection.php";
 $conexion=Connection::make();
 
 require __DIR__."/views/partials/cabecera.part.php";
@@ -307,7 +307,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 </div>
 
 <?php
-include("views/partials/footer.part.php");
+include("./views/partials/footer.part.php");
 ?>
-<script type="text/javascript" src="jsValidar/validarDatosSocioVoluntario.js"></script>
+<script type="text/javascript" src="./jsvalidar/validardatossociovoluntario.js"></script>
 

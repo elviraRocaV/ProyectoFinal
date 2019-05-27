@@ -1,8 +1,8 @@
 <?php
-include("views/partials/cabecera.part.php");
+include("./views/partials/cabecera.part.php");
 $mostrarMensaje=false;
 
-require_once "Database/Connection.php";
+require_once "./database/connection.php";
 $conexion=Connection::make();
 
 $pass="";
@@ -108,7 +108,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
 
 
-<?php include("views/partials/footer.part.php");  ?>
+<?php include("./views/partials/footer.part.php");  ?>
 
-<script type="text/javascript" src="jsValidar/validarDatosSocioVoluntario.js"></script>
+<script type="text/javascript" src="./jsvalidar/validardatossociovoluntario.js"></script>
 

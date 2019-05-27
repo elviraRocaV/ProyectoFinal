@@ -1,12 +1,12 @@
 <?php
-require_once "DataBase/Connection.php";
+require_once "./database/connection.php";
 $dbh = Connection::make();
 
 $stmt = $dbh->prepare("select * from gatosadopcion");   //base de datos regalos
 $stmt->execute();
 
 $gatos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
-include("views/partials/cabecera.part.php");
+include("./views/partials/cabecera.part.php");
 ?>
 
 <div class="container-fluid sinPadding" style="height: 100%">
@@ -230,4 +230,4 @@ include("views/partials/cabecera.part.php");
 
 
 
-<?php include("views/partials/footer.part.php");  ?>
+<?php include("./views/partials/footer.part.php");  ?>

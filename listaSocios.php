@@ -1,9 +1,18 @@
 <?php
-require_once "Database/Connection.php";
+require_once "./database/connection.php";
 require_once "Entities/Socio.php";
 $conexion=Connection::make();
 
-include("views/partials/cabeceraSinNavegador.part.php");
+include("./views/partials/cabeceraSinNavegador.part.php");
+$DniSocioEliminar="";
+
+if(isset($_POST["socioEliminar"]))
+{
+    $DniSocioEliminar=$_POST["socioEliminar"];
+    $DniSocioEliminar=strtoupper($DniSocioEliminar);
+    $stmt = $conexion->prepare("DELETE  FROM socios WHERE dni=\"$DniSocioEliminar\"");
+    $stmt->execute();
+}
 ?>
 
 <div class="container sinPadding">
@@ -83,49 +92,18 @@ include("views/partials/cabeceraSinNavegador.part.php");
         <h3>Eliminar Socios</h3>
         <div class="col-md-10"></div>
     </div>
-    <div class="row">
-        <div class="col-md-1"></div>
-        <p class="pr-md-3">Introduce el DNI del Socio a eliminar</p>
-        <input type="text" name="socioEliminar" value="">
-    </div>
-    <div class="row">
-        <div class="col-md-1"></div>
-        <button class="btn btn-primary boton1" type="submit" role="button" id="btnEliminarSocio" name="socioEliminar" onclick="eliminarSocio()">Eliminar Socio</button>
-    </div>
-
-
-
-
-    <?php
-
-    function eliminarSocio()
-    {
-      //  $conexion=Connection::make();
-
-        $DniSocioEliminar="";
-
-        if(isset($_POST["socioEliminar"]))
-        {
-            $DniSocioEliminar=$_POST["socioEliminar"];
-            $DniSocioEliminar=strtoupper($DniSocioEliminar);
-
-
-        }
-        $stmt = $conexion->prepare("DELETE  FROM 'socios' WHERE dni=$DniSocioEliminar");
-        $stmt->execute();
-
-    }
-
-
-
-
-
-
-
-
-    ?>
-
+    <form method="post" action="listaSocios.php">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <p class="pr-md-3">Introduce el DNI del Socio a eliminar</p>
+            <input type="text" name="socioEliminar" value="">
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <button class="btn btn-primary boton1" type="submit" role="button" id="btnEliminarSocio" name="btnEliminarSocio">Eliminar Socio</button>
+        </div>
+    </form>
 
 </div>
-<?php include("views/partials/footer.part.php");  ?>
+<?php include("./views/partials/footer.part.php");  ?>
 

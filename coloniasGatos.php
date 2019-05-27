@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "Database/Connection.php";
+require_once "./database/connection.php";
 $conexion=Connection::make();
 
 require __DIR__."/views/partials/cabecera.part.php";
@@ -108,8 +108,6 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                 </div>
                 <div class="col-md-2"></div>
             </div>
-
-            <script type="text/javascript" src="jsValidar/validarDatosColonia.js"></script>
         </div>
     </form>
 </div>
@@ -117,10 +115,10 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 
 
 <?php
-include("views/partials/footer.part.php");
+include("./views/partials/footer.part.php");
 ?>
 
-<script type="text/javascript" src="jsValidar/validarDatosColonia.js"></script>
+<script type="text/javascript" src="./jsvalidar/validarDatosColonia.js"></script>
 
 
 

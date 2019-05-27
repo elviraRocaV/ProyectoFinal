@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "Database/Connection.php";
+require_once "./database/connection.php";
 require_once "Entities/Voluntario.php";
 $conexion=Connection::make();
 
@@ -66,7 +66,7 @@ $voluntari=$stmt->fetch();
 
 
 
-<?php include("views/partials/footer.part.php"); ?>
+<?php include("./views/partials/footer.part.php"); ?>
 
 
 

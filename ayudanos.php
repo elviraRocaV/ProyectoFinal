@@ -3,9 +3,9 @@ $hasError=false;
 $errorTitle="";
 $errorText="";
 
-require __DIR__ . "/views/partials/cabecera.part.php";
-require_once "Database/Connection.php";
-require_once "Entities/Socio.php";
+require __DIR__ . "./views/partials/cabecera.part.php";
+require_once "./database/connection.php";
+require_once "./entities/socio.php";
 $conexion = Connection::make();
 $socio=new socio();
 
@@ -420,5 +420,5 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
     });
 </script>
 
-<?php include("views/partials/footer.part.php"); ?>
-<script type="text/javascript" src="jsValidar/validarDatosSocioVoluntario.js"></script>
+<?php include("./views/partials/footer.part.php"); ?>
+<script type="text/javascript" src="./jsValidar/validardatossociovoluntario.js"></script>

@@ -1,11 +1,9 @@
 <?php
-require_once "DataBase/Connection.php";
+require_once "./database/connection.php";
 $dbh = Connection::make();
-include("views/partials/cabecera.part.php");
+include("./views/partials/cabecera.part.php");
 
 $adoptado=false;
-
-echo "XXXX: " . print_r($_POST);
 
 if($_SERVER["REQUEST_METHOD"]=="POST" && isset($_POST["idgato"])) {
     $stmt = $dbh->prepare("update gatosadopcion set adoptado = true where ref=".$_POST["idgato"] );
@@ -47,8 +45,7 @@ $gatos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
             </div>
             <hr class="lineaH mt-md-5">
         <?php } ?>
-<!--        <input type="hidden" id="idgato" name="idgato">
--->
+
     </form>
 </div>
 
@@ -56,7 +53,7 @@ $gatos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
 
 
 
-<?php include("views/partials/footer.part.php");  ?>
+<?php include("./views/partials/footer.part.php");  ?>
 
 
 
