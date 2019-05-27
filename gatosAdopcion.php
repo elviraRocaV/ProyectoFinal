@@ -29,29 +29,6 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
     $rutaRelativa = ltrim(str_replace("\\","/", $destfile), ".");
     $stmt = $dbh->prepare("insert into gatosadopcion(nombre, descripcion, ruta) values(:nombre, :descripcion, :ruta)");
     $stmt->execute([":nombre" => $nombreGato, ":descripcion" => $descripcionGato, ":ruta" => $rutaRelativa]);
-
-    /*
-    $rutaFotos = "\\FotosGatosAdopcion\\".$fotoGato;     //nombre de la carpeta del servidor
-
-    if (is_file($rutaFotos) === true) {
-        $coletilla = time();
-        $fotoGato = $coletilla . "_" . $fotoGato;
-        $rutaFotos = "\\FotosGatosAdopcion\\" . "_" . $fotoGato;
-
-
-        move_uploaded_file($_FILES['fotoGato']['tmp_name'], $rutaFotos);
-
-        $stmt = $dbh->prepare("insert into gatosadopcion(nombre, descripcion, ruta) values(:nombre, :descripcion, :ruta)");
-        $stmt->execute([":nombre" => $rutaFotos, ":descripcion" => $descripGato, ":ruta" => $rutaFotos]);
-    } else {
-       if( move_uploaded_file($_FILES['fotoGato']['tmp_name'], $rutaFotos)){
-           echo "que pasa aquí";
-       }else {
-           echo $_FILES['fotoGato']['name'];
-           echo $rutaFotos;
-       }
-    }
-    */
 }
 ?>
 

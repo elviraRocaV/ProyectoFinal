@@ -38,8 +38,8 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 
     if(isset($_POST["password"])) { $pass1=$_POST["password"];}
 
-    $administrador="SI";
-    $voluntario="NO";
+    $administrador="1";
+    $voluntario="0";
 
     $churropassword=password_hash($pass1, PASSWORD_DEFAULT, ["cost"=>15]);
 
@@ -63,7 +63,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     $query->bindParam(':telefono1', $telf1);
     $query->bindParam(':telefono2', $telf2);
     $query->bindParam(':password',  $churropassword);
-    $query->bindParam(':admin',     $voluntario);  //CAMBIAR ADMINISTRADOR
+    $query->bindParam(':admin',     $administrador="1");  //CAMBIAR ADMINISTRADOR
 
     $query->execute();
     $_SESSION["dniVoluntario"]=$dni;
@@ -97,7 +97,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                                  <div class="input-group">
                                      <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
                                      <input class="lineahazteVoluntarioNombre fondocaja colorLineaCaja" type="text" name="usuario" id="usuarioSocio"
-                                     placeholder="Nombre" required onfocus="cambiarFondoSocio(this)" onblur="cambiarFondoUsuariosSocios(this)">
+                                     placeholder="Nombre" required onfocus="ponerFondoGris(this)" onblur="validar(this,/^[a-zA-Z]+(\s?[a-zA-Z])*$/)">
                                  </div>
                              </div>
 
@@ -108,8 +108,8 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                                  <div class="input-group">
                                      <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
                                      <input class="lineahazteVoluntarioApellidos fondocaja cajaApellidosSocio colorLineaCaja" type="text"
-                                     name="apellido" id="apellidoSocio" placeholder="Apellido1 Apellido2" required onfocus="cambiarFondoSocio(this)"
-                                     onblur="cambiarFondoApellidosSocios(this)">
+                                     name="apellido" id="apellidoSocio" placeholder="Apellido1 Apellido2" required onfocus="ponerFondoGris(this)"
+                                     onblur="validar(this,/^[a-zA-Z]+(\s[a-zA-Z]+)*$/)">
                                 </div>
                             </div>
                         </div>
@@ -120,7 +120,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                                  <div class="input-group">
                                      <span class="input-group-addon icono2"><i class="glyphicon glyphicon-list-alt"></i></span>
                                      <input class="lineahazteVoluntarioDNI fondocaja colorLineaCaja" type="text" name="dni" id="dniSocio"
-                                     placeholder="00000000X" required onfocus="cambiarFondoSocio(this)" onblur="cambiarFondoDNIsSocio(this)"
+                                     placeholder="00000000X" required onfocus="ponerFondoGris(this)" onblur="validar(this,/^\d{8}[a-zA-Z]$/)"
                                      data-mask="00000000S">
                                  </div>
                              </div>
@@ -132,8 +132,8 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                                  <div class="input-group date anchoFecha" data-provide="datepicker">
                                      <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
                                      <input class="form-control lineahazteVoluntarioFechaNa colorLineaCaja" type="text"
-                                            name="fecha" id="fechaSocio" required onfocus="cambiarFondoSocio(this)"
-                                            onblur="cambiarFondoFechassSocio(this)">
+                                     name="fecha" id="fechaSocio" required onfocus="ponerFondoGris(this)"
+                                     onblur="ValidarBorde(this)">
                                  </div>
                              </div>
                          </div>
@@ -145,7 +145,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                                  <label class="textFormularioVoluntario">Zona donde reside <span class="asterisco">*</span></label>
                                  <div class="input-group">
                                      <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
-                                     <select class="lineahazteVoluntarioZona linea" name="zona" id="zona" required onchange="cambiarFondoResides(this)">
+                                     <select class="lineahazteVoluntarioZona linea" name="zona" id="zona" required onchange="ponerFondoGris(this)">
                                          <option class="textFormularioVoluntario" value="">Zona a Elegir</option>
                                          <option value="Moncada">Moncada</option>
                                          <option value="Barrio">Barrio</option>
@@ -164,25 +164,25 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                                          <div class="col-3 mt-1 mt-md-5 mt-sm-5 mt-4">
                                              <label class="textFormularioVoluntario">Nº<span class="asterisco">*</span></label><br>
                                              <input class="lineahazteVoluntarioDirec1" type="text" name="numero"
-                                             id="numeroSocio" required onfocus="cambiarFondoSocio(this)" onblur="cambiarFondoNumerosSocios(this)">
+                                             id="numeroSocio" required onfocus="ponerFondoGris(this)" onblur="ValidarBorde(this)">
                                          </div>
 
                                          <div class="col-3 mt-1 mt-md-5 mt-sm-5 mt-4">
                                              <label class="textFormularioVoluntario">Portal</label>
                                              <input class="lineahazteVoluntarioDirec2" type="text" name="portal"
-                                                    id="portalSocio" onfocus="cambiarFondoSocio(this)">
+                                                    id="portalSocio" onfocus="ponerFondoGris(this)" onblur="ValidarBorde(this)">
                                          </div>
 
                                          <div class="col-3 mt-1 mt-md-5 mt-sm-5 mt-4">
                                              <label class="textFormularioVoluntario">Piso</label>
                                              <input class="lineahazteVoluntarioDirec3" type="text" name="piso" id="pisoSocio"
-                                             onfocus="cambiarFondoSocio(this)">
+                                             onfocus="ponerFondoGris(this)" onblur="ValidarBorde(this)">
                                          </div>
 
                                          <div class="col-3 mt-1 mt-md-5 mt-sm-5 mt-4">
                                              <label class="textFormularioVoluntario">Letra</label>
                                              <input class="lineahazteVoluntarioDirec4" type="text" name="letra" id="letraSocio"
-                                             onfocus="cambiarFondoSocio(this)">
+                                             onfocus="cambiarFondoSocio(this)" onblur="ValidarBorde(this)">
                                          </div>
                                     </div>
                                 </div>
@@ -198,8 +198,8 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                                  <div class="input-group">
                                      <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
                                      <input class="lineahazteSocioCP fondocaja colorLineaCaja" type="text" name="CP"
-                                            id="CPSocio" placeholder="C.P" required onfocus="cambiarFondoSocio(this)"
-                                            onblur="cambiarFondoCPsSocio(this)" data-mask="99999">
+                                            id="CPSocio" placeholder="C.P" required onfocus="ponerFondoGris(this)"
+                                            onblur="validar(this,/^\d{5}$/)" data-mask="99999">
                                  </div>
                              </div>
 
@@ -237,8 +237,8 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                                  <div class="input-group">
                                      <span class="input-group-addon icono2"><i class="glyphicon glyphicon-envelope"></i></span>
                                      <input class="mailSocio fondocaja colorLineaCaja" type="text" name="correo"
-                                     id="correoSocio" placeholder="xxxxx@xxx.xxx" required onfocus="cambiarFondoSocio(this)"
-                                     onblur="cambiarFondoCorreosSocio(this)">
+                                     id="correoSocio" placeholder="xxxxx@xxx.xxx" required onfocus="ponerFondoGris(this)"
+                                     onblur="validar(this,/^[a-z0-9]+\@[a-z]+\.[a-z]+$/)">
                                  </div>
                              </div>
 
@@ -247,8 +247,8 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                                  <div class="input-group">
                                      <span class="input-group-addon icono2"><i class="glyphicon glyphicon-earphone"></i></span>
                                      <input class="telf1Socio fondocaja colorLineaCaja" type="text" name="telefono1"
-                                     id="telefono1Socio" placeholder="Telefono 1" required onfocus="cambiarFondoSocio(this)"
-                                     data-mask="000000000">
+                                     id="telefono1Socio" placeholder="Telefono 1" required onfocus="ponerFondoGris(this)"
+                                     onblur="validar(this,/^\d{9}$/)"data-mask="000000000">
                                  </div>
                              </div>
 
@@ -257,8 +257,8 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                                  <div class="input-group">
                                      <span class="input-group-addon icono2"><i class="glyphicon glyphicon-earphone"></i></span>
                                      <input class="telf2Socio fondocaja colorLineaCaja" type="text" name="telefono2"
-                                     id="telefono2Socio" placeholder="Telefono 2" onfocus="cambiarFondoSocio(this)"
-                                     data-mask="000000000">
+                                     id="telefono2Socio" placeholder="Telefono 2" onfocus="ponerFondoGris(this)"
+                                     onblur="validar(this,/^\d{9}$/)"data-mask="000000000">
                                  </div>
                              </div>
                         </div>
@@ -272,8 +272,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                                  <div class="input-group">
                                      <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
                                      <input class="passwordSocio1 fondocaja colorLineaCaja" type="password" name="password"
-                                     id="passwordSocio" placeholder="Contraseña" required onfocus="cambiarFondoSocio(this)"
-                                     onblur="cambiarFondoCajaSociosPassword()">
+                                     id="passwordSocio" placeholder="Contraseña" required onfocus="ponerFondoGris(this)">
                                  </div>
                              </div>
 
@@ -285,7 +284,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                                      <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
                                      <input class="passwordSocio2 fondocaja colorLineaCaja" type="password" name="password2"
                                      id="password2Socio" placeholder="contraseña" required
-                                     onfocus="cambiarFondoSocio(this)" onblur="comprobarPassword()">
+                                     onfocus="ponerFondoGris(this)" onblur="validarPassword()">
                                  </div>
                              </div>
 

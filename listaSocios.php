@@ -1,53 +1,120 @@
 <?php
 require_once "Database/Connection.php";
+require_once "Entities/Socio.php";
 $conexion=Connection::make();
 
+include("views/partials/cabeceraSinNavegador.part.php");
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>gatos</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kanit|Lobster" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link href="icono/fonts/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-</head>
-<body>
-
-<div class="container-fluid">
-    <header class="row mt-3 justify-content-md-around">
-
-        <div class="col-md-2 col-sm-6 col-6 mt-md-4 mt-sm-1 text-sm-left ml-md-2 posLogo1">
-            <img class="imagenlogo" src="imagenes/logoAyunt.png">
-        </div>
-
-        <div class="col-md-7 col-sm-12 col-12 ml-5 textoPlan text-md-center text-sm-center text-center">
-            <h1 class="pt-md-4"><em><strong>Plan Esterilización Felina</strong></em></h1>
-        </div>
-
-        <div class="col-md-2 col-sm-6 col-6 mt-md-3 mt-sm-1 ml-md-4 mr-md-1 text-sm-right text-right posLogo2">
-            <img class="imagenlogo" src="imagenes/logoCEU.png">
-        </div>
-    </header>
-</div>
 
 <div class="container sinPadding">
     <div class="row">
-        <div class="col-md-12 d-flex justify-content-center mb-md-2">
+        <div class="col-md-12 d-flex justify-content-center mb-md-3">
             <p class="subtitulo">Lista Socios</p>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center" style="height: 100%">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>DNI</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Dirección</th>
+                    <th>Núm</th>
+                    <th>Portal</th>
+                    <th>Piso</th>
+                    <th>Letra</th>
+                    <th>Población</th>
+                    <th>CP</th>
+                    <th>Provincia</th>
+                    <th>Email</th>
+                    <th>Telf1</th>
+                    <th>Telf2</th>
+                    <th>Cuota</th>
+                    <th>Iban</th>
+                    <th>Entidad</th>
+                    <th>Oficina</th>
+                    <th>DC</th>
+                    <th>Cuenta</th>
+                </tr>
+                </thead>
+                <tbody>
+
+    <?php
+
+    $stmt = $conexion->prepare("SELECT * FROM socios");
+    $stmt->execute();
+    $socios =$stmt->fetchAll(PDO:: FETCH_ASSOC);
+
+        foreach ($socios as $socio)
+        {?>
+            <tr>
+            <td><?php echo $socio['nombre'];?></td>
+            <td><?php echo $socio['apellido'];?></td>
+            <td><?php echo $socio['dni'];?></td>
+            <td><?php echo $socio['fechanacimiento'];?></td>
+            <td><?php echo $socio['direccion'];?></td>
+            <td><?php echo $socio['numero'];?></td>
+            <td><?php echo $socio['portal'];?></td>
+            <td><?php echo $socio['piso'];?></td>
+            <td><?php echo $socio['letra'];?></td>
+            <td><?php echo $socio['poblacion'];?></td>
+            <td><?php echo $socio['cp'];?></td>
+            <td><?php echo $socio['provincia'];?></td>
+            <td><?php echo $socio['email'];?></td>
+            <td><?php echo $socio['telefono1'];?></td>
+            <td><?php echo $socio['telefono2'];?></td>
+            <td><?php echo $socio['cantidad'];?></td>
+            <td><?php echo $socio['iban'];?></td>
+            <td><?php echo $socio['entidad'];?></td>
+            <td><?php echo $socio['oficina'];?></td>
+            <td><?php echo $socio['dc'];?></td>
+            <td><?php echo $socio['cuenta'];?></td>
+            </tr>
+                <?php } ?>
+            </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <h3>Eliminar Socios</h3>
+        <div class="col-md-10"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <p class="pr-md-3">Introduce el DNI del Socio a eliminar</p>
+        <input type="text" name="socioEliminar" value="">
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <button class="btn btn-primary boton1" type="submit" role="button" id="btnEliminarSocio" name="socioEliminar" onclick="eliminarSocio()">Eliminar Socio</button>
     </div>
 
 
 
 
+    <?php
+
+    function eliminarSocio()
+    {
+      //  $conexion=Connection::make();
+
+        $DniSocioEliminar="";
+
+        if(isset($_POST["socioEliminar"]))
+        {
+            $DniSocioEliminar=$_POST["socioEliminar"];
+            $DniSocioEliminar=strtoupper($DniSocioEliminar);
+
+
+        }
+        $stmt = $conexion->prepare("DELETE  FROM 'socios' WHERE dni=$DniSocioEliminar");
+        $stmt->execute();
+
+    }
 
 
 
@@ -56,13 +123,9 @@ $conexion=Connection::make();
 
 
 
-
-
-
-
-
-
-
+    ?>
 
 
 </div>
+<?php include("views/partials/footer.part.php");  ?>
+

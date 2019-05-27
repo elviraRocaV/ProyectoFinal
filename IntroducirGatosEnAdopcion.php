@@ -17,19 +17,23 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
     if (isset($_POST["razaGato"]))          {$raza = $_POST["razaGato"];}
     if (isset($_POST["edadGato"]))          {$edad = $_POST["edadGato"];}
     if (isset($_POST["descripcionGato"]))   {$descripcion = $_POST["descripcionGato"];}
-    $fotoGato = $_FILES['fotoGato']["name"];  //name es el nombre del archivo
 
-    if ($fotoGato == false) {
-        throw new UploadException("Error, este fichero no se ha subido");
-    }
+    //$fotoGato = $_FILES['fotoGato']["name"];  //name es el nombre del archivo
+
     $destfile="";
     $rutaFotos=".\\FotosGatosAdopcion\\";
-//    echo "RUTA: " . $rutaFotos . "<br>". print_r($_FILES['fotoGato']) - "<br> " . uniqid('',true);
+
+
     if (is_file($_FILES['fotoGato']['tmp_name']) === true) {
         $array=explode(".", basename($_FILES['fotoGato']['name']));
         $extension=end($array);
         $destfile=$rutaFotos . uniqid('', true) . "." . $extension;
         move_uploaded_file($_FILES['fotoGato']['tmp_name'], $destfile );
+    }
+
+    if(is_uploaded_file($_FILES['fotoGato']['tmp_name'])===false)
+    {
+        throw new UploadException("Error, este fichero no se ha subido");
     }
 
     $rutaRelativa = ltrim(str_replace("\\","/", $destfile), ".");
@@ -40,74 +44,74 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
 ?>
 
 <div class="container-fluid sinPadding">
-
-    <div class="row">
-        <div class="col-12 d-flex justify-content-center mt-md-4">
-            <p class="subtitulo">Introducción gatos para adoptar</p>
+    <div class="fondoGatoSocio sinPadding">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center mt-md-4">
+                <p class="subtitulo">Introducción gatos para adoptar</p>
+            </div>
         </div>
-    </div>
 
-    <div class="container sinPadding">
+        <div class="container sinPadding">
 
-        <form action="IntroducirGatosEnAdopcion.php" method="post" enctype="multipart/form-data">
+            <form action="IntroducirGatosEnAdopcion.php" method="post" enctype="multipart/form-data">
 
-            <div class="row mt-md-4">
-                <div class="col-md-2"></div>
-                <div class="col-md-5 d-flex justify-content-center">
-                    <label class="textFormularioVoluntario">Nombre<span class="asterisco">*</span></label><br>
-                    <input class="linea lineahazteVoluntario fondocaja pl-5" type="text" name="nombreGato"
-                           id="nombreGato" placeholder="Nombre gato" required onblur="cambiarFondoIntroduccionGatos(this)">
+                <div class="row mt-md-5">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 d-flex justify-content-center">
+                        <label class="textFormularioVoluntario">Nombre<span class="asterisco">*</span></label><br>
+                        <input class="linea lineahazteVoluntario fondocaja pl-5" type="text" name="nombreGato"
+                               id="nombreGato" placeholder="Nombre gato" required onfocus="ponerFondoGris(this)" onblur="validar(this,/^[a-zA-Z]+(\s[a-zA-Z]+)*$/)">
+                    </div>
+                    <div class="col-md-4"></div>
                 </div>
-                <div class="col-md-5"></div>
-            </div>
 
-            <div class="row mt-md-5">
-                <div class="col-md-2"></div>
-                <div class="col-md-5 d-flex justify-content-center">
-                    <label class="textFormularioVoluntario ml-md-4">Raza<span class="asterisco">* </span></label><br>
-                    <input class="linea lineahazteVoluntario fondocaja pl-5" type="text" name="razaGato"
-                           id="razaGato" placeholder="raza gato" required onblur="cambiarFondoIntroduccionGatos(this)">
+                <div class="row mt-md-5">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 d-flex justify-content-center">
+                        <label class="textFormularioVoluntario ml-md-4">Raza<span class="asterisco">* </span></label><br>
+                        <input class="linea lineahazteVoluntario fondocaja pl-5" type="text" name="razaGato"
+                               id="razaGato" placeholder="raza gato" required onfocus="ponerFondoGris(this)" onblur="validar(this,/^[a-zA-Z]+(\s[a-zA-Z]+)*$/)">
+                    </div>
+                    <div class="col-md-4"></div>
                 </div>
-                <div class="col-md-5"></div>
-            </div>
 
-            <div class="row mt-md-5">
-                <div class="col-md-2"></div>
-                <div class="col-md-5 d-flex justify-content-center">
-                    <label class="textFormularioVoluntario ml-md-4">Edad<span class="asterisco">* </span></label><br>
-                    <input class="linea lineahazteVoluntario fondocaja pl-5" type="text" name="edadGato"
-                           id="edadGato" placeholder="Edad gato" required onblur="cambiarFondoIntroduccionGatos(this)">
+                <div class="row mt-md-5">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 d-flex justify-content-center">
+                        <label class="textFormularioVoluntario ml-md-4">Edad<span class="asterisco">* </span></label><br>
+                        <input class="linea lineahazteVoluntario fondocaja pl-5" type="text" name="edadGato"
+                               id="edadGato" placeholder="Edad gato" required onfocus="ponerFondoGris(this)" onblur="validar(this,/^[a-zA-Z0-9]+(\s[a-zA-Z0-9]+)*$/)">
+                    </div>
+                    <div class="col-md-4"></div>
                 </div>
-                <div class="col-md-5"></div>
-            </div>
 
-            <div class="row mt-md-5">
-                <div class="col-md-2"></div>
-                <div class="col-md-5 d-flex justify-content-center">
-                    <label class="textFormularioVoluntario">Descripción<span class="asterisco">*</span></label><br>
-                    <textarea class="linea lineahazteVoluntario fondocaja" rows="8" cols="20" name="descripcionGato"
-                              id="descripcionGato" required onclick="cambiarFondoDescripGato()"></textarea>
+                <div class="row mt-md-5">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 d-flex justify-content-center">
+                        <label class="textFormularioVoluntario">Descripción<span class="asterisco">*</span></label><br>
+                        <textarea class="linea lineahazteVoluntario fondocaja" rows="8" cols="20" name="descripcionGato"
+                                  id="descripcionGato" required onfocus="ponerFondoGris(this)" onblur="validar(this,/^[a-zA-Z]+(\s[a-zA-Z]+)*$/)"></textarea>
+                    </div>
+                    <div class="col-md-4"></div>
                 </div>
-                <div class="col-md-5"></div>
-            </div>
 
-            <div class="row mt-md-4">
-                <div class="col-md-2"></div>
-                <div class="col-md-5 col-sm-6 mt-sm-4 d-flex justify-content-center">
-                    <label class="textFormularioVoluntario">Imagen<span class="asterisco">*</span></label><br>
-                    <input type="file" name="fotoGato" id="fotoGato">
-                    <!--esto se pone para poder subir una imagen-->
+                <div class="row mt-md-4">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 col-sm-6 mt-sm-4 d-flex justify-content-center">
+                        <label class="textFormularioVoluntario">Imagen<span class="asterisco">*</span></label><br>
+                        <input type="file" name="fotoGato" id="fotoGato">
+                    </div>
+                    <div class="col-md-4"></div>
                 </div>
-                <div class="col-md-5"></div>
-            </div>
 
-            <div class="row justify-content-md-center">
-                <div class="mt-md-5 mb-md-5">
-                    <button class="btn btn-primary boton1" type="submit" role="button" id="button1">Enviar</button>
+                <div class="row justify-content-md-center">
+                    <div class="mt-md-5 mb-md-5">
+                        <button class="btn btn-primary boton1" type="submit" role="button" id="button1">Enviar</button>
+                    </div>
                 </div>
-            </div>
-            <input type="hidden" name="MAX_FILE_SIZE" value="10000"
-        </form>
+                <input type="hidden" name="MAX_FILE_SIZE" value="10000"
+            </form>
+        </div>
     </div>
 </div>
 

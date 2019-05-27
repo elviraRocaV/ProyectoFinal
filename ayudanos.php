@@ -168,7 +168,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
                                 <div class="col-md-2 col-3 mt-1 mt-md-5 mt-sm-5 mt-4">
                                     <label class="textFormularioVoluntario">Letra</label>
                                     <input class="lineahazteVoluntarioDirec4" type="text" name="socio[letra]" id="letraSocio"
-                                           value="<?php echo $socio->getLetra();?>" onblur="ValidarBorde(this)">
+                                           value="<?php echo $socio->getLetra();?>" onfocus="ponerFondoGris(this)" onblur="ValidarBorde(this)">
                                 </div>
                                 <div class="col-md-2"></div>
                                 <div class="col-md-2"></div>

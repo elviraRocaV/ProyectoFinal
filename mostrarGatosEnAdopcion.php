@@ -6,7 +6,7 @@ include("views/partials/cabecera.part.php");
 
 $stmt = $dbh->prepare("select * from gatosadopcion");   //base de datos regalos
 $stmt->execute();
-
+$basepath = preg_replace('/(.*\/).*$/m','\\1', $_SERVER['REQUEST_URI']);
 $gatos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
 ?>
 
@@ -24,7 +24,7 @@ $gatos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
         ?>
 
         <div class="row d-flex justify-content-md-center mt-md-5">
-            <img class="col-md-5" src=<?php echo $gato['ruta']?> >
+            <img class="col-md-5" src=<?php echo $basepath.$gato['ruta']?> >
             <div class="col-md-3">
                 <h4>Nombre: <?php echo $gato['nombre']?></h4>
                 <h4>Raza: <?php echo $gato['raza']?></h4>

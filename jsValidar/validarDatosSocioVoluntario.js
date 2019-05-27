@@ -1,4 +1,4 @@
-/*--------   funcion onFocus ----------------------*/
+/*--------   funcion onFocus SOCIOS Y VOLUNTARIOS----------------------*/
 
 function  ponerFondoGris(objeto)
 {
@@ -6,7 +6,7 @@ function  ponerFondoGris(objeto)
 }
 
 
-/*--------   funcion onblur SOCIOS!!!!!  ----------------------*/
+/*--------   funcion onblur SOCIOS Y VOLUNTARIOS!!!!!  ----------------------*/
 
 function validar(objeto, expresion)
 {
@@ -32,7 +32,7 @@ function validarPassword()
 
     if(pass1.value != "" && pass1.value == pass2.value )
     {
-        document.getElementById("btnEnviar").style.visibility="visible";
+        document.getElementById("button1").style.visibility="visible";
         document.getElementById("visto1").style.backgroundImage= 'url("imagenes/vistoVerde.png")';
         pass1.style="border-color:#1CA421;"
         pass2.style="border-color:#1CA421;"
@@ -57,19 +57,6 @@ function ValidarBorde(valorCampo)
         valorCampo.style="border-color:#1CA421";
     }
 }
-
-//document.getElementById("cantidadotros").onclick=activarCasilla;
-function activarOtros(activar)
-{
-    casilla=document.getElementById("cantidadTexto")
-    if (activar) { casilla.style.visibility="visible"; }
-    else {casilla.style.visibility="hidden"; }
-//    document.getElementById("botonCantidades").style.visibility="hidden";
-}
-
-
-/*----------------------------------------------  HOJASOCIO --------------------------------------*/
-
 
 function setEditing(editable)
 {
@@ -116,39 +103,6 @@ function setSocioMenu(visible) {
     }
 }
 
-function cambiarFondoCantidadessSocio(cantidad)
-{
-    let donacion="";
-    donacion=document.getElementById("cantidad").value;
-
-    if(donacion=="")
-    {
-        cantidad.style = "border-color:red;"
-    }
-}
-
-
-function cambiarFondoCantidadessSocio(cantidad)
-{
-
-    let pos1=document.getElementsByClassName("circulo")[0].value;
-    let pos2=document.getElementsByClassName("circulo")[1].value;
-    let pos3=document.getElementsByClassName("circulo")[2].value;
-
-    let cantText=document.getElementById("cantidadTexto");
-
-    if(pos1=="" || pos2=="" || pos3=="")
-    {
-        if(cantidad.value=="")
-        {
-            cantidad.style="border-color:red;"
-        }else
-        {
-            cantText.style="border-color:red;"
-        }
-    }
-}
-
     $(function() {
         $('.datepicker').datepicker({
             todayBtn: true,
@@ -158,20 +112,4 @@ function cambiarFondoCantidadessSocio(cantidad)
         });
     });
 
-
-/*----------------------------------------------  HOJA DARSE BAJA SOCIOS --------------------------------------*/
-
-
-/*------------------------------  VOLUNTARIOS ----------------------------*/
-
-function cambiarFondoResides(zona)
-{
-    if(zona.value=="")
-    {
-        zona.style="border-color:red;"
-    }else
-    {
-        zona.style="border-color:#1CA421;"
-    }
-}
 

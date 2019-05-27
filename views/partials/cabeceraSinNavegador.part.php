@@ -5,15 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker3.css">
+
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kanit|Lobster" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link href="icono/fonts/style.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="iconmoon/style.css">
+
 </head>
 <body>
+
 <div class="container-fluid">
     <header class="row mt-3 justify-content-md-around">
 
@@ -31,28 +32,4 @@
     </header>
 </div>
 
-<nav class=" navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler botonMenu" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon "></span>
-    </button>
 
-    <div class="collapse navbar-collapse menuPrincipal" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-            <li class="texto">
-                <a class="textMenuPrinci" href="index.php">Inicio</a>
-            </li>
-            <li class="texto">
-                <a class="textMenuPrinci" href="listaVoluntarios.php">Lista Voluntarios</a>
-            </li>
-            <li class="texto">
-                <a class="textMenuPrinci" href="listaSocios.php">Lista Sócios</a>
-            </li>
-            <li class="texto">
-                <a class="textMenuPrinci" href="introducirEventos.php">Crear Eventos</a>
-            </li>
-            <li class="texto">
-                <a class="textMenuPrinci" href="introducirGatosEnAdopcion.php">Añadir Adopciones</a>
-            </li>
-        </ul>
-    </div>
-</nav>
