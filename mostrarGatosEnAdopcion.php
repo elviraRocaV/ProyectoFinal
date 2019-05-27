@@ -13,7 +13,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST" && isset($_POST["idgato"])) {
 
 $stmt = $dbh->prepare("select * from gatosadopcion where adoptado=false");   //base de datos regalos
 $stmt->execute();
-$basepath = preg_replace('/(.*\/).*$/m','\\1', $_SERVER['REQUEST_URI']);
+//$basepath = preg_replace('/(.*\/).*$/m','\\1', $_SERVER['REQUEST_URI']);
+$basepath = ".";
 $gatos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
 
 ?>

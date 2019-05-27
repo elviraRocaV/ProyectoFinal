@@ -3,11 +3,10 @@ require_once "./database/connection.php";
 $dbh = Connection::make();
 include("./views/partials/cabecera.part.php");
 
-$basepath = preg_replace('/(.*\/).*$/m','\\1', $_SERVER['REQUEST_URI']);
-
 $stmt = $dbh->prepare("select * from eventos where fecha > current_date ");   //base de datos regalos
 $stmt->execute();
-$basepath = preg_replace('/(.*\/).*$/m','\\1', $_SERVER['REQUEST_URI']);
+//$basepath = preg_replace('/(.*\/).*$/m','\\1', $_SERVER['REQUEST_URI']);
+$basepath=".";
 $eventos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
 ?>
 
