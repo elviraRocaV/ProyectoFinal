@@ -21,7 +21,7 @@ $eventos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
     
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
-            <img src="gatosAdopcion/entrada.jpg" width="850px">
+            <img src="gatosadopcion/entrada.jpg" width="850px">
         </div>
     </div>
 

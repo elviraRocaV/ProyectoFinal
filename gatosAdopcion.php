@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
         throw new UploadException("Error, este fichero no se ha subido");
     }
     $destfile="";
-    $rutaFotos=".\\FotosGatosAdopcion\\";
+    $rutaFotos=".\\fotosgatosadopcion\\";
 //    echo "RUTA: " . $rutaFotos . "<br>". print_r($_FILES['fotoGato']) - "<br> " . uniqid('',true);
     if (is_file($_FILES['fotoGato']['tmp_name']) === true) {
         $array=explode(".", basename($_FILES['fotoGato']['name']));
@@ -39,7 +39,7 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
                 </div>
             </div>
 
-            <form action="gatosAdopcion.php" method="post" enctype="multipart/form-data"> <!--enctype=" -----" -->
+            <form action="gatosadopcion.php" method="post" enctype="multipart/form-data"> <!--enctype=" -----" -->
                 <div class="row">
                     <div class="col-md-3 col-sm-6 mt-md-3 mt-sm-4 offset-md-2 offset-sm-1">
                         <label class="textFormularioVoluntario">Nombre<span class="asterisco">*</span></label><br>

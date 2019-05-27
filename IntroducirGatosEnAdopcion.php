@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
     //$fotoGato = $_FILES['fotoGato']["name"];  //name es el nombre del archivo
 
     $destfile="";
-    $rutaFotos=".\\FotosGatosAdopcion\\";
+    $rutaFotos=".\\fotosgatosadopcion\\";
 
 
     if (is_file($_FILES['fotoGato']['tmp_name']) === true) {

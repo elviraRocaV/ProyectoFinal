@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
     if (isset($_POST["descripcionEvento"]))   {$descripcion = $_POST["descripcionEvento"];}
 
     $destfile="";
-    $rutaFotos=".\\FotosEventos\\";
+    $rutaFotos=".\\fotoseventos\\";
 
      if ($_FILES['fotoEvento']['error'] === UPLOAD_ERR_OK) {
         if (is_file($_FILES['fotoEvento']['tmp_name']) === true) {

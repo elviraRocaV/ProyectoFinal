@@ -15,7 +15,7 @@
 .fondoGato::after
 {
     content: "";
-    background: url(gatosAdopcion/02.jpg);
+    background: url(gatosadopcion/02.jpg);
     opacity: 0.4;
     top: 0;
     left: 0;
@@ -170,7 +170,7 @@ h1
     .fondoGato::after
     {
         content: "";
-        background: url(gatosAdopcion/fondoMoviles.jpg);
+        background: url(gatosadopcion/fondoMoviles.jpg);
         opacity: 0.3;
         top: 0;
         left: 0;
@@ -222,7 +222,7 @@ h1
 
     .fondoGato::after {
         content: "";
-        background: url(gatosAdopcion/fondoMoviles.jpg);
+        background: url(gatosadopcion/fondoMoviles.jpg);
         opacity: 0.4;
         top: 0;
         left: 0;
@@ -250,7 +250,7 @@ h1
 .fondoGatoSocio::after
 {
     content: "";
-    background: url(gatosAdopcion/03.jpg);
+    background: url(gatosadopcion/03.jpg);
     opacity: 0.2;
     top: 0;
     left: 0;
@@ -655,7 +655,7 @@ h1
 .imagenFondoBajaSocios::after
 {
     content: "";
-    background: url(gatosAdopcion/bajaSocios.jpg);
+    background: url(gatosadopcion/bajaSocios.jpg);
     opacity: 0.5;
     top: 0;
     left: 0;

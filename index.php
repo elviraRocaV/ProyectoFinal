@@ -68,7 +68,7 @@ include("./views/partials/cabecera.part.php");
             <div class="row">
                 <div class="col-md-7"></div>
                 <div class="col-md-5 mt-5 d-flex justify-content-md-start d-flex justify-content-center">
-                    <img class="fotoIndex1" src="gatosAdopcion/indexHazteVol.jpg" alt="foto">
+                    <img class="fotoIndex1" src="gatosadopcion/indexHazteVol.jpg" alt="foto">
                 </div>
             </div>
 
@@ -102,7 +102,7 @@ include("./views/partials/cabecera.part.php");
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-4 d-flex justify-content-center mt-5 d-flex justify-content-md-start">
-                    <img class="fotoIndex2" src="gatosAdopcion/indexHazteAyu.jpg" alt="foto">
+                    <img class="fotoIndex2" src="gatosadopcion/indexHazteAyu.jpg" alt="foto">
                 </div>
                 <div class="col-md-6"></div>
             </div>
@@ -149,7 +149,7 @@ include("./views/partials/cabecera.part.php");
                       <div class="card-body">
                           <h4 class="card-title"><?php $gato['nombre']?></h4>
                           <p class="card-text"><?php $gato['descripcion']?></p>
-                          <a href="gatosAdopcion.php" class="btn btn-primary stretched-link pl-md-5 pr-md-5 botonCardsGatos">Ver</a>
+                          <a href="gatosadopcion.php" class="btn btn-primary stretched-link pl-md-5 pr-md-5 botonCardsGatos">Ver</a>
                       </div>
                   </div>
               </div>
@@ -160,7 +160,7 @@ include("./views/partials/cabecera.part.php");
 
             <div class="col-md-4 col-sm-6 mt-5 mt-sm-3">
                    <div class="card cajaKar cajaGatosIndex">
-                       <img class="card-img-top" src="gatosAdopcion/01.jpg" alt="01">
+                       <img class="card-img-top" src="gatosadopcion/01.jpg" alt="01">
                        <div class="card-body">
                            <h4 class="card-title">Pepo</h4>
                            <p class="card-text">Gato de aprox. 1 mes <br> Raza Común </p>
@@ -171,7 +171,7 @@ include("./views/partials/cabecera.part.php");
  
                <div class="col-md-4 col-sm-6 mt-5">
                    <div class="card cajaKar">
-                       <img class="card-img-top" src="gatosAdopcion/02.jpg" alt="02">
+                       <img class="card-img-top" src="gatosadopcion/02.jpg" alt="02">
                        <div class="card-body">
                            <h4 class="card-title">Anubis</h4>
                            <p class="card-text">Gata de aprox. 1 año <br> Raza Común</p>
@@ -182,7 +182,7 @@ include("./views/partials/cabecera.part.php");
  
                <div class="col-md-4 col-sm-6 mt-5">
                    <div class="card cajaKar">
-                       <img class="card-img-top" src="gatosAdopcion/03.jpg" alt="03">
+                       <img class="card-img-top" src="gatosadopcion/03.jpg" alt="03">
                        <div class="card-body">
                            <h4 class="card-title">Silvestre</h4>
                            <p class="card-text">Gato de aprox. 1 año <br> Raza Común</p>
@@ -193,7 +193,7 @@ include("./views/partials/cabecera.part.php");
  
                <div class="col-md-4 col-sm-6 mt-5">
                    <div class="card cajaKar">
-                       <img class="card-img-top cuartaPos" src="gatosAdopcion/04.jpg" alt="04">
+                       <img class="card-img-top cuartaPos" src="gatosadopcion/04.jpg" alt="04">
                        <div class="card-body">
                            <h4 class="card-title">Leo</h4>
                            <p class="card-text">Gato de aprox. 1 año <br> Raza Común</p>
@@ -204,7 +204,7 @@ include("./views/partials/cabecera.part.php");
  
                 <div class="col-md-4 col-sm-6 mt-5">
                    <div class="card cajaKar">
-                       <img class="card-img-top" src="gatosAdopcion/05.jpg" alt="05">
+                       <img class="card-img-top" src="gatosadopcion/05.jpg" alt="05">
                        <div class="card-body">
                            <h4 class="card-title">Kitty</h4>
                            <p class="card-text">Gato de aprox. 1 año <br> Raza Común</p>
@@ -215,7 +215,7 @@ include("./views/partials/cabecera.part.php");
  
                <div class="col-md-4 col-sm-6 mt-5">
                    <div class="card cajaKar">
-                       <img class="card-img-top" src="gatosAdopcion/07.jpg" alt="06">
+                       <img class="card-img-top" src="gatosadopcion/07.jpg" alt="06">
                        <div class="card-body">
                            <h4 class="card-title">Nube</h4>
                            <p class="card-text">Gata de aprox. 1 mes <br> Raza Común</p>
