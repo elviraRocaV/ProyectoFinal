@@ -3,21 +3,20 @@ require_once "DataBase/Connection.php";
 $dbh = Connection::make();
 include("views/partials/cabecera.part.php");
 
+$adoptado=false;
 
-$stmt = $dbh->prepare("select * from gatosadopcion");   //base de datos regalos
+echo "XXXX: " . print_r($_POST);
+
+if($_SERVER["REQUEST_METHOD"]=="POST" && isset($_POST["idgato"])) {
+    $stmt = $dbh->prepare("update gatosadopcion set adoptado = true where ref=".$_POST["idgato"] );
+    $stmt->execute();
+    $adoptado = true;
+}
+
+$stmt = $dbh->prepare("select * from gatosadopcion where adoptado=false");   //base de datos regalos
 $stmt->execute();
 $basepath = preg_replace('/(.*\/).*$/m','\\1', $_SERVER['REQUEST_URI']);
 $gatos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
-
-
-
-/*$password=$_POST["passwordUsuario"];
-
-$stm=$conexion->prepare("DELETE from gatosadopcion where dni='$dniUsuario'");
-$stm->execute();*/
-
-
-
 
 ?>
 
@@ -30,12 +29,8 @@ $stm->execute();*/
     </div>
 
     <form method="post" action="mostrarGatosEnAdopcion.php" id="formularioGatos">
-
         <?php
-
-            for($i=0;$i<count($gatos);$i++){
-            ?>
-
+            for($i=0;$i<count($gatos);$i++){ ?>
             <div class="row d-flex justify-content-md-center mt-md-5">
                 <img class="col-md-5" src=<?php echo $basepath.$gatos[$i]['ruta']?> >
                 <div class="col-md-3" id="<?php echo $gatos[$i]?>" name="<?php echo $gatos[$i]?>">
@@ -47,27 +42,14 @@ $stm->execute();*/
 
                 </div>
                 <div class="col-md-4 mt-md-5 mb-md-5 mt-sm-5 mb-sm-5 mt-5 mb-5">
-                    <button class="btn btn-primary boton1" type="submit" role="button" id="button1">Adoptar</button>
+                    <button class="btn btn-primary boton1" type="submit" name="idgato" role="button" value="<?php echo $gatos[$i]['ref']?>" id="btnadoptar" >Adoptar</button>
                 </div>
             </div>
-
-                  <hr class="lineaH mt-md-5">
+            <hr class="lineaH mt-md-5">
         <?php } ?>
-
+<!--        <input type="hidden" id="idgato" name="idgato">
+-->
     </form>
-
-
-    <?php
-
-        for($y=0;$y<count($gatos);$y++)
-        {
-            $("#$gatos[$y]").onclick
-        }
-
-
-
-    ?>
-
 </div>
 
 
