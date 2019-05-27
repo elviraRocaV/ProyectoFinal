@@ -3,7 +3,7 @@ $hasError=false;
 $errorTitle="";
 $errorText="";
 
-require __DIR__ . "./views/partials/cabecera.part.php";
+require "./views/partials/cabecera.part.php";
 require_once "./database/connection.php";
 require_once "./entities/socio.php";
 $conexion = Connection::make();

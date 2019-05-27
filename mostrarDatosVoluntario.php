@@ -4,7 +4,7 @@ require_once "./database/connection.php";
 require_once "Entities/Voluntario.php";
 $conexion=Connection::make();
 
-require __DIR__."/views/partials/cabecera.part.php";
+require "./views/partials/cabecera.part.php";
 
 $dnis=$_SESSION["dniVoluntario"];
 

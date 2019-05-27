@@ -3,7 +3,7 @@ session_start();
 require_once "./database/connection.php";
 $conexion=Connection::make();
 
-require __DIR__."/views/partials/cabecera.part.php";
+require "./views/partials/cabecera.part.php";
 
 $pass1="";
 if($_SERVER['REQUEST_METHOD']=="POST")
