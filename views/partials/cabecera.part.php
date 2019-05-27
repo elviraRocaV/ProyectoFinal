@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="iconmoon/style.css">
 </head>
-<body>
+<body style="height: 100%">
 
 <div class="container-fluid">
     <header class="row mt-3 justify-content-md-around">
@@ -36,7 +36,7 @@
     <div class="row justify-content-md-end justify-content-sm-start sinPadding">
         <div class="col-md-10"></div>
         <div class="col-md-2 col-sm-4 col-6 mt-2 accesoVoluntarios">
-            <a class="textoAcceso" href="accesoVoluntarios.html">Acceso voluntarios<span class="icon-enter iconoPuerta" href="accesoVoluntarios.html"></span></a>
+            <a class="textoAcceso" href="accesoVoluntarios.php">Acceso voluntarios<span class="icon-enter iconoPuerta" href="accesoVoluntarios.html"></span></a>
         </div>
     </div>
 </div>
@@ -59,10 +59,10 @@
                     <a class="textMenuPrinci" href="ayudanos.php">Hazte Sócio</a>
                 </li>
                 <li class="texto mt-md-3 mr-md-3">
-                    <a class="textMenuPrinci" href="eventos.php">Eventos</a>
+                    <a class="textMenuPrinci" href="mostrarEventos.php">Eventos</a>
                 </li>
                 <li class="texto mt-md-3 mr-md-3">
-                    <a class="textMenuPrinci" href="adopcion.php">Adopción</a>
+                    <a class="textMenuPrinci" href="mostrarGatosEnAdopcion.php">Adopción</a>
                 </li>
             </ul>
         </div>

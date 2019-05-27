@@ -63,7 +63,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     $query->bindParam(':telefono1', $telf1);
     $query->bindParam(':telefono2', $telf2);
     $query->bindParam(':password',  $churropassword);
-    $query->bindParam(':admin',     $administrador="1");  //CAMBIAR ADMINISTRADOR
+    $query->bindParam(':admin',     $voluntario);  //CAMBIAR ADMINISTRADOR
 
     $query->execute();
     $_SESSION["dniVoluntario"]=$dni;
@@ -72,7 +72,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 
 ?>
 
-<div class="container-fluid sinPadding ">
+<div class="container-fluid sinPadding" style="height: 100%">
     <div class="row d-flex justify-content-center">
         <div class="fondoGatoSocio">
 

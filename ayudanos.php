@@ -146,32 +146,29 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
                     <div class="col-md-4 col-12">
                         <div class="row">
                             <div class="anchoCajas d-flex justify-content-md-between">
-                                <div class="col-md-2 mt-1 col-3 mt-md-5 mt-sm-5 mt-4">
+                                <div class="col-3 mt-1 mt-md-5 mt-sm-5 mt-4">
                                     <label class="textFormularioVoluntario">Nº<span class="asterisco">*</span></label><br>
-                                    <input class="lineahazteVoluntarioDirec1" type="text" name="socio[n]"
-                                    id="numeroSocio" value="<?php echo $socio->getN();?>" required
-                                    onfocus="ponerFondoGris(this)" onblur="ValidarBorde(this)">
-                                </div>
-                                <div class="col-md-2 col-3 mt-1 mt-md-5 mt-sm-5 mt-4">
-                                    <label class="textFormularioVoluntario">Portal</label>
-                                    <input class="lineahazteVoluntarioDirec2" type="text" name="socio[portal]"
-                                    id="portalSocio" value="<?php echo $socio->getPortal();?>"
-                                    onfocus="ponerFondoGris(this)" onblur="ValidarBorde(this)">
-                                </div>
-                                <div class="col-md-2 col-3 mt-1 mt-md-5 mt-sm-5 mt-4">
-                                    <label class="textFormularioVoluntario">Piso</label>
-                                    <input class="lineahazteVoluntarioDirec3" type="text" name="socio[piso]"
-                                    value="<?php echo $socio->getPiso();?>"id="pisoSocio" onfocus="ponerFondoGris(this)"
-                                    onblur="ValidarBorde(this)">
+                                    <input class="lineahazteVoluntarioDirec1" type="text" name="numero"
+                                           id="numeroSocio" required onfocus="ponerFondoGris(this)" onblur="ValidarBorde(this)">
                                 </div>
 
-                                <div class="col-md-2 col-3 mt-1 mt-md-5 mt-sm-5 mt-4">
-                                    <label class="textFormularioVoluntario">Letra</label>
-                                    <input class="lineahazteVoluntarioDirec4" type="text" name="socio[letra]" id="letraSocio"
-                                           value="<?php echo $socio->getLetra();?>" onfocus="ponerFondoGris(this)" onblur="ValidarBorde(this)">
+                                <div class="col-3 mt-1 mt-md-5 mt-sm-5 mt-4">
+                                    <label class="textFormularioVoluntario">Portal</label>
+                                    <input class="lineahazteVoluntarioDirec2" type="text" name="portal"
+                                           id="portalSocio" onfocus="ponerFondoGris(this)" onblur="ValidarBorde(this)">
                                 </div>
-                                <div class="col-md-2"></div>
-                                <div class="col-md-2"></div>
+
+                                <div class="col-3 mt-1 mt-md-5 mt-sm-5 mt-4">
+                                    <label class="textFormularioVoluntario">Piso</label>
+                                    <input class="lineahazteVoluntarioDirec3" type="text" name="piso" id="pisoSocio"
+                                           onfocus="ponerFondoGris(this)" onblur="ValidarBorde(this)">
+                                </div>
+
+                                <div class="col-3 mt-1 mt-md-5 mt-sm-5 mt-4">
+                                    <label class="textFormularioVoluntario">Letra</label>
+                                    <input class="lineahazteVoluntarioDirec4" type="text" name="letra" id="letraSocio"
+                                           onfocus="cambiarFondoSocio(this)" onblur="ValidarBorde(this)">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -202,11 +199,22 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
 
                     <div class="col-md-4 col-12 mt-md-5 mt-sm-5 mt-4">
                         <label class="textFormularioVoluntario">Provincia<span class="asterisco">*</span></label>
-                        <div class="input-group ancho">
+                        <div class="input-group">
                             <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
-                            <select class="browser-default custom-select colorLineaCaja lineahazteVoluntarioProvincia"
-                             id="provincias" name="socio[provincia]" value="<?php echo $socio->getProvincia();?>"required>
+                            <select class="colorLineaCaja lineahazteVoluntarioProvincia" id="provincias"
+                                    name="provincia" required >
                                 <option selected disabled value="0">Selecciona tu provincia</option>
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        $.getJSON('data/provincias.json', function (datos) {
+                                            for (index in datos.provincias) {
+                                                $('#provincias').append('<option ' + 'value=' + datos.provincias[index].id + '>'
+                                                    + datos.provincias[index].nm + '</option>');
+                                            }
+                                            $('#provincias').val(46);
+                                        });
+                                    });
+                                </script>
                             </select>
                         </div>
                     </div>
@@ -248,31 +256,29 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
 
                 <hr class="lineaH mt-md-5">
 
-                <div class="row">
+                <div class="row d-flex justify-content-md-between">
+
                     <div class="col-md-4 col-12 mt-md-3 mt-md-5 mt-sm-5 mt-4">
                         <label class="textFormularioVoluntario">Contraseña <span class="asterisco">*</span></label><br>
                         <div class="input-group">
                             <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
-                            <input class="passwordSocio1 fondocaja colorLineaCaja" type="password" name="socio[password]"
-                            id="passwordSocio" placeholder="Contraseña" value="<?php echo $socio->getPassword();?>"
-                            required onfocus="ponerFondoGris(this)">
+                            <input class="passwordSocio1 fondocaja colorLineaCaja" type="password" name="password"
+                                   id="passwordSocio" placeholder="Contraseña" required onfocus="ponerFondoGris(this)">
                         </div>
                     </div>
 
                     <div class="col-md-3"></div>
 
                     <div class="col-md-4 col-12 mt-md-5 mt-sm-5 mt-4">
-                        <label class="textFormularioVoluntario">Introduce de nuevo la contaseña <span class="asterisco">*</span></label><br>
+                        <label class="textFormularioVoluntario">Introduce contaseña <span class="asterisco">*</span></label><br>
                         <div class="input-group">
                             <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
-                            <input class="passwordSocio2 fondocaja colorLineaCaja" type="password"
-                            id="password2Socio" placeholder="Confirmar Contraseña" value="<?php echo $socio->getPassword();?>"
-                            required onfocus="ponerFondoGris(this)" onblur="validarPassword()">
+                            <input class="passwordSocio2 fondocaja colorLineaCaja" type="password" name="password2"
+                                   id="password2Socio" placeholder="contraseña" required
+                                   onfocus="ponerFondoGris(this)" onblur="validarPassword()">
                         </div>
                     </div>
-
-                    <div class="col-md-1 anchoVisto" id="visto1"></div>
-
+                    <div class="vistoPassword" id="visto1"></div>
                 </div>
 
                 <hr class="lineaH mt-md-5">

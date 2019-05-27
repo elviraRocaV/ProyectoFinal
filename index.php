@@ -9,7 +9,7 @@ $gatos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
 include("views/partials/cabecera.part.php");
 ?>
 
-<div class="container-fluid sinPadding">
+<div class="container-fluid sinPadding" style="height: 100%">
     <div class="col-md-12 fondoGato sinPadding sinMargin">
 
         <div class="container sinPadding">

@@ -1,75 +1,114 @@
 <?php
 include("views/partials/cabecera.part.php");
+$mostrarMensaje=false;
 
 require_once "Database/Connection.php";
 $conexion=Connection::make();
 
+$pass="";
+$password="";
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
-$dniUsuario=$_POST["usuario"];
-$password=$POST["usuario"];
+    $dniUsuario=$_POST["dniUsuario"];
+    $dniUsuario=strtoupper($dniUsuario);
 
-    $stm=$conexion->prepare("select password1 from voluntariado where dni=$dniUsuario");
+    $password=$_POST["passwordUsuario"];
+
+    $stm=$conexion->prepare("select password from voluntariado where dni='$dniUsuario'");
     $stm->execute();
-    $passwordEncriptado=$stmt->fetch(PDO::FETCH_ASSOC);
+
+    $passwordEncriptado = $stm->fetch(PDO::FETCH_ASSOC);
     $pass=$passwordEncriptado["password"];
 
-    if(password_verify($password, $pass))
+    if (password_verify($password, $pass))
     {
-        $_SESSION["dniVoluntario"]=$dniUsuario;
-        header("Location: hojaVoluntario.php");
-    }else
+        $stm=$conexion->prepare("select administrador from voluntariado where dni='$dniUsuario'");
+        $stm->execute();
+
+        $administrador = $stm->fetch(PDO::FETCH_ASSOC);
+        $numAdministrador=$administrador["administrador"];
+
+        if($numAdministrador==0)
         {
-            echo "la contraseña o DNI no son válidos";
+            header("Location:hojaVoluntario.php");
+        }else
+            {
+                header("Location:administrador.php");
+            }
+    } else
+        {
+            $mostrarMensaje = true;
         }
 }
 
 ?>
 
-
 <div class="container-fluid">
-        <div class="row mt-3">
-            <div class="col-md-12 col-sm-12 col-12 text-md-center text-sm-center text-center acceso">
-                <h2 class="accesoTexto">Acceso Voluntarios</h2>
-            </div>
-        </div>
-
-        <div class="row mt-2">
-            <div class="col-md-12 col-sm-12 col-12 text-md-center text-sm-center text-center mb-4">
-                <h4 class="">Identificación Usuario</h4>
-            </div>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-auto mb-5">
-                <label>DNI:</label><br>
-                <div class="input-group">
-                    <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
-                    <input class="linea lineaVoluntario fondocaja" type="text" name="usuario" id="usuario" placeholder="Nombre Usuario" onfocus="cambiarFondoUsuario(this)">
-                </div>
-            </div>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-auto mb-5">
-                <label>Contraseña:</label><br>
-                <div class="input-group">
-                    <span class="input-group-addon icono2"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input class="linea lineaVoluntario fondocaja" type="text" name="password" id="password" placeholder="contraseña" onfocus="cambiarFondoPassword(this)">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-12 text-md-center text-sm-center text-center mb-md-5">
-                <button type="button" class="btn botonGrande">Enviar</button>
-            </div>
+    <div class="row mt-3">
+        <div class="col-md-12 d-flex justify-content-center">
+            <h2 class="accesoTexto">Acceso Voluntarios</h2>
         </div>
     </div>
+
+    <div class="row mt-2">
+        <div class="col-md-12 d-flex justify-content-center">
+            <h4 class="">Identificación Usuario</h4>
+        </div>
+    </div>
+
+    <div class="container sinPadding">
+
+        <form action="accesoVoluntarios.php" method="post">
+            <?php
+            if($mostrarMensaje)
+            {?>
+
+            <div class="alert alert-danger alert-dismissible show">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                 El DNI del voluntario o contraseña no son correctos
+            </div>
+         <?php   }  ?>
+
+
+            <div class="row d-flex justify-content-md-center">
+                <div class="col-md-4"></div>
+                <div class="col-md-4 col-12 mt-md-5 mt-sm-5 mt-4">
+                    <label class="textFormularioVoluntario">DNI <span class="asterisco">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-list-alt"></i></span>
+                        <input class="lineahazteVoluntarioDNI fondocaja colorLineaCaja" type="text" name="dniUsuario" id="dni"
+                               placeholder="00000000X" required onfocus="ponerFondoGris(this)" onblur="validar(this,/^\d{8}[a-zA-Z]$/)"
+                               data-mask="00000000S">
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4 col-12 mt-md-5 mt-sm-5 mt-4">
+                    <label class="textFormularioVoluntario">Password <span class="asterisco">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-addon icono2"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input class="lineahazteVoluntarioDNI fondocaja colorLineaCaja" type="password" name="passwordUsuario" id="dni"
+                               placeholder="password" required onfocus="ponerFondoGris(this)">
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+
+            <div class="row justify-content-md-center">
+                <div class="mt-md-5 mb-md-5">
+                    <button class="btn btn-primary boton1" type="submit" role="button" id="button1">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 
 
 <?php include("views/partials/footer.part.php");  ?>
 
-<script type="text/javascript" src="jsValidar/validar.js"></script>
+<script type="text/javascript" src="jsValidar/validarDatosSocioVoluntario.js"></script>
 
