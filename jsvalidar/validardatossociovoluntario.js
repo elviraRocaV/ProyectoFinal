@@ -103,13 +103,26 @@ function setSocioMenu(visible) {
     }
 }
 
-    $(function() {
-        $('.datepicker').datepicker({
-            todayBtn: true,
-            language: "es",
-            todayHighlight: true,
-            toggleActive: true
-        });
+$(function() {
+    $('.datepicker').datepicker({
+        todayBtn: true,
+        language: "es",
+        todayHighlight: true,
+        toggleActive: true
     });
+});
 
 
+/*
+document.getElementById("button1").onclick=activarOnlyRead;
+
+function activarOnlyRead()
+{
+    alert("àsa");
+    let sololectura=document.getElementsByTagName("input");
+
+    for(let i=0;i<sololectura.length;i++)
+    {
+        sololectura[i].style.readOnly=true;
+    }
+}*/

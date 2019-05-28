@@ -12,6 +12,7 @@
     <link href="icono/fonts/style.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="iconmoon/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body style="height: 100%">
 
@@ -56,7 +57,7 @@
                     <a class="textMenuPrinci" href="hazteVoluntario.php">Hazte Voluntario</a>
                 </li>
                 <li id="menuSocio" class="texto mt-md-3 mr-md-3">
-                    <a class="textMenuPrinci" href="ayudanos.php">Hazte Sócio</a>
+                    <a class="textMenuPrinci" href="ayudanos.php">Hazte Socio</a>
                 </li>
                 <li class="texto mt-md-3 mr-md-3">
                     <a class="textMenuPrinci" href="mostrarEventos.php">Eventos</a>

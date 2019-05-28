@@ -44,13 +44,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 ?>
 
 <div class="container-fluid">
-    <div class="row mt-3">
+    <div class="row mt-md-5">
         <div class="col-md-12 d-flex justify-content-center">
             <h2 class="accesoTexto">Acceso Voluntarios</h2>
         </div>
     </div>
 
-    <div class="row mt-2">
+    <div class="row mt-md-5">
         <div class="col-md-12 d-flex justify-content-center">
             <h4 class="">Identificación Usuario</h4>
         </div>
@@ -111,4 +111,5 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 <?php include("./views/partials/footer.part.php");  ?>
 
 <script type="text/javascript" src="./jsvalidar/validardatossociovoluntario.js"></script>
+<script type="text/javascript" src="./jsvalidar/posicionarFooter.js"></script>
 

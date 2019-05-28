@@ -45,3 +45,4 @@ $eventos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
 </div>
 
 <?php include("./views/partials/footer.part.php");  ?>
+<script type="text/javascript" src="./jsvalidar/posicionarFooter.js"></script>

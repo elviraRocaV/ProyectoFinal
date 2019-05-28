@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
     {
         $tmp = $_POST["socio"];
         if ( $tmp["aportacionotros"] ) { $tmp["aportacion"] = $tmp["aportacionotros"]; }
-        $socio = new socio($tmp["nombre"],$tmp["apellidos"],$tmp["dni"],$tmp["fechaNacimiento"],$tmp["direccion"],$tmp["n"],
+        $socio = new socio($tmp["nombre"],$tmp["apellidos"],$tmp["dni"],$tmp["fechaNacimiento"],$tmp["direccion"],$tmp["numero"],
             $tmp["portal"],$tmp["piso"],$tmp["letra"],$tmp["poblacion"],$tmp["codigoPostal"],$tmp["provincia"],$tmp["mail"],
             $tmp["telef1"],$tmp["telef2"],$tmp["password"],$tmp["aportacion"],$tmp["iban"],$tmp["banco"],$tmp["oficina"],$tmp["dc"],$tmp["cuenta"]);
     }
@@ -55,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
         $resultados = $stmt->fetch(PDo::FETCH_OBJ);
     }
 }
+
 ?>
 
 
@@ -148,25 +149,25 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
                             <div class="anchoCajas d-flex justify-content-md-between">
                                 <div class="col-3 mt-1 mt-md-5 mt-sm-5 mt-4">
                                     <label class="textFormularioVoluntario">Nº<span class="asterisco">*</span></label><br>
-                                    <input class="lineahazteVoluntarioDirec1" type="text" name="numero"
-                                           id="numeroSocio" required onfocus="ponerFondoGris(this)" onblur="ValidarBorde(this)">
+                                    <input class="lineahazteVoluntarioDirec1" type="text" name="socio[numero]"
+                                           id="numeroSocio" value="<?php echo $socio->getN();?>" onfocus="ponerFondoGris(this)" onblur="ValidarBorde(this)">
                                 </div>
 
                                 <div class="col-3 mt-1 mt-md-5 mt-sm-5 mt-4">
                                     <label class="textFormularioVoluntario">Portal</label>
-                                    <input class="lineahazteVoluntarioDirec2" type="text" name="portal"
+                                    <input class="lineahazteVoluntarioDirec2" type="text" name="socio[portal]"
                                            id="portalSocio" onfocus="ponerFondoGris(this)" onblur="ValidarBorde(this)">
                                 </div>
 
                                 <div class="col-3 mt-1 mt-md-5 mt-sm-5 mt-4">
                                     <label class="textFormularioVoluntario">Piso</label>
-                                    <input class="lineahazteVoluntarioDirec3" type="text" name="piso" id="pisoSocio"
+                                    <input class="lineahazteVoluntarioDirec3" type="text" name="socio[piso]" id="pisoSocio"
                                            onfocus="ponerFondoGris(this)" onblur="ValidarBorde(this)">
                                 </div>
 
                                 <div class="col-3 mt-1 mt-md-5 mt-sm-5 mt-4">
                                     <label class="textFormularioVoluntario">Letra</label>
-                                    <input class="lineahazteVoluntarioDirec4" type="text" name="letra" id="letraSocio"
+                                    <input class="lineahazteVoluntarioDirec4" type="text" name="socio[letra]" id="letraSocio"
                                            onfocus="cambiarFondoSocio(this)" onblur="ValidarBorde(this)">
                                 </div>
                             </div>
@@ -202,7 +203,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
                         <div class="input-group">
                             <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
                             <select class="colorLineaCaja lineahazteVoluntarioProvincia" id="provincias"
-                                    name="provincia" required >
+                                    name="socio[provincia]" required >
                                 <option selected disabled value="0">Selecciona tu provincia</option>
                                 <script type="text/javascript">
                                     $(document).ready(function () {
@@ -262,7 +263,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
                         <label class="textFormularioVoluntario">Contraseña <span class="asterisco">*</span></label><br>
                         <div class="input-group">
                             <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
-                            <input class="passwordSocio1 fondocaja colorLineaCaja" type="password" name="password"
+                            <input class="passwordSocio1 fondocaja colorLineaCaja" type="password" name="socio[password]"
                                    id="passwordSocio" placeholder="Contraseña" required onfocus="ponerFondoGris(this)">
                         </div>
                     </div>
@@ -377,7 +378,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
                 </div>
                 <div class="row justify-content-center">
                     <div class="mt-md-5 mb-md-5 mt-sm-5 mb-sm-5 mt-5 mb-5">
-                        <button class="btn btn-primary boton1" type="submit" role="button" id="btnEnviar">Enviar</button>
+                        <button class="btn btn-primary boton1" type="submit" role="button" id="button1">Enviar</button>
                     </div>
                 </div>
             </div>

@@ -148,7 +148,8 @@ include("./views/partials/cabecera.part.php");
                       <img class="card-img-top" src=<?php $gato['ruta']?>>
                       <div class="card-body">
                           <h4 class="card-title"><?php $gato['nombre']?></h4>
-                          <p class="card-text"><?php $gato['descripcion']?></p>
+                          <p class="card-text"><?php $gato['edad']?></p>
+                          <p class="card-text"><?php $gato['raza']?></p>
                           <a href="gatosadopcion.php" class="btn btn-primary stretched-link pl-md-5 pr-md-5 botonCardsGatos">Ver</a>
                       </div>
                   </div>
@@ -168,7 +169,7 @@ include("./views/partials/cabecera.part.php");
                        </div>
                    </div>
                </div>
- 
+
                <div class="col-md-4 col-sm-6 mt-5">
                    <div class="card cajaKar">
                        <img class="card-img-top" src="gatosadopcion/02.jpg" alt="02">
@@ -179,7 +180,7 @@ include("./views/partials/cabecera.part.php");
                        </div>
                    </div>
                </div>
- 
+
                <div class="col-md-4 col-sm-6 mt-5">
                    <div class="card cajaKar">
                        <img class="card-img-top" src="gatosadopcion/03.jpg" alt="03">
@@ -190,7 +191,7 @@ include("./views/partials/cabecera.part.php");
                        </div>
                    </div>
                </div>
- 
+
                <div class="col-md-4 col-sm-6 mt-5">
                    <div class="card cajaKar">
                        <img class="card-img-top cuartaPos" src="gatosadopcion/04.jpg" alt="04">
@@ -201,7 +202,7 @@ include("./views/partials/cabecera.part.php");
                        </div>
                    </div>
                </div>
- 
+
                 <div class="col-md-4 col-sm-6 mt-5">
                    <div class="card cajaKar">
                        <img class="card-img-top" src="gatosadopcion/05.jpg" alt="05">
@@ -212,7 +213,7 @@ include("./views/partials/cabecera.part.php");
                        </div>
                    </div>
                </div>
- 
+
                <div class="col-md-4 col-sm-6 mt-5">
                    <div class="card cajaKar">
                        <img class="card-img-top" src="gatosadopcion/07.jpg" alt="06">
