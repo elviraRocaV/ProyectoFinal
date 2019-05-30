@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="col-12 col-md-2 anchoCelda ml-md-2">
-                    <a class="textFooter" href="accesoSocios.php">Acceso Socios</a>
+                    <a class="textFooter" href="bajaSocios.php">Darse de baja Socios</a>
                 </div>
 
                 <div class="iconos alturaIcono bordeIcono">

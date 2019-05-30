@@ -9,7 +9,7 @@ require_once "./entities/socio.php";
 $conexion = Connection::make();
 $socio=new socio();
 
-if ($_SERVER['REQUEST_METHOD'] === "GET") {
+/*if ($_SERVER['REQUEST_METHOD'] === "GET") {
     if ($_SESSION) {
         if ($_SESSION["socio"] !== "") { // NUEVO
         } else { //EDITAR --> Cargo Datos
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
             $socio=new socio($resultados);
         }
     }
-}
+}*/
 if ($_SERVER['REQUEST_METHOD'] === "POST")
 {
     if (isset($_POST["socio"]))
@@ -54,6 +54,11 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
         $stmt->execute([":dni" => $socio->getDni()]);
         $resultados = $stmt->fetch(PDo::FETCH_OBJ);
     }
+    $_SESSION["dniSocio"]="".$dni;
+
+    header("Location:hojaSocio.php");
+
+    echo "El archivo ha sido cargado correctamente";
 }
 
 ?>
