@@ -1,5 +1,5 @@
 
-    <footer class="container-fluid sinPadding" id="footer">
+    <footer class="container-fluid" id="footer">
         <div class="row sinMargin sinPadding">
             <div class="col-md-12 menuPrincipal mt-md-3 pt-md-4 pb-md-4 d-flex justify-content-md-center">
                 <div class="col-12 col-md-2 distanciaFooter ml-md-3">

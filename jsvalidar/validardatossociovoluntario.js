@@ -5,6 +5,16 @@ function  ponerFondoGris(objeto)
     objeto.style.backgroundColor="#d1d1c6";
 }
 
+function activarOtros(visible)
+{
+    if ( visible ) {
+        document.getElementById("cantidadTexto").style.visibility = "visible"
+    }
+    else
+    {
+        document.getElementById("cantidadTexto").style.visibility = "hidden"
+    }
+}
 
 /*--------   funcion onblur SOCIOS Y VOLUNTARIOS!!!!!  ----------------------*/
 
@@ -44,65 +54,6 @@ function validarPassword()
     }
 }
 
-
-/* ----------------------------------------FECHA NACIMIENTO ------------------------------------------*/
-
-function ValidarBorde(valorCampo)
-{
-    if(valorCampo.value=="")
-    {
-        valorCampo.style="border-color:red;"
-    }else
-    {
-        valorCampo.style="border-color:#1CA421";
-    }
-}
-
-function setEditing(editable)
-{
-    let inputs=document.getElementsByTagName("input");
-    for(let i=0;i<inputs.length;i++)
-    {
-        inputs[i].readOnly=!editable;
-    }
-    $('#dni').readOnly=true;
-    if (editable) {
-        $('#divSave').show();
-        $('#divEdit').hide();
-        $('#divDelete').hide();
-        $('#divCancel').show();
-    } else {
-        $('#divSave').hide();
-        $('#divEdit').show();
-        $('#divDelete').show();
-        $('#divCancel').hide();
-    }
-}
-
-function save() {
-    setEditing(false)
-    document.getElementById("socioform").submit();
-}
-
-function cancel() {
-    location.reload(true)
-}
-
-function erase()
-{
-    alert("Cuidado que lo borras... S/N")
-}
-
-function setSocioMenu(visible) {
-    if (visible) {
-        $('#menuSocio').show()
-    }
-    else
-    {
-        $('#menuSocio').hide()
-    }
-}
-
 $(function() {
     $('.datepicker').datepicker({
         todayBtn: true,
@@ -113,16 +64,17 @@ $(function() {
 });
 
 
-/*
-document.getElementById("button1").onclick=activarOnlyRead;
 
-function activarOnlyRead()
+function setEditing(editable)
 {
-    alert("àsa");
-    let sololectura=document.getElementsByTagName("input");
-
-    for(let i=0;i<sololectura.length;i++)
+    let inputs=document.getElementsByTagName("input");
+    for(let i=0;i<inputs.length;i++)
     {
-        sololectura[i].style.readOnly=true;
+        inputs[i].readOnly=!editable;
     }
-}*/
+    let selects=document.getElementsByTagName("select");
+    for(let i=0;i<selects.length;i++)
+    {
+        selects[i].disabled=!editable;
+    }
+}

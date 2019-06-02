@@ -200,6 +200,11 @@ h1
         font-size: 12px;
     }
 
+    .alturaTextoIndice   /* texto parrafos */
+    {
+        font-size: 130%;
+    }
+
     .boton1 {
         font-size: 13px;
     }
@@ -263,8 +268,6 @@ h1
     border: #dc3545;
 }
 
-
-
 .lineahazteVoluntario  /*nombre*/
 {
     border: 1px solid #1CA421;
@@ -322,19 +325,18 @@ h1
 
     .anchoFecha{width: 65%;}
 
+    .anchoReside{width: 70%;}
+
     .lineahazteVoluntarioDirecion { padding: 1% 11%;}
 
-    .alinearCajasDireccionSocio
-    {
-        display: inline-flex;
-    }
+    .alinearCajasDireccionSocio { display: inline-flex;}
 
     .lineahazteVoluntarioDirec1, .lineahazteVoluntarioDirec2, .lineahazteVoluntarioDirec3, .lineahazteVoluntarioDirec4 { padding: 1% 40%;
         width: 50px;
         height: 50%;
     }
 
-    .anchoCajas{ width: 270px;}
+    .anchoCajas{ width: 230px;}
 
     .lineaPoblacionSocio { padding: 1% 11%;}
 
@@ -427,7 +429,7 @@ h1
 
     .lineahazteVoluntarioFechaNa{padding: 2% 5%; width: 10px;}
 
-    .anchoFecha{width: 90%;}
+    .anchoFecha{width: 100%;}
 
     .lineahazteVoluntarioDirecion {padding: 2% 15%;}
 
@@ -468,6 +470,10 @@ h1
     .vistoPassword {margin-top: 6%;}
 }
 
+@media (min-width: 1200px)
+{
+    .anchoFecha{width: 90%;}
+}
 
 /*---------------------------- ACABA SOCIO  ------------------------------------------------------------------------*/
 
@@ -1037,146 +1043,17 @@ h1
 
 
  /*------------------------------------------  media query cabecera----------------------------------------*/
-    @media (max-width: 767px)   /*sm*/ {
-        .textoPlan {
-            font-size: 90%; /*titulo plan esterilizacion felina*/
-        }
-
-        .imagenlogoAyunt /*img ayuntamiento*/
-        {
-            width: 80%;
-        }
-
-        .imagenlogoCeu /*img CEU*/
-        {
-            width: 80%;
-        }
-
-        .textoPlan /*texto plan esterilizacion*/
-        {
-            order: 1;
-        }
-
-        .posLogo1 /* caja img ayuntamiento*/
-        {
-            order: 2;
-        }
-
-        .botonMenu {
-            width: 11%;
-        }
-
-        .accesoVoluntarios {
-            font-size: 13px;
-        }
-
-        .textMenuPrinci /*texto menu*/
-        {
-            font-size: 18px;
-        }
-    }
-
-    @media(min-width:768px)   /*md*/
-    {
-
-    .iconoPuerta { padding-left: 10px; }
-
-    .textoPlan {
-        font-size: 90%; /*titulo plan esterilizacion felina*/
-    }
-
-    .imagenlogoAyunt /*img ayuntamiento*/
-    {
-        width: 80%;
-    }
-
-    .imagenlogoCeu /*img CEU*/
-    {
-        width: 80%;
-    }
-
-    .accesoVoluntarios {
-        font-size: 13px;
-    }
-
-    .textMenuPrinci /*texto menu*/
-    {
-        font-size: 18px;
-    }
-
-    .texto {
-        margin: 2px 0px; /*texto menu*/
-    }
-
-    }
-
-    @media (max-width: 576px)   /* xs */
-    {
-        .imagenlogoAyunt /*img ayuntamiento*/
-        {
-            width: 70%;
-        }
-
-        .imagenlogoCeu /*img CEU*/
-        {
-            width: 70%;
-        }
-
-        .textoPlan /*texto plan esterilizacion*/
-        {
-            font-size: 50%;
-        }
-
-        .texto
-        {
-            margin: 1px; /*texto menu*/
-            width: 100px;
-        }
-
-        .posLogo2 /*logo ceu*/
-        {
-            order: 3;
-        }
-
-        .textoPlan /*texto plan esterilizacion*/
-        {
-            order: 1;
-        }
-
-        .posLogo1 /*img ayuntamiento*/
-        {
-            order: 2;
-        }
-
-        .botonMenu
-        {
-            background-color: #1CA421;
-        }
-
-        .textMenuPrinci /*texto menu*/
-        {
-            font-size: 3px;
-        }
-
-        .accesoVoluntarios /*texto botón acceso usuarios*/
-        {
-            font-size: 10px;
-        }
-
-}
-
-
 
 @media (max-width: 576px)   /* xs */
 {
     .imagenlogoAyunt /*img ayuntamiento*/
     {
-        width: 40%;
+        width: 70%;
     }
 
     .imagenlogoCeu /*img CEU*/
     {
-        width: 60%;
+        width: 70%;
     }
 
     .textoPlan /*texto plan esterilizacion*/
@@ -1217,8 +1094,140 @@ h1
 
     .accesoVoluntarios /*texto botón acceso usuarios*/
     {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 767px)   /*sm*/ {
+
+    .textoPlan {
+        font-size: 90%; /*titulo plan esterilizacion felina*/
+    }
+
+    .imagenlogoAyunt /*img ayuntamiento*/
+    {
+        width: 90%;
+    }
+
+    .imagenlogoCeu /*img CEU*/
+    {
+        width: 90%;
+    }
+
+    .textoPlan /*texto plan esterilizacion*/
+    {
+        order: 1;
+    }
+
+    .posLogo1 /* caja img ayuntamiento*/
+    {
+        order: 2;
+    }
+
+    .botonMenu {
+        width: 11%;
+    }
+
+    .accesoVoluntarios {
+        font-size: 13px;
+    }
+
+    .textMenuPrinci /*texto menu*/
+    {
+        font-size: 20px;
+    }
+}
+
+
+    @media(min-width:768px)   /*md*/
+    {
+
+    .iconoPuerta { padding-left: 10px; }
+
+    .textoPlan {
+        font-size: 90%; /*titulo plan esterilizacion felina*/
+    }
+
+    .imagenlogoAyunt /*img ayuntamiento*/
+    {
+        width: 140%;
+    }
+
+    .imagenlogoCeu /*img CEU*/
+    {
+        width: 140%;
+    }
+
+    .accesoVoluntarios {
+        font-size: 13px;
+    }
+
+    .textMenuPrinci /*texto menu*/
+    {
+        font-size: 20px;
+    }
+
+    .texto { margin: 2px 0px; /*texto menu*/ }
+
+    .alturaTextoIndice{font-size: 110%;}
+
+}
+
+
+
+
+/*@media (max-width: 576px)   /* xs */
+/*{
+    .imagenlogoAyunt /*img ayuntamiento*/
+  /*  {
+        width: 40%;
+    }
+
+    .imagenlogoCeu /*img CEU*/
+    /*{
+        width: 60%;
+    }
+
+    .textoPlan /*texto plan esterilizacion*/
+    /*{
+        font-size: 50%;
+    }
+
+    .texto
+    {
+        margin: 1px; /*texto menu*/
+      /*  width: 100px;
+    }
+
+    .posLogo2 /*logo ceu*/
+    /*{
+        order: 3;
+    }
+
+    .textoPlan /*texto plan esterilizacion*/
+    /*{
+        order: 1;
+    }
+
+    .posLogo1 /*img ayuntamiento*/
+    /*{
+        order: 2;
+    }
+
+    .botonMenu
+    {
+        background-color: #1CA421;
+    }
+
+    .textMenuPrinci /*texto menu*/
+    /*{
+        font-size: 3px;
+    }
+
+    .accesoVoluntarios /*texto botón acceso usuarios*/
+    /*{
         font-size: 10px;
     }
 
-}
+}*/
 

@@ -9,8 +9,8 @@ $gatos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
 include("./views/partials/cabecera.part.php");
 ?>
 
-<div class="container-fluid sinPadding" style="height: 100%">
-    <div class="col-md-12 fondoGato sinPadding sinMargin">
+<div class="container-fluid sinPadding">
+    <div class="fondoGato">
 
         <div class="container sinPadding">
             <div class="row">
@@ -28,7 +28,7 @@ include("./views/partials/cabecera.part.php");
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-8 mt-md-5 d-flex justify-content-center indexHazteVoluntarioParraf">
-                    <p>El Ayuntamiento de Moncada, junto con el CEU San Pablo y las voluntarias de las colonias felinas de la ciudad de Moncada
+                    <p class="alturaTextoIndice">El Ayuntamiento de Moncada, junto con el CEU San Pablo y las voluntarias de las colonias felinas de la ciudad de Moncada
                         desde hace 10 años están trabajando para poner fin al problema de la superpoblación felina de la ciudad y
                         tener un mayor control sobre las colonias existentes.<br>
                         Para ello, buscamos gente solidaria que quiera unise a nuestro proyecto</p>
@@ -51,7 +51,7 @@ include("./views/partials/cabecera.part.php");
             <div class="row">
                 <div class="col-md-2 mt-md-5"></div>
                 <div class="col-md-8 indexHazteVoluntarioParraf mt-md-1">
-                    <p>Si ya eres responsable de una colonia felia o quieres hacerlo, lo único que debes hacer es registrarte y así
+                    <p class="alturaTextoIndice">Si ya eres responsable de una colonia felia o quieres hacerlo, lo único que debes hacer es registrarte y así
                         nos ayudarás con el plan de esterilización felina</p>
                 </div>
                 <div class="col-md-2"></div>
@@ -81,7 +81,7 @@ include("./views/partials/cabecera.part.php");
             <div class="row d-flex justify-content-md-center">
                 <div class="col-md-2"></div>
                 <div class="col-md-8 indexHazteVoluntarioParraf mt-md-1">
-                    <p>Si te gustan los animales y no tienes tiempo para cuidarlos. Hazte sócio!!!!, nos gustaría mucho que
+                    <p class="alturaTextoIndice">Si te gustan los animales y no tienes tiempo para cuidarlos. Hazte sócio!!!!, nos gustaría mucho que
                         colaborases con nosotros realizando una pequeña aportación mensual.
                         <b>Es muy fácil, únicamente debes rellenar un formulario.</b>
                         El dinero recaudado es utilizado para sufragar gastos veterinarios, ya que algunos sufren atropellos u
@@ -116,7 +116,7 @@ include("./views/partials/cabecera.part.php");
             <div class="row d-flex justify-content-md-center">
                 <div class="col-md-2"></div>
                 <div class="col-md-8 indexHazteVoluntarioParraf mt-md-1">
-                    <p>Acoge en tu casa un gatito mientras encuentra una familia permanente. Escribe a acogeungato@moncada.es
+                    <p class="alturaTextoIndice">Acoge en tu casa un gatito mientras encuentra una familia permanente. Escribe a acogeungato@moncada.es
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -130,7 +130,7 @@ include("./views/partials/cabecera.part.php");
            <div class="row">
                <div class="col-md-2"></div>
                 <div class=" col-md-8 indexHazteVoluntarioParraf mt-md-1">
-                     <p>Estos son los gatos que están esperando ser adoptados.</p>
+                     <p class="alturaTextoIndice">Estos son los gatos que están esperando ser adoptados.</p>
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -139,32 +139,13 @@ include("./views/partials/cabecera.part.php");
 
       <div class="container sinPadding d-flex justify-content-md-center">
           <div class="row">
-     <!--   <?php
-
-        foreach ($gatos as $gato):
-            ?>
-              <div class="col-md-4 col-sm-6 mt-5 mt-sm-3">
-                  <div class="card cajaKar cajaGatosIndex">
-                      <img class="card-img-top" src=<?php $gato['ruta']?>>
-                      <div class="card-body">
-                          <h4 class="card-title"><?php $gato['nombre']?></h4>
-                          <p class="card-text"><?php $gato['edad']?></p>
-                          <p class="card-text"><?php $gato['raza']?></p>
-                          <a href="gatosadopcion.php" class="btn btn-primary stretched-link pl-md-5 pr-md-5 botonCardsGatos">Ver</a>
-                      </div>
-                  </div>
-              </div>
-        <?php endforeach; ?>-->
-
-
-
 
             <div class="col-md-4 col-sm-6 mt-5 mt-sm-3">
                    <div class="card cajaKar cajaGatosIndex">
                        <img class="card-img-top" src="gatosadopcion/01.jpg" alt="01">
                        <div class="card-body">
-                           <h4 class="card-title">Pepo</h4>
-                           <p class="card-text">Gato de aprox. 1 mes <br> Raza Común </p>
+                           <h4 class="card-title alturaTextoIndice">Pepo</h4>
+                           <p class="card-text alturaTextoIndice">Gato de aprox. 1 mes <br> Raza Común </p>
                            <a href="mostrarGatosEnAdopcion.php" class="btn btn-primary stretched-link pl-md-5 pr-md-5 botonCardsGatos">Ver</a>
                        </div>
                    </div>
@@ -174,8 +155,8 @@ include("./views/partials/cabecera.part.php");
                    <div class="card cajaKar">
                        <img class="card-img-top" src="gatosadopcion/02.jpg" alt="02">
                        <div class="card-body">
-                           <h4 class="card-title">Anubis</h4>
-                           <p class="card-text">Gata de aprox. 1 año <br> Raza Común</p>
+                           <h4 class="card-title alturaTextoIndice">Anubis</h4>
+                           <p class="card-text alturaTextoIndice">Gata de aprox. 1 año <br> Raza Común</p>
                            <a href="mostrarGatosEnAdopcion.php" class="btn btn-primary stretched-link pl-md-5 pr-md-5 botonCardsGatos">Ver</a>
                        </div>
                    </div>
@@ -185,8 +166,8 @@ include("./views/partials/cabecera.part.php");
                    <div class="card cajaKar">
                        <img class="card-img-top" src="gatosadopcion/03.jpg" alt="03">
                        <div class="card-body">
-                           <h4 class="card-title">Silvestre</h4>
-                           <p class="card-text">Gato de aprox. 1 año <br> Raza Común</p>
+                           <h4 class="card-title alturaTextoIndice">Silvestre</h4>
+                           <p class="card-text alturaTextoIndice">Gato de aprox. 1 año <br> Raza Común</p>
                            <a href="mostrarGatosEnAdopcion.php" class="btn btn-primary stretched-link pl-md-5 pr-md-5 botonCardsGatos">Ver</a>
                        </div>
                    </div>
@@ -196,8 +177,8 @@ include("./views/partials/cabecera.part.php");
                    <div class="card cajaKar">
                        <img class="card-img-top cuartaPos" src="gatosadopcion/04.jpg" alt="04">
                        <div class="card-body">
-                           <h4 class="card-title">Leo</h4>
-                           <p class="card-text">Gato de aprox. 1 año <br> Raza Común</p>
+                           <h4 class="card-title alturaTextoIndice">Leo</h4>
+                           <p class="card-text alturaTextoIndice">Gato de aprox. 1 año <br> Raza Común</p>
                            <a href="mostrarGatosEnAdopcion.php" class="btn btn-primary stretched-link pl-md-5 pr-md-5 botonCardsGatos">Ver</a>
                        </div>
                    </div>
@@ -207,8 +188,8 @@ include("./views/partials/cabecera.part.php");
                    <div class="card cajaKar">
                        <img class="card-img-top" src="gatosadopcion/05.jpg" alt="05">
                        <div class="card-body">
-                           <h4 class="card-title">Kitty</h4>
-                           <p class="card-text">Gato de aprox. 1 año <br> Raza Común</p>
+                           <h4 class="card-title alturaTextoIndice">Kitty</h4>
+                           <p class="card-text alturaTextoIndice">Gato de aprox. 1 año <br> Raza Común</p>
                            <a href="mostrarGatosEnAdopcion.php" class="btn btn-primary stretched-link pl-md-5 pr-md-5 botonCardsGatos">Ver</a>
                        </div>
                    </div>
@@ -218,8 +199,8 @@ include("./views/partials/cabecera.part.php");
                    <div class="card cajaKar">
                        <img class="card-img-top" src="gatosadopcion/07.jpg" alt="06">
                        <div class="card-body">
-                           <h4 class="card-title">Nube</h4>
-                           <p class="card-text">Gata de aprox. 1 mes <br> Raza Común</p>
+                           <h4 class="card-title alturaTextoIndice">Nube</h4>
+                           <p class="card-text alturaTextoIndice">Gata de aprox. 1 mes <br> Raza Común</p>
                            <a href="mostrarGatosEnAdopcion.php" class="btn btn-primary stretched-link pl-md-5 pr-md-5 botonCardsGatos">Ver</a>
                        </div>
                    </div>

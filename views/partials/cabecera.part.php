@@ -14,49 +14,45 @@
     <link rel="stylesheet" href="iconmoon/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
-<body style="height: 100%">
+<body>
 
-<div class="container-fluid">
-    <header class="row mt-3 justify-content-md-around">
+    <div class="container-fluid">
+        <header class="row mt-3 justify-content-md-around">
+            <div class="col-md-2 col-sm-6 col-6 mt-md-4 mt-3 mb-2 text-sm-left ml-md-2 posLogo1 d-flex justify-content-start">
+                <a href="http://www.moncada.es/"><img class="imagenlogoAyunt" src="imagenes/logoAyunt.png"></a>
+            </div>
 
-        <div class="col-md-2 col-sm-6 col-6 mt-md-4 mt-2 mb-2 text-sm-left ml-md-2 posLogo1 d-flex justify-content-start">
-            <a href="http://www.moncada.es/"><img class="imagenlogoAyunt" src="imagenes/logoAyunt.png"></a>
-        </div>
+            <div class="col-md-7 mt-3 textoPlan text-md-center text-sm-center d-flex justify-content-center">
+                <h1 class="pt-md-4 textoTitle"><em><strong>Plan Esterilización Felina</strong></em></h1>
+            </div>
 
-        <div class="col-md-7 mt-3 textoPlan text-md-center text-sm-center d-flex justify-content-center">
-            <h1 class="pt-md-4 textoTitle"><em><strong>Plan Esterilización Felina</strong></em></h1>
-        </div>
+            <div class="col-md-2 col-sm-6 col-6 mt-md-3 mt-1 ml-md-4 mr-md-1 d-flex justify-content-md-end d-flex justify-content-start posLogo2">
+                <a href="https://www.uchceu.es/estudios/grado/veterinaria"><img class="imagenlogoCeu" src="imagenes/logoCEU.png"></a>
+            </div>
 
-        <div class="col-md-2 col-sm-6 col-6 mt-md-3 mt-1 ml-md-4 mr-md-1 d-flex justify-content-end d-flex justify-content-md-end posLogo2">
-            <a href="https://www.uchceu.es/estudios/grado/veterinaria"><img class="imagenlogoCeu" src="imagenes/logoCEU.png"></a>
-        </div>
-    </header>
-</div>
+        </header>
 
-<div class="container-fluid sinPadding">
-    <div class="row justify-content-md-end justify-content-sm-start sinPadding">
-        <div class="col-md-10"></div>
-        <div class="col-md-2 col-sm-4 col-6 mt-2 accesoVoluntarios">
-            <a class="textoAcceso" href="accesoVoluntarios.php">Acceso voluntarios<span class="icon-enter iconoPuerta" href="accesoVoluntarios.html"></span></a>
+        <div class="row justify-content-md-end justify-content-sm-start">
+            <div class="col-md-10"></div>
+            <div class="col-md-3 col-lg-3 col-xl-2 col-xl-1 col-sm-4 col-6 mt-2 accesoVoluntarios">
+                <a class="textoAcceso" href="accesoVoluntarios.php">Acceso voluntarios<span class="icon-enter iconoPuerta" href="accesoVoluntarios.html"></span></a>
+            </div>
         </div>
     </div>
-</div>
 
-
-<div class="container-fluid sinPadding sinMargin">
-    <nav class="navbar navbar-expand-md navbar-light bg-light sinPadding d-flex justify-content-start ml-3 sinMargin">
+    <nav class="navbar navbar-expand-md navbar-light bg-light sinPadding d-flex justify-content-start sinMargin">
         <button class="navbar-toggler sinPadding botonMenu" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse menuPrincipal " id="navbarNavDropdown">
+        <div class="collapse navbar-collapse menuPrincipal" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="navbar-brand pl-md-5 ml-md-2">
-                    <a href="index.php"><img src="imagenes/gatoBlanco.png" style="height: 40px; padding-left: 3rem; padding-right: 3rem"></a>
+                <li class="navbar-brand pl-md-5 ml-md-2 mb-md-5">
+                    <a href="index.php"><img src="imagenes/gatoBlanco.png" style="height: 5rem; padding-left: 3rem; padding-right: 3rem;"></a>
                 </li>
-                <li class="texto mt-md-3 mr-md-3">
+                <li class="texto mt-md-3 mr-md-3 ">
                     <a class="textMenuPrinci" href="hazteVoluntario.php">Hazte Voluntario</a>
                 </li>
-                <li id="menuSocio" class="texto mt-md-3 mr-md-3">
+                <li class="texto mt-md-3 mr-md-3">
                     <a class="textMenuPrinci" href="ayudanos.php">Hazte Socio</a>
                 </li>
                 <li class="texto mt-md-3 mr-md-3">
@@ -68,7 +64,8 @@
             </ul>
         </div>
     </nav>
-</div>
 
-<script src="js/jquery-3.3.1.min.js"></script>
+    <?php if (isset($_SESSION)) { echo "SESSION : \"" . print_r($_SESSION) . "\""; } ?>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

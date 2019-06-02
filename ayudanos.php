@@ -9,8 +9,8 @@ require_once "./entities/socio.php";
 $conexion = Connection::make();
 $socio=new socio();
 
-/*if ($_SERVER['REQUEST_METHOD'] === "GET") {
-    if ($_SESSION) {
+if ($_SERVER['REQUEST_METHOD'] === "GET") {
+    if ($_SESSION && isset($_SESSION["socio"])) {
         if ($_SESSION["socio"] !== "") { // NUEVO
         } else { //EDITAR --> Cargo Datos
             $stmt = $dbh->prepare("SELECT * FROM socios where dni=:dni limit 1");
@@ -19,7 +19,8 @@ $socio=new socio();
             $socio=new socio($resultados);
         }
     }
-}*/
+}
+
 if ($_SERVER['REQUEST_METHOD'] === "POST")
 {
     if (isset($_POST["socio"]))
@@ -291,7 +292,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
 
                 <div class="row">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="subtitle">Cantidad a aportar</p>
+                        <p class="subtitle">Cantidad mensual a aportar</p>
                     </div>
                 </div>
 

@@ -3,13 +3,17 @@ session_start();
 require_once "./database/connection.php";
 include("./views/partials/cabecera.part.php");
 $conexion = Connection::make();
+$mostrarMensaje=false;
 
 $dni = $_SESSION["dniSocio"];  //es un nombre de variable
 
-$stmt=$conexion->prepare("select * from socios where dni='11111111g'");
+$stmt=$conexion->prepare("select * from socios where dni='$dni'");
 $stmt->execute();
 
 $socios =$stmt->fetchAll(PDO:: FETCH_ASSOC);
+
+
+
 
 ?>
 <div class="container-fluid sinPadding">
@@ -33,7 +37,6 @@ $socios =$stmt->fetchAll(PDO:: FETCH_ASSOC);
                         <?php
                         foreach ($socios as $socio)
                         {?>
-
 
                         <div class="col-md-4 col-12 mt-md-5 mt-4">
                             <label class="textFormularioVoluntario">Nombre</label>
@@ -250,27 +253,21 @@ $socios =$stmt->fetchAll(PDO:: FETCH_ASSOC);
                         <div class="col-md-1"></div>
                     </div>
 
-                    <div class="row justify-content-md-center">
+                    <div class="row justify-content-md-center mb-md-5 mt-md-5">
                         <div class="mt-md-5 col-md-4 centerText" id="divEdit">
-                            <p class="textoFecha">Editar Perfil</p>
                             <button type="button" class="btn btn-primary botonSocEdit" onclick="setEditing(true)">
-                                Editar
+                                Editar Perfil
                             </button>
                         </div>
 
                         <div class="mt-md-5 col-md-4 centerText" id="divSave">
-                            <p class="textoFecha">Guardar Cambios</p>
                             <button type="button" class="btn btn-primary botonSocEdit" onclick="save()">
-                                Guardar
+                                Guardar Cambios
                             </button>
                         </div>
 
                         <div class="mt-md-5 col-md-4 centerText" id="divDelete">
-                            <p class="textoFecha">Darse de Baja</p>
-                            <a href="bajaSocio.php">
-                                <button type="button" class="btn btn-primary botonSocElim" onclick="erase()">Eliminar
-                                </button>
-                            </a>
+                             <button type="button" class="btn btn-primary botonSocElim" id="botonEliminar">Darse de Baja</button>
                         </div>
                     </div>
                         <?php } ?>
@@ -283,5 +280,5 @@ $socios =$stmt->fetchAll(PDO:: FETCH_ASSOC);
 
 
 <?php include("./views/partials/footer.part.php"); ?>
-
+<script type="text/javascript" src="./jsValidar/validarhojasocio.js"></script>
 <script type="text/javascript" src="./jsvalidar/posicionarFooter.js"></script>

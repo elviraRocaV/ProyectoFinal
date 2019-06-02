@@ -1,8 +1,7 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {session_start();}
 require_once "./database/connection.php";
 $conexion=Connection::make();
-
 require "./views/partials/cabecera.part.php";
 
 
@@ -13,7 +12,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     if (isset($_POST["numGatasTotales"]))   {$numTotalGatas = $_POST["numGatasTotales"];}
     if (isset($_POST["numGatasCastradas"])) {$numGatasCastradas =$_POST["numGatasCastradas"];}
 
-    $dni = $_SESSION["dniVoluntario"];  //es un nombre de variable
+    $dni = $_SESSION["voluntario"]->dni;  //es un nombre de variable
 
     $stmt = $conexion->prepare(
     "INSERT INTO `colonia` (ubicacion, numgatostotal, numgatastotal, numgatascastradas, idVoluntario)
