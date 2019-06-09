@@ -2,11 +2,13 @@
 if (!isset($_SESSION)) {session_start();}
 require_once "./database/connection.php";
 $conexion=Connection::make();
+require_once "entities/voluntario.php";
 
 require "./views/partials/cabecera.part.php";
 
 $pass1="";
 $voluntario=new stdClass();
+$colonias=new stdClass();
 $viewing=false;
 
 if($_SERVER['REQUEST_METHOD']=="POST")
@@ -27,9 +29,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     if(isset($_POST["telefono2"]))  { $telf2=$_POST["telefono2"];}
     if(isset($_POST["password"]))   { $pass1=$_POST["password"];}
 
-    $administrador="1";
-    $voluntario="0";
-
+    $esVoluntario=0;
     $churropassword=password_hash($pass1, PASSWORD_DEFAULT, ["cost"=>15]);
 
     $query=$conexion->prepare("
@@ -52,7 +52,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     $query->bindParam(':telefono1', $telf1);
     $query->bindParam(':telefono2', $telf2);
     $query->bindParam(':password',  $churropassword);
-    $query->bindParam(':admin',     $voluntario);  //CAMBIAR ADMINISTRADOR
+    $query->bindParam(':admin',     $esVoluntario);  //CAMBIAR ADMINISTRADOR
 
     $query->execute();
     $_SESSION["dniVoluntario"]=$dni;
@@ -67,6 +67,7 @@ if (isset($_SESSION["dniVoluntario"])) {
         $_SESSION["voluntario"]=$voluntario;
     }
 }
+
 ?>
 
 <div class="container-fluid sinPadding">
@@ -92,7 +93,7 @@ if (isset($_SESSION["dniVoluntario"])) {
                          <div class="input-group">
                              <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
                              <input class="lineahazteVoluntarioNombre fondocaja colorLineaCaja" type="text" name="usuario" id="usuarioSocio"
-                                    value="<?php echo $voluntario->nombre ?>"  placeholder="Nombre" required
+                                    value="<?php if (isset($voluntario->nombre)) { echo $voluntario->nombre; }?>"  placeholder="Nombre" required
                                     onfocus="ponerFondoGris(this)" onblur="validar(this,/^[a-zA-Z]+(\s?[a-zA-Z])*$/)">
                          </div>
                      </div>
@@ -104,7 +105,7 @@ if (isset($_SESSION["dniVoluntario"])) {
                          <div class="input-group">
                              <span class="input-group-addon icono2"><i class="glyphicon glyphicon-user"></i></span>
                              <input class="lineahazteVoluntarioApellidos fondocaja cajaApellidosSocio colorLineaCaja" type="text"
-                                    value="<?php echo $voluntario->apellido ?>" name="apellido" id="apellidoSocio"
+                                    value="<?php if (isset($voluntario->apellido)) { $voluntario->apellido; } ?>" name="apellido" id="apellidoSocio"
                                     placeholder="Apellido1 Apellido2" required onfocus="ponerFondoGris(this)"
                                     onblur="validar(this,/^[a-zA-Z]+(\s[a-zA-Z]+)*$/)">
                         </div>
@@ -117,7 +118,7 @@ if (isset($_SESSION["dniVoluntario"])) {
                          <div class="input-group">
                              <span class="input-group-addon icono2"><i class="glyphicon glyphicon-list-alt"></i></span>
                              <input class="lineahazteVoluntarioDNI fondocaja colorLineaCaja" type="text" name="dniVoluntario" id="dniSocio"
-                                    value="<?php echo $voluntario->dni ?>" placeholder="00000000X" required onfocus="ponerFondoGris(this)"
+                                    value="<?php if (isset($voluntario->dni)) { echo $voluntario->dni; }?>" placeholder="00000000X" required onfocus="ponerFondoGris(this)"
                                     onblur="validar(this,/^\d{8}[a-zA-Z]$/)" data-mask="00000000S">
                          </div>
                      </div>
@@ -129,7 +130,7 @@ if (isset($_SESSION["dniVoluntario"])) {
                          <div class="input-group date anchoFecha" data-provide="datepicker">
                              <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
                              <input class="form-control lineahazteVoluntarioFechaNa colorLineaCaja" type="text"
-                                    value="<?php echo $voluntario->fechanacimiento ?>" name="fecha" id="fechaSocio" required onfocus="ponerFondoGris(this)"
+                                    value="<?php if (isset($voluntario->fechanacimiento)) { echo $voluntario->fechanacimiento; } ?>" name="fecha" id="fechaSocio" required onfocus="ponerFondoGris(this)"
                                     onblur="validar(this,/^\d{2}\/\d{2}\/\d{4}$/)">
                          </div>
                      </div>
@@ -140,15 +141,15 @@ if (isset($_SESSION["dniVoluntario"])) {
                 <div class="row d-flex justify-content-md-between">
                      <div class="col-md-4 col-12 mt-md-5 mt-sm-5 mt-4 ml-5 ml-md-0">
                          <label class="textFormularioVoluntario">Zona donde reside <span class="asterisco">*</span></label>
-                         <div class="input-group anchoReside">
+                         <div class="input-group ">
                              <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
                              <select class="lineahazteVoluntarioZona linea" name="zona" id="zona" required onfocus="ponerFondoGris(this)">
-                                 <option class="textFormularioVoluntario" value="" <?php if ($voluntario->zona =="" ) echo 'selected="selected"' ?>>Zona a Elegir</option>
-                                 <option <?php $valor="MONCADA"; echo "value=\"$valor\""; if ($voluntario->zona == $valor) {echo 'selected="selected"'; }; echo "\>$valor"?></option>
-                                 <option <?php $valor="BARRIO"; echo "value=\"$valor\""; if ($voluntario->zona == $valor) {echo 'selected="selected"'; }; echo "\>$valor"?></option>
-                                 <option <?php $valor="BARRIO DE LOS DOLORES"; echo "value=\"$valor\""; if ($voluntario->zona == $valor) {echo 'selected="selected"'; }; echo "\>$valor"?></option>
-                                 <option <?php $valor="MASÍAS"; echo "value=\"$valor\""; if ($voluntario->zona == $valor) {echo 'selected="selected"'; }; echo "\>$valor"?></option>
-                                 <option <?php $valor="SAN ISIDRO DE BENAGEBER"; echo "value=\"$valor\""; if ($voluntario->zona == $valor) {echo 'selected="selected"'; }; echo "\>$valor"?></option>
+                                 <option class="textFormularioVoluntario" value="" <?php if (!isset($voluntario->zona) || $voluntario->zona =="" ) echo 'selected="selected"' ?>>Zona a Elegir</option>
+                                 <option class="textFormularioVoluntario" <?php $valor="MONCADA"; echo "value=\"$valor\""; if (isset($voluntario->zona) && $voluntario->zona == $valor) {echo 'selected="selected"'; }; echo ">$valor"?></option>
+                                 <option class="textFormularioVoluntario" <?php $valor="BARRIO"; echo "value=\"$valor\""; if (isset($voluntario->zona) && $voluntario->zona == $valor) {echo 'selected="selected"'; }; echo ">$valor"?></option>
+                                 <option class="textFormularioVoluntario" <?php $valor="BARRIO DE LOS DOLORES"; echo "value=\"$valor\""; if (isset($voluntario->zona) && $voluntario->zona == $valor) {echo 'selected="selected"'; }; echo ">$valor"?></option>
+                                 <option class="textFormularioVoluntario" <?php $valor="MASÍAS"; echo "value=\"$valor\""; if (isset($voluntario->zona) && $voluntario->zona == $valor) {echo 'selected="selected"'; }; echo ">$valor"?></option>
+                                 <option class="textFormularioVoluntario" <?php $valor="SAN ISIDRO DE BENAGEBER"; echo "value=\"$valor\""; if (isset($voluntario->zona) && $voluntario->zona == $valor) {echo 'selected="selected"'; }; echo ">$valor"?></option>
                              </select>
                          </div>
                      </div>
@@ -161,28 +162,28 @@ if (isset($_SESSION["dniVoluntario"])) {
                                  <div class="col-3 mt-1 mt-md-5 mt-sm-5 mt-5 ml-5 ml-md-0">
                                      <label class="textFormularioVoluntario">Nº<span class="asterisco">*</span></label><br>
                                      <input class="lineahazteVoluntarioDirec1" type="text" name="numero"
-                                            value="<?php echo $voluntario->numero ?>"
+                                            value="<?php if (isset($voluntario->numero)) { echo $voluntario->numero; } ?>"
                                             id="numeroSocio" required onfocus="ponerFondoGris(this)" onblur="validar(this,/^\d{1,3}$/)">
                                  </div>
 
                                  <div class="col-3 mt-1 mt-md-5 mt-sm-5 mt-5 ml-5 ml-md-0">
                                      <label class="textFormularioVoluntario">Portal</label>
                                      <input class="lineahazteVoluntarioDirec2" type="text" name="portal"
-                                            value="<?php echo $voluntario->portal ?>"
+                                            value="<?php if (isset($voluntario->portal)) { echo $voluntario->portal; } ?>"
                                             id="portalSocio" onfocus="ponerFondoGris(this)" onblur="validar(this,/^\d{1,3}$/)">
                                  </div>
 
                                  <div class="col-3 mt-1 mt-md-5 mt-sm-5 mt-5 ml-5 ml-md-0">
                                      <label class="textFormularioVoluntario">Piso</label>
                                      <input class="lineahazteVoluntarioDirec3" type="text" name="piso" id="pisoSocio"
-                                            value="<?php echo $voluntario->piso ?>"
+                                            value="<?php if (isset($voluntario->piso)) { echo $voluntario->piso; } ?>"
                                             onfocus="ponerFondoGris(this)" onblur="validar(this,/^\d{1,2}$/)">
                                  </div>
 
                                  <div class="col-3 mt-1 mt-md-5 mt-sm-5 mt-5 ml-5 ml-md-0">
                                      <label class="textFormularioVoluntario">Letra</label>
                                      <input class="lineahazteVoluntarioDirec4" type="text" name="letra" id="letraSocio"
-                                            value="<?php echo $voluntario->letra ?>"
+                                            value="<?php if (isset($voluntario->letra)) { echo $voluntario->letra; } ?>"
                                             onfocus="ponerFondoGris(this)" onblur="validar(this,/^\w{1}$/)">
                                  </div>
                             </div>
@@ -199,7 +200,7 @@ if (isset($_SESSION["dniVoluntario"])) {
                          <div class="input-group">
                              <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
                              <input class="lineahazteSocioCP fondocaja colorLineaCaja" type="text" name="CP"
-                                    value="<?php echo $voluntario->cp ?>"
+                                    value="<?php if (isset($voluntario->cp)) { echo $voluntario->cp; } ?>"
                                     id="CPSocio" placeholder="C.P" required onfocus="ponerFondoGris(this)"
                                     onblur="validar(this,/^\d{5}$/)" data-mask="99999">
                          </div>
@@ -213,7 +214,7 @@ if (isset($_SESSION["dniVoluntario"])) {
                          <div class="input-group">
                              <span class="input-group-addon icono2"><i class="glyphicon glyphicon-home"></i></span>
                              <select class="colorLineaCaja lineahazteVoluntarioProvincia" id="provincias"
-                                     value="<?php echo $voluntario->provincia ?>"
+                                     value="<?php if (isset($voluntario->provincia)) { echo $voluntario->provincia; }?>"
                                      name="provincia" required >
                                  <option selected disabled value="0">Selecciona tu provincia</option>
                                     <script type="text/javascript">
@@ -240,7 +241,7 @@ if (isset($_SESSION["dniVoluntario"])) {
                          <div class="input-group">
                              <span class="input-group-addon icono2"><i class="glyphicon glyphicon-envelope"></i></span>
                              <input class="mailSocio fondocaja colorLineaCaja" type="text" name="correo"
-                                    value="<?php echo $voluntario->mail ?>"
+                                    value="<?php if (isset($voluntario->mail)) { echo $voluntario->mail; } ?>"
                                     id="correoSocio" placeholder="xxxxx@xxx.xxx" required onfocus="ponerFondoGris(this)"
                              onblur="validar(this,/^[a-z0-9]+\@[a-z]+\.[a-z]+$/)">
                          </div>
@@ -251,7 +252,7 @@ if (isset($_SESSION["dniVoluntario"])) {
                          <div class="input-group">
                              <span class="input-group-addon icono2"><i class="glyphicon glyphicon-earphone"></i></span>
                              <input class="telf1Socio fondocaja colorLineaCaja" type="text" name="telefono1"
-                                    value="<?php echo $voluntario->telefono1 ?>"
+                                    value="<?php if (isset($voluntario->telefono1)) { echo $voluntario->telefono1; } ?>"
                                     id="telefono1Socio" placeholder="Telefono 1" required onfocus="ponerFondoGris(this)"
                              onblur="validar(this,/^\d{9}$/)"data-mask="000000000">
                          </div>
@@ -262,7 +263,7 @@ if (isset($_SESSION["dniVoluntario"])) {
                          <div class="input-group">
                              <span class="input-group-addon icono2"><i class="glyphicon glyphicon-earphone"></i></span>
                              <input class="telf2Socio fondocaja colorLineaCaja" type="text" name="telefono2"
-                                    value="<?php echo $voluntario->telefono2 ?>"
+                                    value="<?php if (isset($voluntario->telefono2)) { echo $voluntario->telefono2; } ?>"
                                     id="telefono2Socio" placeholder="Telefono 2" onfocus="ponerFondoGris(this)"
                              onblur="validar(this,/^\d{9}$/)"data-mask="000000000">
                          </div>
@@ -296,6 +297,47 @@ if (isset($_SESSION["dniVoluntario"])) {
 
                      <div class="vistoPassword" id="visto1"></div>
                  </div>
+
+                <div class="row justify-content-md-center mt-md-4" style="visibility:"
+                <?php if (isset($_SESSION["mostrarColonias"]) && $_SESSION["mostrarColonias"]) { echo 'visible'; } else { echo 'hidden'; }?>>
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-center" style="height: 100%">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Núm Colonia</th>
+                                    <th>Ubicación</th>
+                                    <th>Núm Total de Gatos</th>
+                                    <th>Núm de Gatas</th>
+                                    <th>Núm Gatas Castradas</th>
+                                    <th>Núm Gatas por Castrar</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <?php
+                                if (isset($_SESSION["mostrarColonias"]) && $_SESSION["mostrarColonias"]) {
+                                    $query = $conexion->prepare("select * from colonia where idVoluntario=:dni ");
+                                    $query->execute([":dni" => $_SESSION["dniVoluntario"]]);
+                                    $colonias = $query->fetchAll(PDO::FETCH_OBJ);
+                                }
+                                foreach ($colonias as $colonia)
+                                {?>
+                                    <tr>
+                                        <td><?php echo $colonia->idcolonia;?></td>
+                                        <td><?php echo $colonia->ubicacion;?></td>
+                                        <td><?php echo $colonia->numgatostotal;?></td>
+                                        <td><?php echo $colonia->numgatastotal;?></td>
+                                        <td><?php echo $colonia->numgatascastradas;?></td>
+                                        <td><?php echo $colonia->numgatastotal-$colonia->numgatascastradas;?></td>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
 
                  <div class="row justify-content-md-center mt-md-4">
                      <div class="mt-md-5 mb-md-5">

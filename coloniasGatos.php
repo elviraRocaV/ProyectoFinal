@@ -19,7 +19,10 @@ if($_SERVER['REQUEST_METHOD']=="POST")
       VALUES (:ubicacion, :numgatostotal, :numgatastotal, :numgatascastradas, :idVoluntario)");
     $stmt->execute([":ubicacion"=>$ubicacion, ":numgatostotal"=>$nunTotalGatos,"numgatastotal"=>$numTotalGatas,
         ":numgatascastradas"=>$numGatasCastradas, ":idVoluntario"=>$dni]);
-    header("Location:mostrarDatosVoluntario.php");
+
+    $_SESSION["dniVoluntario"] = $dni;
+    $_SESSION["mostrarColonias"] = true;
+    header("Location:haztevoluntario.php");
 }
 
 ?>

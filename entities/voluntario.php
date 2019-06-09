@@ -24,8 +24,8 @@ class Voluntario
     private $password1;
     private $password2;
 
-    public function __construct($usuario=" ",$apellidos=" ",$dni=" ",$fechaNacimiento=" ",$direccion=" ",$n=" ",$portal=" ",$piso=" ",
-                                $letra=" ",$zonaReside=" ", $correoElectronico=" ",$telef1=" ",$telef2=" ",$password1=" ",$password2=" ")
+    public function __construct($usuario="",$apellidos="",$dni="",$fechaNacimiento="",$direccion="",$n="",$portal="",$piso="",
+                                $letra="",$zonaReside="", $correoElectronico="",$telef1="",$telef2="",$password1="",$password2="")
     {
         $this->usuario=$usuario;
         $this->apellidos=$apellidos;

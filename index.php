@@ -1,4 +1,12 @@
 <?php
+include("./views/partials/cabecera.part.php");
+if (!isset($_SESSION)) { session_start(); }
+if (isset($_SESSION)) {
+    unset($_SESSION["dniSocio"]);
+    unset($_SESSION["dniVoluntario"]);
+    unset($_SESSION["voluntario"]);
+    unset($_SESSION["mostrarColonias"]);
+}
 require_once "./database/connection.php";
 $dbh = Connection::make();
 
@@ -6,12 +14,10 @@ $stmt = $dbh->prepare("select * from gatosadopcion");   //base de datos regalos
 $stmt->execute();
 
 $gatos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
-include("./views/partials/cabecera.part.php");
 ?>
 
 <div class="container-fluid sinPadding">
     <div class="fondoGato">
-
         <div class="container sinPadding">
             <div class="row">
                 <div class="col-12 mt-md-5 d-flex justify-content-center titInicio">

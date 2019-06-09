@@ -2,8 +2,8 @@
 require_once "./database/connection.php";
 require_once "Entities/Socio.php";
 $conexion=Connection::make();
+include("./views/partials/cabeceraAdministrador.php");
 
-include("./views/partials/cabeceraSinNavegador.part.php");
 $DniSocioEliminar="";
 
 if(isset($_POST["socioEliminar"]))
@@ -17,7 +17,7 @@ if(isset($_POST["socioEliminar"]))
 
 <div class="container sinPadding">
     <div class="row">
-        <div class="col-md-12 d-flex justify-content-center mb-md-3">
+        <div class="col-md-12 d-flex justify-content-center mb-md-3 mt-md-5">
             <p class="subtitulo">Lista Socios</p>
         </div>
     </div>
@@ -98,12 +98,14 @@ if(isset($_POST["socioEliminar"]))
             <p class="pr-md-3">Introduce el DNI del Socio a eliminar</p>
             <input type="text" name="socioEliminar" value="">
         </div>
-        <div class="row">
+        <div class="row mb-md-5">
             <div class="col-md-1"></div>
             <button class="btn btn-primary boton1" type="submit" role="button" id="btnEliminarSocio" name="btnEliminarSocio">Eliminar Socio</button>
         </div>
     </form>
 
 </div>
+
 <?php include("./views/partials/footer.part.php");  ?>
+<script type="text/javascript" src="./jsvalidar/posicionarFooter.js"></script>
 

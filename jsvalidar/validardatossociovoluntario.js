@@ -5,6 +5,11 @@ function  ponerFondoGris(objeto)
     objeto.style.backgroundColor="#d1d1c6";
 }
 
+function setProvincia(objeto)
+{
+    document.getElementById("provincias").value=objeto.value.substr(0,2)
+}
+
 function activarOtros(visible)
 {
     if ( visible ) {

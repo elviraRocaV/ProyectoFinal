@@ -3,8 +3,7 @@ require_once "./database/connection.php";
 $conexion=Connection::make();
 $showMessage=false;
 $message="";
-
-include("./views/partials/cabeceraSinNavegador.part.php");
+include("./views/partials/cabeceraAdministrador.php");
 
 if(isset($_POST["voluntarioEliminar"])) {
     $DniVoluntarioEliminar = $_POST["voluntarioEliminar"];
@@ -159,4 +158,5 @@ if(isset($_POST["voluntarioEliminar"])) {
     </form>
 </div>
 <?php include("./views/partials/footer.part.php");  ?>
+<script type="text/javascript" src="./jsvalidar/posicionarFooter.js"></script>
 

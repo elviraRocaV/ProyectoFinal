@@ -43,8 +43,7 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
 }
 ?>
 
-<div class="container-fluid sinPadding">
-    <div class="fondoGatoSocio sinPadding">
+<div class="container-fluid">
         <div class="row">
             <div class="col-12 d-flex justify-content-center mt-md-4">
                 <p class="subtitulo">Introducción gatos para adoptar</p>
@@ -112,11 +111,29 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
                 <input type="hidden" name="MAX_FILE_SIZE" value="10000"
             </form>
         </div>
-    </div>
 </div>
 
+<style>
+
+    html {
+        min-height: 100%;
+        position: relative;
+    }
+    body {
+        margin: 0;
+        margin-bottom: 40px;
+    }
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+        color: white;
+    }
+</style>
     <?php include("./views/partials/footer.part.php"); ?>
 
 
 <script type="text/javascript" src="./jsvalidar/validardatossociovoluntario.js"></script>
+<script type="text/javascript" src="./jsvalidar/posicionarFooter.js"></script>
 
