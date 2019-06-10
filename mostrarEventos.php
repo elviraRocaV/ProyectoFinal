@@ -5,6 +5,7 @@ include("./views/partials/cabecera.part.php");
 
 $stmt = $dbh->prepare("select * from eventos where fecha > current_date ");   //base de datos regalos
 $stmt->execute();
+
 //$basepath = preg_replace('/(.*\/).*$/m','\\1', $_SERVER['REQUEST_URI']);
 $basepath=".";
 $eventos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
@@ -44,5 +45,6 @@ $eventos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
     </div>
 </div>
 
-<?php include("./views/partials/footer.part.php");  ?>
+<?php
+include("./views/partials/footer.part.php");  ?>
 <script type="text/javascript" src="./jsvalidar/posicionarFooter.js"></script>

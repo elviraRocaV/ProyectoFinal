@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include("./views/partials/cabecera.part.php");
 $mostrarMensaje=false;
 
@@ -84,7 +85,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 </div>
 
 
-<?php include("./views/partials/footer.part.php");  ?>
+<?php include("./views/partials/footer.part.php");  ob_end_flush();?>
 
 <script type="text/javascript" src="./jsvalidar/validardatossociovoluntario.js"></script>
 <script type="text/javascript" src="./jsvalidar/posicionarFooter.js"></script>
