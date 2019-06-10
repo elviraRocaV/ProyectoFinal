@@ -1,5 +1,5 @@
 <?php
-include("./views/partials/cabecera.part.php");
+//include("./views/partials/cabecera.part.php");
 $mostrarMensaje=false;
 
 require_once "./database/connection.php";

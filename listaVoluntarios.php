@@ -3,7 +3,7 @@ require_once "./database/connection.php";
 $conexion=Connection::make();
 $showMessage=false;
 $message="";
-include("./views/partials/cabeceraAdministrador.php");
+include("./views/partials/cabeceraadministrador.php");
 
 if(isset($_POST["voluntarioEliminar"])) {
     $DniVoluntarioEliminar = $_POST["voluntarioEliminar"];

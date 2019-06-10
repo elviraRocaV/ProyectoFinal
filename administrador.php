@@ -1,5 +1,5 @@
 <?php
-include("./views/partials/cabeceraAdministrador.php");
+include("./views/partials/cabeceraadministrador.php");
 ?>
 <div class="container sinPadding">
     <div class="row">

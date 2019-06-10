@@ -1,8 +1,8 @@
 <?php
 require_once "./database/connection.php";
-require_once "Entities/Socio.php";
+require_once "entities/socio.php";
 $conexion=Connection::make();
-include("./views/partials/cabeceraAdministrador.php");
+include("./views/partials/cabeceraadministrador.php");
 
 $DniSocioEliminar="";
 

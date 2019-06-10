@@ -1,7 +1,7 @@
 <?php
 require_once "./database/connection.php";
 $dbh = Connection::make();
-include("./views/partials/cabeceraAdministrador.php");
+include("./views/partials/cabeceraadministrador.php");
 ?>
 
 
