@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
     if (isset($_POST["descripcionEvento"]))   {$descripcion = $_POST["descripcionEvento"];}
 
     $destfile="";
-    $rutaFotos=".\\fotoseventos\\";
+    $rutaFotos="./fotoseventos/";
 
      if ($_FILES['fotoEvento']['error'] === UPLOAD_ERR_OK) {
         if (is_file($_FILES['fotoEvento']['tmp_name']) === true) {
@@ -129,5 +129,5 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
 
 <?php include("./views/partials/footer.part.php"); ?>
 
-<script type="text/javascript" src="jsvalidar/validardatos.js"></script>
+<script type="text/javascript" src="./js/validardatos.js"></script>
 

@@ -1,6 +1,6 @@
 <?php
+if (session_status() == PHP_SESSION_NONE ) { session_start(); }
 include("./views/partials/cabecera.part.php");
-if (!isset($_SESSION)) { session_start(); }
 if (isset($_SESSION)) {
     unset($_SESSION["dniSocio"]);
     unset($_SESSION["dniVoluntario"]);

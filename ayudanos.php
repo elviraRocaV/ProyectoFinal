@@ -493,5 +493,5 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 </script>
 
 <?php include("./views/partials/footer.part.php"); ?>
-<script type="text/javascript" src="./jsValidar/validardatos.js"></script>
-<script type="text/javascript" src="./jsValidar/validardatos.js"></script>
+<script type="text/javascript" src="./js/validardatos.js"></script>
+<script type="text/javascript" src="./js/validardatos.js"></script>

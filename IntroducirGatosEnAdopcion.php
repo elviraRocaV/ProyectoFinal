@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
     //$fotoGato = $_FILES['fotoGato']["name"];  //name es el nombre del archivo
 
     $destfile="";
-    $rutaFotos=".\\fotosgatosadopcion\\";
+    $rutaFotos="./fotosgatosadopcion/";
 
 
     if (is_file($_FILES['fotoGato']['tmp_name']) === true) {
@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
 
     if(is_uploaded_file($_FILES['fotoGato']['tmp_name'])===false)
     {
-        throw new UploadException("Error, este fichero no se ha subido");
+        //throw new UploadException("Error, este fichero no se ha subido");
     }
 
     $rutaRelativa = ltrim(str_replace("\\","/", $destfile), ".");
@@ -52,7 +52,7 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
 
         <div class="container sinPadding">
 
-            <form action="IntroducirGatosEnAdopcion.php" method="post" enctype="multipart/form-data">
+            <form action="introducirGatosEnAdopcion.php" method="post" enctype="multipart/form-data">
 
                 <div class="row mt-md-5">
                     <div class="col-md-4"></div>
@@ -134,6 +134,6 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
     <?php include("./views/partials/footer.part.php"); ?>
 
 
-<script type="text/javascript" src="jsvalidar/validardatos.js"></script>
-<script type="text/javascript" src="./jsvalidar/posicionarFooter.js"></script>
+<script type="text/javascript" src="./js/validardatos.js"></script>
+<script type="text/javascript" src="./js/posicionarFooter.js"></script>
 

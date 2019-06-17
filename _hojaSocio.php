@@ -280,5 +280,5 @@ $socios =$stmt->fetchAll(PDO:: FETCH_ASSOC);
 
 
 <?php include("./views/partials/footer.part.php"); ?>
-<script type="text/javascript" src="./jsValidar/validarhojasocio.js"></script>
-<script type="text/javascript" src="./jsvalidar/posicionarFooter.js"></script>
+<script type="text/javascript" src="./js/validarhojasocio.js"></script>
+<script type="text/javascript" src="./js/posicionarFooter.js"></script>

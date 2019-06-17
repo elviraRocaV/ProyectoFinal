@@ -1,3 +1,6 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) { session_start(); }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +20,6 @@
 <body>
 
 <?php
-if (session_status() == PHP_SESSION_NONE) { session_start(); }
 $error = false;
 
 if (isset($_SESSION["dniVoluntario"]) && isset($_SESSION["Administrator"])) {

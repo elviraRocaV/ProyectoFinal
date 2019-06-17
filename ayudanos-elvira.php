@@ -468,4 +468,4 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
 </script>
 
 <?php include("./views/partials/footer.part.php"); ?>
-<script type="text/javascript" src="./jsValidar/validardatossociovoluntario.js"></script>
+<script type="text/javascript" src="./js/validardatossociovoluntario.js"></script>

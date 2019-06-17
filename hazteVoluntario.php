@@ -543,5 +543,5 @@ if ($viewing) {
 ?>
 
 <?php include("./views/partials/footer.part.php"); ?>
-<script type="text/javascript" src="./jsvalidar/validardatos.js"></script>
-<script type="text/javascript" src="./jsValidar/validardatos.js"></script>
+<script type="text/javascript" src="./js/validardatos.js"></script>
+<script type="text/javascript" src="./js/validardatos.js"></script>
