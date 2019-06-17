@@ -31,7 +31,7 @@ $socios =$stmt->fetchAll(PDO:: FETCH_ASSOC);
                     </div>
                 </div>
 
-                <form id="socioform" action="hojaSocio.php" method="post">
+                <form id="socioform" action="_hojaSocio.php" method="post">
                     <div class="row d-flex justify-content-md-between">
 
                         <?php

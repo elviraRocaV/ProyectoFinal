@@ -6,19 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-datepicker3.css">
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kanit|Lobster" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link href="icono/fonts/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="icono/fonts/style.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="iconmoon/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kanit|Lobster" rel="stylesheet">
+    <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
+
+<?php
+if (session_status() == PHP_SESSION_NONE) { session_start(); }
+$error = false;
+
+if (isset($_SESSION["dniVoluntario"]) && isset($_SESSION["Administrator"])) {
+    $dni = $_SESSION["dniVoluntario"];  //es un nombre de variable
+} else {
+    $error=true;
+    $Title = "Error";
+    $Text = "Sesión no Iniciada. Debe Iniciar Sesión";
+}
+?>
+
 <div class="container-fluid">
     <div class="row mt-3 justify-content-md-around">
 
         <div class="col-md-2 col-sm-6 col-6 mt-md-4 mt-sm-1 text-sm-left ml-md-2 posLogo1">
-            <img class="imagenlogo" src="imagenes/logoAyunt.png">
+            <a href="http://www.moncada.es/"><img class="imagenlogo" src="imagenes/logoAyunt.png"></a>
         </div>
 
         <div class="col-md-7 col-sm-12 col-12 ml-5 textoPlan text-md-center text-sm-center text-center">
@@ -26,7 +41,7 @@
         </div>
 
         <div class="col-md-2 col-sm-6 col-6 mt-md-3 mt-sm-1 ml-md-4 mr-md-1 text-sm-right text-right posLogo2">
-            <img class="imagenlogo" src="imagenes/logoCEU.png">
+            <a href="http://www.colegioceuvalencia.es/"><img class="imagenlogo" src="imagenes/logoCEU.png"></a>
         </div>
     </div>
 </div>
@@ -56,3 +71,39 @@
         </ul>
     </div>
 </nav>
+
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Mensaje Modal-->
+<div class="modal alert-light" id="modalMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered alert " role="document">
+        <div id="modaltype" class="modal-content alert">
+            <div id="modaltype2" class="modal-header alert">
+                <h2 class="modal-title" id="exampleModalLongTitle"><?php echo $Title ?></h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <?php echo $Text ?>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $("#modalMessage").click(function () {
+        window.location = "accesoVoluntarios.php";
+    });
+
+    <?php if ($error) { ?>
+        $(document).ready(function () {
+            $('#modalMessage').modal('show'); $('#modaltype').addClass("alert-danger"); $('#modaltype2').addClass("alert-danger");
+        });
+    <?php } ?>
+
+</script>

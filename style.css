@@ -5,13 +5,9 @@
     display: block;
     position: relative;
 }
-
 .lineaH { border-color: #b5e8bf;}
-
 .asterisco { color: #dc3545;}
-
 .sinMargin { margin-bottom: 0px;}
-
 .fondoGato::after
 {
     content: "";
@@ -36,74 +32,29 @@ h1
     font-size: 360%;
     color: #1CA421;
 }
-
 .imagenlogo { width: 100%; }
-
-.sinPadding
-{
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-.botonMenu   /* NO BORRAR VALE!!!!!!!  */
-{
-    background-color: #1CA421;
-    border-color: #1CA421;
-}
-
-.textMenuPrinci  /*texto menu*/  /* NO BORRAR VALE!!!!!!!  */
-{
-    color: white;
-    display: ruby;
-}
-
-.textMenuPrinci:hover
-{
-    color: black;
-    text-decoration: none;
-}
-
-.accesoVoluntarios
-{
-    background-color: #1CA421;
-}
+.sinPadding {padding-left: 0px; padding-right: 0px;}
+.botonMenu   /* NO BORRAR VALE!!!!!!!  */{background-color: #1CA421; border-color: #1CA421;}
+.textMenuPrinci  /*texto menu*/  /* NO BORRAR VALE!!!!!!!  */{color: white;display: ruby;}
+.textMenuPrinci:hover {color: black;text-decoration: none;}
+.accesoVoluntarios {background-color: #1CA421;}
 .textoAcceso
 {
     color: white;
     font-family: 'Bree Serif', serif;
     font-size: 130%;
-    /* margin: 1% 0%;*/
 }
-.textoAcceso:hover {
-    color: black;
-    text-decoration: none;
-}
-
-.menuPrincipal {
-    background-color: #1CA421;
-}
-
+.textoAcceso:hover {color: black; text-decoration: none;}
+.menuPrincipal {background-color: #1CA421;}
 .texto {
     padding: 1% 13%;
     color: white;
     font-family: 'Bree Serif', serif;
     font-size: 100%;
 }
-
-.boton {
-    background-color: #1CA421;
-    border-color: #1CA421;
-}
-
-.boton1 {
-    background-color: #1CA421;
-    border-color: #1CA421;
-}
-
-.anchoVisto  /*visto contraseñas*/
-{
-    width: 5px;
-}
+.boton {background-color: #1CA421; border-color: #1CA421;}
+.boton1 {background-color: #1CA421; border-color: #1CA421;}
+.anchoVisto  /*visto contraseñas*/{width: 5px;}
 
 /*  ---------------------Pagina principal -------------------------------------------*/
 
@@ -124,11 +75,8 @@ h1
     letter-spacing: 4px;
     color: #1CA421;
 }
-
 .indexHazteVoluntarioParraf { letter-spacing: 1px; }
-
 .fotoIndex1,.fotoIndex2 { width: 50%; }
-
 .card { border-color: white; }
 
 .botonCardsGatos
@@ -140,26 +88,12 @@ h1
 
 @media(max-width:576px)   /* xs */
 {
-    .titInicio /* inicio*/
-    {
-        font-size: 10px;
-    }
-
-    .indexHazteVoluntario /* hazte voluntario*/
-    {
-        font-size: 20px;
-    }
-
-    .indexHazteVoluntarioParraf {
-        font-size: 12px;
-    }
-
+    .titInicio /* inicio*/{font-size: 10px;}
+    .indexHazteVoluntario /* hazte voluntario*/{font-size: 20px;}
+    .indexHazteVoluntarioParraf {font-size: 12px;}
     .boton1 { font-size: 12px; }
-
     .cajaGatosIndex { margin-top: 10%; }
-
     .card-text { font-size: 12px; }
-
     .fondoGato
     {
         height: 100%;
@@ -186,38 +120,14 @@ h1
 
 @media(max-width:767px)   /*sm*/
 {
-    .titInicio /* inicio*/
-    {
-        font-size: 13px;
-    }
-
-    .indexHazteVoluntario /* hazte voluntario*/
-    {
-        font-size: 20px;
-    }
-
-    .indexHazteVoluntarioParraf {
-        font-size: 12px;
-    }
-
-    .alturaTextoIndice   /* texto parrafos */
-    {
-        font-size: 130%;
-    }
-
-    .boton1 {
-        font-size: 13px;
-    }
-
+    .titInicio /* inicio*/{font-size: 13px;}
+    .indexHazteVoluntario /* hazte voluntario*/{font-size: 20px;}
+    .indexHazteVoluntarioParraf {font-size: 12px;}
+    .alturaTextoIndice   /* texto parrafos */{font-size: 130%;}
+    .boton1 {font-size: 13px;}
     .fotoIndex1,.fotoIndex2 { width: 40%; }
-
-    .cajaGatosIndex {
-        margin-top: 8%;
-    }
-
-    .card-text {
-        font-size: 12px;
-    }
+    .cajaGatosIndex {margin-top: 8%;}
+    .card-text {font-size: 12px;}
 
     .fondoGato {
         height: 100%;
@@ -267,190 +177,86 @@ h1
     background-size: cover;
     border: #dc3545;
 }
-
-.lineahazteVoluntario  /*nombre*/
-{
-    border: 1px solid #1CA421;
-    border-radius:5%;
-  /*  padding: 2.5% 25%;  */
-}
-
-.lineahazteVoluntarioApellidos
-{
-    border: 1px solid #1CA421;
-    border-radius:5%;
- /*   padding: 2.5% 25%;*/
-}
-
-.lineahazteVoluntarioFecha
-{
-    border: 1px solid #1CA421;
-    border-radius:5%;
-}
-
-.lineahazteVoluntarioDirecion
-{
-    border: 1px solid #1CA421;
-    border-radius:5%;
-  /*  padding: 2.5% 25%; */
-}
-
-.lineahazteVoluntarioDirec1, .lineahazteVoluntarioDirec2, .lineahazteVoluntarioDirec3, .lineahazteVoluntarioDirec4 {
-    border: 1px solid #1CA421;
-    border-radius: 5%;
-}
-
-.colorLineaCaja
-{
-    border: 1px solid #1CA421;
-    border-radius:5%;
-}
-
-.passwordSocio2
-{
-    border: 1px solid #1CA421;
-    border-radius:5%;
-}
-
+.lineahazteVoluntario  /*nombre*/{ border: 1px solid #1CA421; border-radius:5%;}
+.lineahazteVoluntarioApellidos {border: 1px solid #1CA421; border-radius:5%;}
+.lineahazteVoluntarioFecha {border: 1px solid #1CA421; border-radius:5%;}
+.lineahazteVoluntarioDirecion {border: 1px solid #1CA421; border-radius:5%;}
+.lineahazteVoluntarioDirec1, .lineahazteVoluntarioDirec2, .lineahazteVoluntarioDirec3, .lineahazteVoluntarioDirec4
+{border: 1px solid #1CA421;border-radius: 5%;}
+.colorLineaCaja {border: 1px solid #1CA421;border-radius:5%;}
+.passwordSocio2 {border: 1px solid #1CA421; border-radius:5%;}
 
 @media (max-width: 576px)
 {
-    .lineahazteVoluntarioNombre{padding: 1% 11%;}
-
-    .lineahazteVoluntarioApellidos{padding: 1% 11%;}
-
-    .lineahazteVoluntarioDNI{padding: 1% 11%;}
-
-    .lineahazteVoluntarioFechaNa{padding: 2% 11%; height: 2%;}
-
-    .anchoFecha{width: 65%;}
-
-    .anchoReside{width: 70%;}
-
+    .lineahazteVoluntarioNombre, .lineahazteVoluntarioApellidos, .lineahazteVoluntarioDNI{padding: 2% 0;}
+    .lineahazteVoluntarioNombre, .lineahazteVoluntarioApellidos, .lineahazteVoluntarioDNI{width: 80%;}
+    .anchoFecha{width: 80%;}
+    .lineahazteVoluntarioZona{padding: 2% 0%;}
+    .lineahazteVoluntarioZona{width: 78%;}
     .lineahazteVoluntarioDirecion { padding: 1% 11%;}
-
+    .lineahazteVoluntarioDirecion{width: 80%;}
     .alinearCajasDireccionSocio { display: inline-flex;}
-
-    .lineahazteVoluntarioDirec1, .lineahazteVoluntarioDirec2, .lineahazteVoluntarioDirec3, .lineahazteVoluntarioDirec4 { padding: 1% 40%;
-        width: 50px;
-        height: 50%;
-    }
-
+    .lineahazteVoluntarioDirec1, .lineahazteVoluntarioDirec2, .lineahazteVoluntarioDirec3, .lineahazteVoluntarioDirec4
+    { padding: 2% 0%; width: 50px;}
     .anchoCajas{ width: 230px;}
-
-    .lineaPoblacionSocio { padding: 1% 11%;}
-
-    .lineahazteSocioCP { padding: 1% 11%;}
-
-    .lineahazteVoluntarioProvincia{ padding: 1% 11%; }
-
-    .ancho{width: 260%;}
-
-    .mailSocio{padding: 1% 11%;}
-
-    .telf1Socio{padding: 1% 11%;}
-
-    .telf2Socio{padding: 1% 11%;}
-
-    .passwordSocio1{padding: 1% 11%;}
-
-    .passwordSocio2{padding: 1% 11%;}
-
-    .desplazarPassord1{padding-left: 0px;}
-
-    .desplazarPassord2{padding-left: 0px;}
-
-    .anchoCantidad{ width: 120px;}
-
-    .lineaAportarSocio { padding: 2% 4%;}
-
+    .lineaPoblacionSocio, .lineahazteSocioCP, .lineahazteVoluntarioProvincia { padding: 2% 0%;}
+    .lineaPoblacionSocio, .lineahazteSocioCP, .lineahazteVoluntarioProvincia{width: 80%;}
+    .mailSocio, .telf1Socio, .telf2Socio, .passwordSocio1, .passwordSocio2 {padding: 2% 0%;}
+    .mailSocio, .telf1Socio, .telf2Socio, .passwordSocio1, .passwordSocio2{width: 80%;}
+    .anchoCantidad {padding: 2% 0%;}
+    .anchoCantidad{ width: 160px;}
+    .lineaAportarSocio { padding: 4% 0%;}
+    .lineaAportarSocio{width: 200%;}
     .lineahazteSocioCuenta{ padding: 1% 11%; }
-
 }
 
 
 @media (min-width: 577px)
 {
-    .lineahazteVoluntarioNombre { padding: 1% 11%;}
-
-    .lineahazteVoluntarioApellidos{padding: 1% 11%;}
-
-    .lineahazteVoluntarioDNI{padding: 1% 11%;}
-
-    .anchoFecha{width: 55%;}
-
-    .lineahazteVoluntarioDirecion { padding: 1% 11%; }
-
-    .lineahazteVoluntarioDirec1, .lineahazteVoluntarioDirec2, .lineahazteVoluntarioDirec3, .lineahazteVoluntarioDirec4 { padding: 1% 20%; width: 50px;
-        height: 60%; }
-
-    .lineaPoblacionSocio { padding: 1% 11%;}
-
+    .lineahazteVoluntarioNombre, .lineahazteVoluntarioApellidos, .lineahazteVoluntarioDNI { padding: 1.5% 0%;}
+    .lineahazteVoluntarioNombre, .lineahazteVoluntarioApellidos, .lineahazteVoluntarioDNI{width: 60%;}
+    .anchoFecha{width: 62%;}
+    .lineahazteVoluntarioZona{padding: 1.5% 0%;}
+    .lineahazteVoluntarioZona{width: 60%;}
+    .lineahazteVoluntarioDirecion { padding: 1.5% 0%; }
+    .lineahazteVoluntarioDirecion{width: 60%;}
+    .lineahazteVoluntarioDirec1, .lineahazteVoluntarioDirec2, .lineahazteVoluntarioDirec3, .lineahazteVoluntarioDirec4
+    { padding: 4% 0%; width: 65px;}
     .anchoCajas {width: 330px;}
-
-    .poblacionSocio{margin-right: 3%;}
-
-    .lineahazteSocioCP { padding: 1% 11%;}
-
-    .lineahazteVoluntarioProvincia{ padding: 1% 11%; }
-
-    .ancho{width: 220%;}
-
-    .lineahazteSocioProv { padding: 1% 11%;}
-
-    .mailSocio{padding: 1% 11%;}
-
-    .telf1Socio{padding: 1% 11%;}
-
-    .telf2Socio{padding: 1% 11%;}
-
-    .passwordSocio1{padding: 1% 11%;}
-
-    .passwordSocio2{padding: 1% 11%;}
-
-    .anchoCantidad
-    {
-        display: inline-flex;
-    }
-
-    .lineaAportarSocio { padding: 1% 11%;}
-
+    .lineaPoblacionSocio, .lineahazteSocioCP, .lineahazteVoluntarioProvincia { padding: 1.5% 0%;}
+    .lineaPoblacionSocio, .lineahazteSocioCP, .lineahazteVoluntarioProvincia{width: 60%;}
+    .mailSocio, .telf1Socio, .telf2Socio, .passwordSocio1, .passwordSocio2 {padding: 1.5% 0%;}
+    .mailSocio, .telf1Socio, .telf2Socio, .passwordSocio1, .passwordSocio2{width: 60%;}
+    .anchoCantidad {padding: 1.5% 0%;}
+    .anchoCantidad{ width: 500px;}
+    .lineaAportarSocio { padding: 8% 0%;}
+    .lineaAportarSocio{width: 60%;}
     .lineahazteSocioCuenta{ padding: 1% 11%; }
-
+    .anchoCantidad {display: inline-flex;}
+    .lineaAportarSocio { padding: 1.5% 0%;}
+    .lineahazteSocioCuenta{ padding: 1% 11%; }
 }
 
 @media (min-width: 768px)
 {
-    .lineahazteVoluntarioNombre {padding: 2% 15%;}
-
-    .lineahazteVoluntarioApellidos {padding: 2% 15%;}
-
-    .lineahazteVoluntarioDNI {padding: 2% 15%;}
-
-    .lineahazteVoluntarioFechaNa{padding: 2% 5%; width: 10px;}
-
+    .lineahazteVoluntarioNombre, .lineahazteVoluntarioApellidos, .lineahazteVoluntarioDNI { padding: 2% 0%;}
+    .lineahazteVoluntarioNombre, .lineahazteVoluntarioApellidos, .lineahazteVoluntarioDNI{width: 100%;}
     .anchoFecha{width: 100%;}
-
-    .lineahazteVoluntarioDirecion {padding: 2% 15%;}
-
-    .anchoCajas {width: 350px;}
-
-    .lineaPoblacionSocio {padding: 2% 15%;}
-
-    .lineahazteSocioCP {padding: 2% 15%;}
-
-    .lineahazteVoluntarioProvincia{height:38px; width:280px;}
-
-  /*  .ancho{width: 270%;}*/
-
-    .mailSocio {padding: 2% 15%;}
-
-    .telf1Socio {padding: 2% 15%;}
-
-    .telf2Socio {padding: 2% 15%;}
-
-    .lineaAportarSocio{padding: 2% 15%;}
-
+    .lineahazteVoluntarioZona{padding: 2% 0%;}
+    .lineahazteVoluntarioZona{width: 100%;}
+    .lineahazteVoluntarioDirecion { padding: 2% 0%; }
+    .lineahazteVoluntarioDirecion{width: 100%;}
+    .lineahazteVoluntarioDirec1, .lineahazteVoluntarioDirec2, .lineahazteVoluntarioDirec3, .lineahazteVoluntarioDirec4
+    { padding: 2% 0%; width: 50px;}
+    .anchoCajas {width: 330px;}
+    .lineaPoblacionSocio, .lineahazteSocioCP, .lineahazteVoluntarioProvincia { padding: 2% 0%;}
+    .lineaPoblacionSocio, .lineahazteSocioCP, .lineahazteVoluntarioProvincia{width: 100%;}
+    .mailSocio, .telf1Socio, .telf2Socio, .passwordSocio1, .passwordSocio2 {padding: 2% 0%;}
+    .mailSocio, .telf1Socio, .telf2Socio, .passwordSocio1, .passwordSocio2{width: 100%;}
+    .anchoCantidad {padding: 2% 0%;}
+    .anchoCantidad{ width: 900px;}
+    .lineaAportarSocio { padding: 2% 0%;}
+    .lineaAportarSocio{width: 70%;}
     .textoBanco {font-size: 90%;}
 
     /*esto pertenece a entidad banco..etc*/
@@ -460,42 +266,65 @@ h1
         width: 60px;
         height: 70%;
     }
-
     .passwordSocio1 { padding: 2% 15%;}
-
     .passwordSocio2 { padding: 2% 15%;}
-
     .lineahazteSocioCuenta{ padding: 3% 12%; }
-
     .vistoPassword {margin-top: 6%;}
 }
 
+@media (min-width: 992px)
+{
+    .lineahazteVoluntarioNombre, .lineahazteVoluntarioApellidos, .lineahazteVoluntarioDNI { padding: 2% 0%;}
+    .lineahazteVoluntarioNombre, .lineahazteVoluntarioApellidos, .lineahazteVoluntarioDNI{width: 100%;}
+    .anchoFecha{width: 100%;}
+    .lineahazteVoluntarioZona{padding: 2% 0%;}
+    .lineahazteVoluntarioZona{width: 100%;}
+    .lineahazteVoluntarioDirecion { padding: 2% 0%; }
+    .lineahazteVoluntarioDirecion{width: 100%;}
+    .lineahazteVoluntarioDirec1, .lineahazteVoluntarioDirec2, .lineahazteVoluntarioDirec3, .lineahazteVoluntarioDirec4
+    { padding: 2% 0%; width: 50px; }
+    .anchoCajas {width: 330px;}
+    .lineahazteSocioCP, .lineahazteVoluntarioProvincia { padding: 2% 0%;}
+    .lineahazteSocioCP, .lineahazteVoluntarioProvincia{width: 100%;}
+    .mailSocio, .telf1Socio, .telf2Socio, .passwordSocio1, .passwordSocio2 {padding: 2% 0%;}
+    .mailSocio, .telf1Socio, .telf2Socio, .passwordSocio1, .passwordSocio2{width: 100%;}
+}
+
+
+
 @media (min-width: 1200px)
 {
-    .anchoFecha{width: 90%;}
+    .lineahazteVoluntarioNombre, .lineahazteVoluntarioApellidos, .lineahazteVoluntarioDNI { padding: 2% 0%;}
+    .lineahazteVoluntarioNombre, .lineahazteVoluntarioApellidos, .lineahazteVoluntarioDNI{width: 100%;}
+    .anchoFecha{width: 100%;}
+    .lineahazteVoluntarioZona{padding: 2% 0%;}
+    .lineahazteVoluntarioZona{width: 100%;}
+    .lineahazteVoluntarioDirecion { padding: 2% 0%; }
+    .lineahazteVoluntarioDirecion{width: 100%;}
+    .lineahazteVoluntarioDirec1, .lineahazteVoluntarioDirec2, .lineahazteVoluntarioDirec3, .lineahazteVoluntarioDirec4
+    { padding: 2% 0%; width: 50px; }
+    .anchoCajas {width: 330px;}
+    .lineahazteSocioCP, .lineahazteVoluntarioProvincia { padding: 2% 0%;}
+    .lineahazteSocioCP, .lineahazteVoluntarioProvincia{width: 100%;}
+    .mailSocio, .telf1Socio, .telf2Socio, .passwordSocio1, .passwordSocio2 {padding: 2% 0%;}
+    .mailSocio, .telf1Socio, .telf2Socio, .passwordSocio1, .passwordSocio2{width: 100%;}
 }
+
+
 
 /*---------------------------- ACABA SOCIO  ------------------------------------------------------------------------*/
 
 
 /*---------------------------- EMPIEZA VOLUNTARIO  ------------------------------------------------------------------------*/
 
-.lineahazteVoluntarioZona
-{
-   border: 1px solid #1CA421;
-   border-radius: 5%;
-   padding: 2.2% 14%;
-}
+.lineahazteVoluntarioZona {border: 1px solid #1CA421; border-radius: 5%;}
 
 
 /*---------------------------- EMPIEZA HOJASOCIO  ------------------------------------------------------------------------*/
 
 .navbar{padding-bottom: 0px;}
 
-.etiquetas   /*label*/
-{
-    font-size: 18px;
-}
+.etiquetas   /*label*/{font-size: 18px;}
 
 .cajaResultadoSocio
 {
@@ -505,11 +334,7 @@ h1
     font-weight: bold;
 }
 
-.centrarTextoCajas
-{
-    display: inline;
-    text-align: center;
-}
+.centrarTextoCajas {display: inline; text-align: center;}
 
 .sinBorde { border: 0;}
 
@@ -549,7 +374,6 @@ h1
     height: 30px;
     text-align: center;
     font-weight: bold;
-
 }
 
 .cajaDatoBancoSocio, .cajaDatoOficinaSocio
@@ -576,55 +400,27 @@ h1
     font-weight: bold;
 }
 
-
 .sinMargin { margin-bottom: 0px;}
 
 .botonSocEdit, .botonSocElim { background-color: #1CA421; border: 1px solid #1CA421;}
 
-
-
 @media (max-width: 576px)
 {
-    .centrarTexto  /*COMPROBAR QUE VAYA AQUI*/
-    {
-        text-align: center;
-        display: contents;
-    }
+    .centrarTexto {text-align: center; display: contents;}
 
-    .centrarTextoDireccion
-    {
-        text-align: center;
-        display: contents;
-    }
+    .centrarTextoDireccion {text-align: center; display: contents;}
 
-    .centrarTextoBanco
-    {
-        text-align: center;
-        display: contents;
-    }
+    .centrarTextoBanco {text-align: center;display: contents;}
 }
 
 @media (min-width: 576px)
 {
-    .centrarTexto  /*COMPROBAR QUE VAYA AQUI*/
-    {
-        display: contents;
-        text-align: center;
-    }
+    .centrarTexto {display: contents; text-align: center;}
 
-    .centrarTextoDireccion
-    {
-        text-align: center;
-        display: contents;
-    }
+    .centrarTextoDireccion {text-align: center; display: contents;}
 
-    .centrarTextoBanco
-    {
-        text-align: center;
-        display: contents;
-    }
+    .centrarTextoBanco {text-align: center; display: contents;}
 }
-
 
 @media (min-width: 768px)
 {
@@ -676,13 +472,6 @@ h1
 }
 
 
-/*--------------------------------  EMPIEZA COLONIASGATOS------------------------------------------*/
-
-.separacionHorizontal
-{
-    margin-top: 5%;
-}
-
 /*--------------------------------  FONDOS ZONAADMINISTRADOR------------------------------------------*/
 .fondoGato
 {
@@ -705,16 +494,11 @@ h1
     background-size: cover;
 }
 
-
 /*-----------------------------------------------------------------------------------------------------------------*/
-    .icon {
-        display: inline-block;
-    }
+    .icon {display: inline-block;}
 
     /*------------------------------------------------ index ------------------------------------------------------*/
-    .cajaKar {
-        width: 80%;
-    }
+    .cajaKar {width: 80%;}
 
     /*  --------------------- Footer -------------------------------------------*/
     .textFooter {
@@ -723,22 +507,16 @@ h1
         font-weight: bold
     }
 
-    .iconos {
-        color: white;
-    }
+    .iconos {color: white;}
 
     a:hover {
         text-decoration: none;
         color: black;
     }
 
-    .alturaIcono {
-        font-size: 125%;
-    }
+    .alturaIcono {font-size: 125%;}
 
-    .bordeIcono {
-        width: 7%;
-    }
+    .bordeIcono {width: 7%;}
 
     /*  --------------------- accesoVoluntario -------------------------------------------*/
 
@@ -769,289 +547,24 @@ h1
         color: #1CA421;
     }
 
-    /*  --------------------- hazte Voluntario -------------------------------------------*/
-
-
-
 /*-------------------------------- MOSTRARGATOSENADOPCION ---------------------------------*/
 
-
-.caja
-{
-    border: 1px solid red;
-}
-
-
-    /*.ubicarVisto {
-        margin-top: 4%;
-    }
-
-    .deplazarDerecha {
-        margin-left: 30%;
-    }
-
-    .lineaGatos {
-        padding: 3.5% 20%;
-        border: 1px solid #1CA421;
-        border-radius: 5%;
-    }
-
-    .lineahazteVoluntarioGatos {
-        padding: 2% 20%;
-        border: 1px solid #1CA421;
-        border-radius: 5%;
-    }
-
-    @media (max-width: 828px)   /* xs plan esterilizacion felina*/ /*{
-      /*  .textoTitle {
-            font-size: 280%;
-        }
-    }
-
-
-
-    @media (max-width: 543px)   /* xs nombre, apellidos, dni*/ /*{
-       /* .lineahazteVoluntario {
-            padding: 1% 14%;
-            border: 1px solid #1CA421;
-            border-radius: 5%;
-        }
-    }
-
-
-    @media (max-width: 543px)   /* sm *//* {
-        /*.lineahazteVoluntarioDirecion {
-            padding: 1% 14%;
-        }
-    }
-
-
-    .lineahazteVoluntarioDirec1 {
-        border: 1px solid #1CA421;
-        border-radius: 5%;
-    }
-
-    .lineahazteVoluntarioDirec2 {
-        border: 1px solid #1CA421;
-        border-radius: 5%;
-    }
-
-    .lineahazteVoluntarioDirec3 {
-        border: 1px solid #1CA421;
-        border-radius: 5%;
-    }
-
-    .lineahazteVoluntarioDirec4 {
-        border: 1px solid #1CA421;
-        border-radius: 5%;
-    }
-
-    @media (max-width: 767px)   /* sm  parte 2*/ /*{
-/*        .lineahazteVoluntarioDirec1 {
-            width: 43%;
-            height: 64%;
-        }
-
-        .lineahazteVoluntarioDirec2 {
-            width: 43%;
-            height: 64%;
-        }
-
-        .lineahazteVoluntarioDirec3 {
-            width: 43%;
-            height: 64%;
-        }
-
-        .lineahazteVoluntarioDirec4 {
-            width: 43%;
-            height: 64%;
-        }
-    }
-
-    @media (max-width: 543px)   /* sm    parte 3*/ /*{
-  /*      .lineahazteVoluntarioDirec1 {
-            width: 42%;
-            height: 65%;
-        }
-
-        .lineahazteVoluntarioDirec2 {
-            width: 42%;
-            height: 65%;
-            margin-bottom: 10px;
-        }
-
-        .lineahazteVoluntarioDirec3 {
-            width: 42%;
-            height: 65%;
-            margin-bottom: 10px;
-        }
-
-        .lineahazteVoluntarioDirec4 {
-            width: 42%;
-            height: 65%;
-            margin-bottom: 10px;
-        }
-    }
-
-
-    @media (max-width: 544px)   /* col    parte 4*/ /*{
-    /*    .lineahazteVoluntarioDirec1 {
-            width: 42px;
-            height: 30px;
-        }
-
-        .lineahazteVoluntarioDirec2 {
-            width: 42px;
-            height: 30px;
-            margin-bottom: 10px;
-        }
-
-        .lineahazteVoluntarioDirec3 {
-            width: 42px;
-            height: 30px;
-            margin-bottom: 10px;
-        }
-
-        .lineahazteVoluntarioDirec4 {
-            width: 42px;
-            height: 30px;
-            margin-bottom: 10px;
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-   /* .lineahazteVoluntarioZona {
-        border: 1px solid #1CA421;
-        border-radius: 5%;
-    }
-
-    @media (min-width: 768px)   /* md */ /*{
-        .lineahazteVoluntarioZona {
-            padding: 2.2% 4%;
-        }
-    }
-
-    @media (max-width: 768px)   /* sm *//* {
-        .lineahazteVoluntarioZona {
-            padding: 1% 4%;
-        }
-    }*/
-
-
-
-
-
-   /* .lineahazteVoluntarioCorreo {
-        border: 1px solid #1CA421;
-        border-radius: 5%;
-    }
-
-    .lineahazteVoluntarioTelef {
-        border: 1px solid #1CA421;
-        border-radius: 5%;
-    }
-
-    .lineahazteVoluntarioTelef2 {
-        border: 1px solid #1CA421;
-        border-radius: 5%;
-    }
-
-    @media (min-width: 768px)   /* md */ /*{
-     /*   .lineahazteVoluntarioCorreo {
-            padding: 4% 16%;
-        }
-
-        .lineahazteVoluntarioTelef {
-            padding: 4% 15%;
-        }
-
-        .lineahazteVoluntarioTelef2 {
-            padding: 4% 15%;
-        }
-    }
-
-    @media (max-width: 768px)   /* sm */ /*{
-        .lineahazteVoluntarioCorreo {
-            padding: 1% 8%;
-        }
-
-        .lineahazteVoluntarioTelef {
-            padding: 1% 8%;
-        }
-
-        .lineahazteVoluntarioTelef2 {
-            padding: 1% 8%;
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    .textFormularioVoluntario {
-        font-size: 120%;
-    }
-
-    .boton1 {
-        color: white;
-        border-color: #1CA421;
-    }
-
-    .boton1:hover {
-        background-color: #1CA421;
-        border-color: #1CA421;
-        color: black;
-    }
-
+.caja {border: 1px solid red;}
 
 /*---------------------------------------ADMINISTRADOR VER SOCIOS ------------------------------------------*/
 .table-striped>tbody>tr:nth-child(odd)>td,
-.table-striped>tbody>tr:nth-child(odd)>th {
-    background-color: #1CA421;
-}
+.table-striped>tbody>tr:nth-child(odd)>th {background-color: #1CA421;}
 
 
  /*------------------------------------------  media query cabecera----------------------------------------*/
 
-@media (max-width: 576px)   /* xs */
+@media (max-width: 575px)   /* xs */
 {
-    .imagenlogoAyunt /*img ayuntamiento*/
-    {
-        width: 70%;
-    }
+    .imagenlogoAyunt /*img ayuntamiento*/{width: 10%;}
 
-    .imagenlogoCeu /*img CEU*/
-    {
-        width: 70%;
-    }
+    .imagenlogoCeu /*img CEU*/{width: 10%;}
 
-    .textoPlan /*texto plan esterilizacion*/
-    {
-        font-size: 50%;
-    }
+    .textoPlan /*texto plan esterilizacion*/{font-size: 60%;}
 
     .texto
     {
@@ -1059,164 +572,65 @@ h1
         width: 100px;
     }
 
-    .posLogo2 /*logo ceu*/
-    {
-        order: 3;
-    }
+    .posLogo2 /*logo ceu*/{order: 3;}
 
-    .textoPlan /*texto plan esterilizacion*/
-    {
-        order: 1;
-    }
+    .textoPlan /*texto plan esterilizacion*/{order: 1;}
 
-    .posLogo1 /*img ayuntamiento*/
-    {
-        order: 2;
-    }
+    .posLogo1 /*img ayuntamiento*/{order: 2;}
 
-    .botonMenu
-    {
-        background-color: #1CA421;
-    }
+    .botonMenu {background-color: #1CA421;}
 
-    .textMenuPrinci /*texto menu*/
-    {
-        font-size: 3px;
-    }
+    .textMenuPrinci /*texto menu*/{font-size: 3px;}
 
-    .accesoVoluntarios /*texto botón acceso usuarios*/
-    {
-        font-size: 15px;
-    }
+    .accesoVoluntarios /*texto botón acceso usuarios*/{font-size: 15px;}
 }
 
-@media (max-width: 767px)   /*sm*/ {
+@media (min-width: 576px)   /*sm*/
+{
 
-    .textoPlan {
-        font-size: 90%; /*titulo plan esterilizacion felina*/
-    }
+    .textoPlan {font-size: 90%; /*titulo plan esterilizacion felina*/}
 
-    .imagenlogoAyunt /*img ayuntamiento*/
-    {
-        width: 90%;
-    }
+    .imagenlogoAyunt /*img ayuntamiento*/{ width: 5%;}
 
-    .imagenlogoCeu /*img CEU*/
-    {
-        width: 90%;
-    }
+    .imagenlogoCeu /*img CEU*/{ width: 5%;}
 
-    .textoPlan /*texto plan esterilizacion*/
-    {
-        order: 1;
-    }
+    .textoPlan /*texto plan esterilizacion*/{ order: 1;}
 
-    .posLogo1 /* caja img ayuntamiento*/
-    {
-        order: 2;
-    }
+    .posLogo1 /* caja img ayuntamiento*/{order: 2;}
 
-    .botonMenu {
-        width: 11%;
-    }
+    .botonMenu {width: 11%;}
 
-    .accesoVoluntarios {
-        font-size: 13px;
-    }
+    .accesoVoluntarios {font-size: 13px;}
 
-    .textMenuPrinci /*texto menu*/
-    {
-        font-size: 20px;
-    }
+    .textMenuPrinci /*texto menu*/{font-size: 20px;}
 }
 
 
-    @media(min-width:768px)   /*md*/
-    {
-
+@media(min-width:768px)   /*md*/
+{
     .iconoPuerta { padding-left: 10px; }
 
-    .textoPlan {
-        font-size: 90%; /*titulo plan esterilizacion felina*/
-    }
+    .textoPlan {font-size: 90%; /*titulo plan esterilizacion felina*/}
 
-    .imagenlogoAyunt /*img ayuntamiento*/
-    {
-        width: 140%;
-    }
+    .imagenlogoAyunt /*img ayuntamiento*/{width: 200%;}
 
-    .imagenlogoCeu /*img CEU*/
-    {
-        width: 140%;
-    }
+    .imagenlogoCeu /*img CEU*/{width: 200%;}
 
-    .accesoVoluntarios {
-        font-size: 13px;
-    }
+    .accesoVoluntarios {font-size: 13px;}
 
-    .textMenuPrinci /*texto menu*/
-    {
-        font-size: 20px;
-    }
+    .textMenuPrinci /*texto menu*/{font-size: 20px;}
 
     .texto { margin: 2px 0px; /*texto menu*/ }
 
     .alturaTextoIndice{font-size: 110%;}
-
 }
 
+@media(min-width:1400px)   /*md*/
+{
+    .textoPlan {font-size: 120%; /*titulo plan esterilizacion felina*/}
 
+    .imagenlogoAyunt /*img ayuntamiento*/{width: 120%;}
 
-
-/*@media (max-width: 576px)   /* xs */
-/*{
-    .imagenlogoAyunt /*img ayuntamiento*/
-  /*  {
-        width: 40%;
-    }
-
-    .imagenlogoCeu /*img CEU*/
-    /*{
-        width: 60%;
-    }
-
-    .textoPlan /*texto plan esterilizacion*/
-    /*{
-        font-size: 50%;
-    }
-
-    .texto
-    {
-        margin: 1px; /*texto menu*/
-      /*  width: 100px;
-    }
-
-    .posLogo2 /*logo ceu*/
-    /*{
-        order: 3;
-    }
-
-    .textoPlan /*texto plan esterilizacion*/
-    /*{
-        order: 1;
-    }
-
-    .posLogo1 /*img ayuntamiento*/
-    /*{
-        order: 2;
-    }
-
-    .botonMenu
-    {
-        background-color: #1CA421;
-    }
-
-    .textMenuPrinci /*texto menu*/
-    /*{
-        font-size: 3px;
-    }
-
-
-
-}*/
+    .imagenlogoCeu /*img CEU*/{width: 120%;}
+}
 

@@ -89,5 +89,5 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
             ?>
         </div>
 
-        <script type="text/javascript" src="./jsvalidar/validardatossociovoluntario.js"></script>
+        <script type="text/javascript" src="jsvalidar/validardatos.js"></script>
 

@@ -1,6 +1,6 @@
 /*--------   funcion onFocus SOCIOS Y VOLUNTARIOS----------------------*/
 
-function  ponerFondoGris(objeto)
+function ponerFondoGris(objeto)
 {
     objeto.style.backgroundColor="#d1d1c6";
 }
@@ -10,14 +10,18 @@ function setProvincia(objeto)
     document.getElementById("provincias").value=objeto.value.substr(0,2)
 }
 
-function activarOtros(visible)
+function activarOtros(objeto, visible)
 {
+    element = document.getElementById("aportacion")
     if ( visible ) {
-        document.getElementById("cantidadTexto").style.visibility = "visible"
+        element.style.visibility = "visible"
     }
     else
     {
-        document.getElementById("cantidadTexto").style.visibility = "hidden"
+        console.log("ELEMENT " + objeto.value)
+        element.style.visibility = "hidden"
+        element.value = objeto.value
+        console.log("ELE: " + element.value)
     }
 }
 
@@ -36,8 +40,8 @@ function validar(objeto, expresion)
 /*-----------------------VALIDAR PASSWORD-----------------------------------*/
 function validarPassword()
 {
-    let pass1=document.getElementById("passwordSocio");
-    let pass2=document.getElementById("password2Socio");
+    let pass1=document.getElementById("password");
+    let pass2=document.getElementById("password2");
 
     let circulo=document.getElementById("visto1");
     circulo.style.width="24px";
@@ -47,7 +51,7 @@ function validarPassword()
 
     if(pass1.value != "" && pass1.value == pass2.value )
     {
-        document.getElementById("button1").style.visibility="visible";
+        document.getElementById("button1").removeAttribute("disabled");
         document.getElementById("visto1").style.backgroundImage= 'url("imagenes/vistoVerde.png")';
         pass1.style="border-color:#1CA421;"
         pass2.style="border-color:#1CA421;"

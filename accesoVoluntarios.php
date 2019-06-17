@@ -1,5 +1,6 @@
 <?php
 ob_start();
+session_start();
 require_once "./views/partials/cabecera.part.php";
 $mostrarMensaje=false;
 
@@ -8,32 +9,37 @@ $conexion=Connection::make();
 
 $pass="";
 $password="";
+
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
-    $dniUsuario=$_POST["dniUsuario"];
-    $dniUsuario=strtoupper($dniUsuario);
-
+    $dniUsuario=strtoupper($_POST["dniUsuario"]);
     $password=$_POST["passwordUsuario"];
 
-    $stm=$conexion->prepare("select password from voluntariado where dni='$dniUsuario'");
-    $stm->execute();
+    $stmt=$conexion->prepare("select password from voluntariado where dni=:dni");
+    $stmt->bindParam(':dni',$dniUsuario);
+    $stmt->execute();
 
-    $passwordEncriptado = $stm->fetch(PDO::FETCH_ASSOC);
-    $pass=$passwordEncriptado["password"];
+    //echo "DNI: $dniUsuario <br>";
+    //echo "PASS: $password <br>";
 
-    if (password_verify($password, $pass))
+    $hash=$stmt->fetch(PDO::FETCH_ASSOC)["password"];
+    //echo "PASSCIFRADA: $hash <br>";
+    //echo "NEW CYPHER :". sha1(trim($password));
+
+    //if (password_verify($password, $hash))
+    if ( sha1($password) == $hash)
     {
-        $stm=$conexion->prepare("select administrador from voluntariado where dni='$dniUsuario'");
-        $stm->execute();
-
-        $administrador = $stm->fetch(PDO::FETCH_ASSOC);
-        $numAdministrador=$administrador["administrador"];
-
-        if($numAdministrador==0)
-        {
-            header("Location:hojaVoluntario.php");
+        $stmt=$conexion->prepare("select administrador from voluntariado where dni='$dniUsuario'");
+        $stmt->execute();
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);  //devuelve 1 'o 0;
+        $_SESSION["dniVoluntario"]=$dniUsuario;
+        if($usuario['administrador']==0)
+            {
+            $_SESSION["mostrarColonias"]=true;
+            header("Location:hazteVoluntario.php");
         }else
             {
+                $_SESSION["Administrator"] = true;
                 header("Location:administrador.php");
             }
     } else
@@ -111,6 +117,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
 <?php include("./views/partials/footer.part.php");  ob_end_flush(); ?>
 
-<script type="text/javascript" src="./jsvalidar/validardatossociovoluntario.js"></script>
+<script type="text/javascript" src="jsvalidar/validardatos.js"></script>
+<script type="text/javascript" src="jsvalidar/validardatos.js"></script>
 <script type="text/javascript" src="./jsvalidar/posicionarFooter.js"></script>
 

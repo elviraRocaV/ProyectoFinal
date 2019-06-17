@@ -2,20 +2,31 @@
 ob_start();
 include("./views/partials/cabecera.part.php");
 $mostrarMensaje=false;
+$mensajeOk=false;
+$mensajeFaltanDatos=false;
+$usuarioInexistente=false;
 
 require_once "./database/connection.php";
 $conexion=Connection::make();
 
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
-    $dniSocio=$_POST["dni"];
-    $dniSocio.strtoupper($dniSocio);
-
-    $passwordSocio=$_POST["password"];
-    $passwordSocio.strtoupper($passwordSocio);
-
-    $stm=$conexion->prepare("delete from socios where dni='$dniSocio'");
-    $stm->execute([':dni'=>$dniSocio]);
+    if(isset($_POST["dni"]) && isset($_POST["password"]))
+    {
+        $dniSocio=strtoupper($_POST["dni"]);
+        $passwordSocio=$_POST["password"];
+        $stmt=$conexion->prepare("select password from socios where dni=:dni");
+        $stmt->bindParam(':dni',$dniSocio);
+        $stmt->execute();
+        $hash=$stmt->fetch(PDO::FETCH_ASSOC)["password"];
+        if($hash==sha1($passwordSocio)) {
+            $stmt = $conexion->prepare("delete from socios where dni='$dniSocio'");
+            $stmt->execute();
+            $mensajeOk = true;
+        } else {
+            $usuarioInexistente = true;
+        }
+    }
 
 }
 
@@ -36,14 +47,23 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
     <div class="container sinPadding">
 
-        <form action="bajaSocio.php" method="post">
+        <form action="bajaSocios.php" method="post">
+
             <?php
-            if($mostrarMensaje)
+            if($usuarioInexistente)
             {?>
 
                 <div class="alert alert-danger alert-dismissible show">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                     DNI o contraseña no son correctos
+                </div>
+            <?php   }  ?>
+
+            <?php
+            if($mensajeOk)
+            {?>
+                <div class="alert alert-info">
+                    <strong>Eliminado!!</strong> El Socio se ha eliminado correctamente.
                 </div>
             <?php   }  ?>
 
@@ -87,5 +107,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
 <?php include("./views/partials/footer.part.php");  ob_end_flush();?>
 
-<script type="text/javascript" src="./jsvalidar/validardatossociovoluntario.js"></script>
+<script type="text/javascript" src="jsvalidar/validardatos.js"></script>
+<script type="text/javascript" src="jsvalidar/validardatos.js"></script>
 <script type="text/javascript" src="./jsvalidar/posicionarFooter.js"></script>

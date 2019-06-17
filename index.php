@@ -13,8 +13,8 @@ $dbh = Connection::make();
 $stmt = $dbh->prepare("select * from gatosadopcion");   //base de datos regalos
 $stmt->execute();
 $stmt->closeCursor();
-$stmt->null;
-$pdo=null;
+/*$stmt->null;
+$pdo=null;*/
 
 $gatos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
 ?>
@@ -216,9 +216,9 @@ $gatos = $stmt->fetchAll(PDO:: FETCH_ASSOC);
                </div>
           </div>
       </div>
+        <?php include("./views/partials/footer.part.php");  ?>
   </div>
 </div>
 
 
 
-<?php include("./views/partials/footer.part.php");  ?>

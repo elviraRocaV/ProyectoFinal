@@ -6,34 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-datepicker3.css">
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kanit|Lobster" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link href="icono/fonts/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="icono/fonts/style.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="iconmoon/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kanit|Lobster" rel="stylesheet">
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 
 <div class="container-fluid">
     <div class="row mt-3 justify-content-md-around">
-
-        <div class="col-md-2 col-sm-6 col-6 mt-md-4 mt-sm-1 text-sm-left ml-md-2 posLogo1">
-            <img class="imagenlogo" src="imagenes/logoAyunt.png">
+        <div class="col-md-2 col-sm-4 col-4 mt-md-4 mt-sm-1 text-sm-center ml-md-2 posLogo1">
+            <a href="http://www.moncada.es/"><img class="imagenlogo" src="imagenes/logoAyunt.png"></a>
         </div>
-
         <div class="col-md-7 col-sm-12 col-12 ml-5 textoPlan text-md-center text-sm-center text-center">
             <h1 class="pt-md-4"><em><strong>Plan Esterilización Felina</strong></em></h1>
         </div>
-
-        <div class="col-md-2 col-sm-6 col-6 mt-md-3 mt-sm-1 ml-md-4 mr-md-1 text-sm-right text-right posLogo2">
-            <img class="imagenlogo" src="imagenes/logoCEU.png">
+        <div class="col-md-2 col-sm-4 col-4 mt-md-3 mt-sm-1 ml-md-4 mr-md-1 text-sm-right text-right posLogo2">
+            <a href="http://www.colegioceuvalencia.es/"><img class="imagenlogo" src="imagenes/logoCEU.png"></a>
         </div>
     </div>
-</div>
 
-<div class="container-fluid">
     <div class="row">
         <div class="col-md-10 col-lg-10"></div>
         <div class="col-md-2 col-lg-2 col-xl-2 col-sm-4 mt-2 accesoVoluntarios">
@@ -67,5 +62,4 @@
         </div>
     </nav>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>

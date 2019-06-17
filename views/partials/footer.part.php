@@ -37,13 +37,13 @@
         </div>
     </footer>
 
+    <script type="text/javascript" src="js/jquery.mask.js"</script>
 
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/moment-with-locales.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="locales/bootstrap-datepicker.es.min.js"</script>
 
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/moment-with-locales.js"></script>
-<script src="js/bootstrap-datepicker.js"></script>
-<script src="js/jquery.mask.js"</script>
-<script src="locales/bootstrap-datepicker.es.min.js"</script>
 </body>
 </html>

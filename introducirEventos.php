@@ -129,5 +129,5 @@ if($_SERVER['REQUEST_METHOD']==="POST") {
 
 <?php include("./views/partials/footer.part.php"); ?>
 
-<script type="text/javascript" src="./jsvalidar/validardatossociovoluntario.js"></script>
+<script type="text/javascript" src="jsvalidar/validardatos.js"></script>
 
